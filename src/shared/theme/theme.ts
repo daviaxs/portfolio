@@ -1,4 +1,4 @@
-export const darkTheme = {
+export const theme = {
   bg: {
     primary: '#1D203E',
     secondary: '#2C2F48',
