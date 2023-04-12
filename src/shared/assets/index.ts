@@ -3,5 +3,5 @@ import WorldImage from './worldImage.png'
 
 export default {
   AvatarImage,
-  WorldImage
+  WorldImage,
 }

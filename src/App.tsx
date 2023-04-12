@@ -1,5 +1,11 @@
-import { THeadingPrimary } from "./shared/fonts"
+import {BrowserRouter} from 'react-router-dom'
+
+import { AppRoutes } from "./routes"
 
 export const App = () => {
-  return <THeadingPrimary>Hello World</THeadingPrimary>
+  return (
+    <BrowserRouter>
+      <AppRoutes/>
+    </BrowserRouter>
+  )
 }
