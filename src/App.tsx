@@ -1,5 +1,5 @@
-
+import { THeadingPrimary } from "./shared/fonts"
 
 export const App = () => {
-  return <>Hello World</>
+  return <THeadingPrimary>Hello World</THeadingPrimary>
 }
