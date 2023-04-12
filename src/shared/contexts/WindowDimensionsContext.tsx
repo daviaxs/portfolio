@@ -29,9 +29,9 @@ export const WindowDimensionsProvider: React.FC<
         height: window.innerHeight,
       })
     }
-
+    
     window.addEventListener('resize', handleResize)
-
+    
     return () => {
       window.removeEventListener('resize', handleResize)
     }
