@@ -10,7 +10,7 @@ interface ITextProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 
 const THeadingPrimaryStyle = styled.span<ITextProps>`
   font-weight: 900;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -19,7 +19,7 @@ const THeadingPrimaryStyle = styled.span<ITextProps>`
 
 const THeadingSecondaryStyle = styled.span<ITextProps>`
   font-weight: 700;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -27,7 +27,7 @@ const THeadingSecondaryStyle = styled.span<ITextProps>`
 
 const THeadingTertiaryStyle = styled.span<ITextProps>`
   font-weight: 900;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -43,7 +43,7 @@ const THeadingQuaternaryStyle = styled.span<ITextProps>`
 
 const TTitlePrimaryStyle = styled.span<ITextProps>`
   font-weight: 900;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -51,7 +51,7 @@ const TTitlePrimaryStyle = styled.span<ITextProps>`
 
 const TTitleSecondaryStyle = styled.span<ITextProps>`
   font-weight: 900;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -59,16 +59,16 @@ const TTitleSecondaryStyle = styled.span<ITextProps>`
 
 const TTitleTertiaryStyle = styled.span<ITextProps>`
   font-weight: 700;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
   display: ${(props) => props.display};
 
-  color: ${(props) => props.fontSize};
+  color: ${(props) => props.fontSize}rem;
 `
 
 const TTitleQuaternaryStyle = styled.span<ITextProps>`
   font-weight: 700;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
   display: ${(props) => props.display};
 
@@ -77,7 +77,7 @@ const TTitleQuaternaryStyle = styled.span<ITextProps>`
 
 const TTextPrimaryStyle = styled.span<ITextProps>`
   font-weight: 500;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -85,7 +85,7 @@ const TTextPrimaryStyle = styled.span<ITextProps>`
 
 const TTextSecondaryStyle = styled.span<ITextProps>`
   font-weight: 500;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -93,7 +93,7 @@ const TTextSecondaryStyle = styled.span<ITextProps>`
 
 const TTextTertiaryStyle = styled.span<ITextProps>`
   font-weight: 400;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -101,7 +101,7 @@ const TTextTertiaryStyle = styled.span<ITextProps>`
 
 const TTextQuaternaryStyle = styled.span<ITextProps>`
   font-weight: 600;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -109,7 +109,7 @@ const TTextQuaternaryStyle = styled.span<ITextProps>`
 
 const THeadingLinearPrimaryStyle = styled.span<ITextProps>`
   font-weight: 700;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   background: linear-gradient(270deg, #48a7ff 60%, #00fff0 100%);
@@ -120,7 +120,7 @@ const THeadingLinearPrimaryStyle = styled.span<ITextProps>`
 
 const THeadingLinearSecondaryStyle = styled.span<ITextProps>`
   font-weight: 900;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
   background: linear-gradient(270deg, #48a7ff 60%, #00fff0 100%);
@@ -132,7 +132,7 @@ const THeadingLinearSecondaryStyle = styled.span<ITextProps>`
 export const THeadingPrimary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 105,
+  fontSize = 6.5,
   display,
   children,
 }) => {
@@ -151,7 +151,7 @@ export const THeadingPrimary: React.FC<ITextProps> = ({
 export const THeadingSecondary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 40,
+  fontSize = 2.5,
   display,
   children,
 }) => {
@@ -170,7 +170,7 @@ export const THeadingSecondary: React.FC<ITextProps> = ({
 export const THeadingTertiary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 40,
+  fontSize = 2.5,
   display,
   children,
 }) => {
@@ -189,7 +189,7 @@ export const THeadingTertiary: React.FC<ITextProps> = ({
 export const THeadingQuaternary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 38,
+  fontSize = 2.375,
   display,
   children,
 }) => {
@@ -208,7 +208,7 @@ export const THeadingQuaternary: React.FC<ITextProps> = ({
 export const TTitlePrimary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 40,
+  fontSize = 2.5,
   display,
   children,
 }) => {
@@ -227,7 +227,7 @@ export const TTitlePrimary: React.FC<ITextProps> = ({
 export const TTitleSecondary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 32,
+  fontSize = 2,
   display,
   children,
 }) => {
@@ -246,7 +246,7 @@ export const TTitleSecondary: React.FC<ITextProps> = ({
 export const TTitleTertiary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 16,
+  fontSize = 1,
   display,
   children,
 }) => {
@@ -265,7 +265,7 @@ export const TTitleTertiary: React.FC<ITextProps> = ({
 export const TTitleQuaternary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 20,
+  fontSize = 1.25,
   display,
   children,
 }) => {
@@ -284,7 +284,7 @@ export const TTitleQuaternary: React.FC<ITextProps> = ({
 export const TTextPrimary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 24,
+  fontSize = 1.5,
   display,
   children,
 }) => {
@@ -303,7 +303,7 @@ export const TTextPrimary: React.FC<ITextProps> = ({
 export const TTextSecondary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 20,
+  fontSize = 1.25,
   display,
   children,
 }) => {
@@ -322,7 +322,7 @@ export const TTextSecondary: React.FC<ITextProps> = ({
 export const TTextTertiary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 16,
+  fontSize = 1,
   display,
   children,
 }) => {
@@ -341,7 +341,7 @@ export const TTextTertiary: React.FC<ITextProps> = ({
 export const TTextQuaternary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 10,
+  fontSize = 0.625,
   display,
   children,
 }) => {
@@ -360,7 +360,7 @@ export const TTextQuaternary: React.FC<ITextProps> = ({
 export const THeadingLinearPrimary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 40,
+  fontSize = 2.5,
   display,
   children,
 }) => {
@@ -379,7 +379,7 @@ export const THeadingLinearPrimary: React.FC<ITextProps> = ({
 export const THeadingLinearSecondary: React.FC<ITextProps> = ({
   txtColor,
   txtShadow,
-  fontSize = 40,
+  fontSize = 2.5,
   display,
   children,
 }) => {

@@ -12,16 +12,16 @@ import Github from './github.svg'
 import Discord from './discord.svg'
 
 export default {
-  IconHome,
-  IconPeople,
-  IconPaint,
-  IconArrowBack,
-  IconArrowClose,
-  IconArrowOpen,
-  IconChat,
-  IconOptions,
-  IconRocket,
-  IconXClose,
-  Github,
-  Discord
+  home: IconHome,
+  peoplo: IconPeople,
+  paint: IconPaint,
+  arrowBack: IconArrowBack,
+  arrowClose: IconArrowClose,
+  arrowOpen: IconArrowOpen,
+  chat: IconChat,
+  options: IconOptions,
+  rocket: IconRocket,
+  xClose: IconXClose,
+  github: Github,
+  discord: Discord,
 }

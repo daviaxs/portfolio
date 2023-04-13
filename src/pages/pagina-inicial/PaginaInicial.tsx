@@ -1,10 +1,10 @@
-import { useContext } from "react"
-import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
-import { THeadingPrimary } from "../../shared/fonts"
+import { IconButton } from "../../shared/components/icon/iconButton" 
+import { Icon } from "../../shared/components/icon/icon" 
 
 export const PaginaInicial = () => {
-  const {width} = useContext(WindowDimensionsContext)
-  console.log(width)
-
-  return <THeadingPrimary>Hello World</THeadingPrimary>
+  return (
+    <IconButton height={5} width={5}>
+      <Icon name="home" size={2} />
+    </IconButton>
+  )
 }

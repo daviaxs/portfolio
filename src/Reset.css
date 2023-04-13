@@ -11,8 +11,13 @@
   letter-spacing: 0.36px;
   line-height: 18px;
   font-style: normal;
+  color: white;
 }
 
 a {
   text-decoration: none;
+}
+
+body {
+  background: black;
 }
