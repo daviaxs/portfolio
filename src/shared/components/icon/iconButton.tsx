@@ -28,7 +28,7 @@ const IconButtonStyle = styled.button<IIconButtonProps>`
   border-radius: ${(props) => props.borderRadius}px;
   cursor: pointer;
 
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   &:hover {
     background-color: ${theme.icons.hover_bg};
@@ -43,7 +43,7 @@ export const IconButton: React.FC<IIconButtonProps> = ({
   width,
   height,
   borderRadius = 9999,
-  display,
+  display = "flex",
   onClick,
   children,
   ...rest
