@@ -8,7 +8,7 @@ interface ITextProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   children: React.ReactNode
 }
 
-const THeadingPrimaryStyle = styled.span<ITextProps>`
+const THeadingPrimaryStyle = styled.h1<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -17,7 +17,7 @@ const THeadingPrimaryStyle = styled.span<ITextProps>`
   text-shadow: ${(props) => props.txtShadow};
 `
 
-const THeadingSecondaryStyle = styled.span<ITextProps>`
+const THeadingSecondaryStyle = styled.h2<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -25,7 +25,7 @@ const THeadingSecondaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const THeadingTertiaryStyle = styled.span<ITextProps>`
+const THeadingTertiaryStyle = styled.h3<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -33,15 +33,7 @@ const THeadingTertiaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const THeadingQuaternaryStyle = styled.span<ITextProps>`
-  font-weight: 900;
-  font-size: ${(props) => props.txtColor}px;
-  line-height: 100%;
-
-  color: ${(props) => props.txtColor};
-`
-
-const TTitlePrimaryStyle = styled.span<ITextProps>`
+const TTitlePrimaryStyle = styled.strong<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -49,7 +41,7 @@ const TTitlePrimaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTitleSecondaryStyle = styled.span<ITextProps>`
+const TTitleSecondaryStyle = styled.strong<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -57,7 +49,7 @@ const TTitleSecondaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTitleTertiaryStyle = styled.span<ITextProps>`
+const TTitleTertiaryStyle = styled.strong<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -66,7 +58,7 @@ const TTitleTertiaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.fontSize}rem;
 `
 
-const TTitleQuaternaryStyle = styled.span<ITextProps>`
+const TTitleQuaternaryStyle = styled.strong<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -75,7 +67,7 @@ const TTitleQuaternaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTextPrimaryStyle = styled.span<ITextProps>`
+const TTextPrimaryStyle = styled.p<ITextProps>`
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -83,7 +75,7 @@ const TTextPrimaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTextSecondaryStyle = styled.span<ITextProps>`
+const TTextSecondaryStyle = styled.p<ITextProps>`
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -91,7 +83,7 @@ const TTextSecondaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTextTertiaryStyle = styled.span<ITextProps>`
+const TTextTertiaryStyle = styled.p<ITextProps>`
   font-weight: 400;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -99,7 +91,7 @@ const TTextTertiaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTextQuaternaryStyle = styled.span<ITextProps>`
+const TTextQuaternaryStyle = styled.p<ITextProps>`
   font-weight: 600;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
@@ -107,19 +99,8 @@ const TTextQuaternaryStyle = styled.span<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const THeadingLinearPrimaryStyle = styled.span<ITextProps>`
+const THeadingLinearPrimaryStyle = styled.h1<ITextProps>`
   font-weight: 700;
-  font-size: ${(props) => props.fontSize}rem;
-  line-height: 100%;
-
-  background: linear-gradient(270deg, #48a7ff 60%, #00fff0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-`
-
-const THeadingLinearSecondaryStyle = styled.span<ITextProps>`
-  font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
   line-height: 100%;
 
@@ -183,25 +164,6 @@ export const THeadingTertiary: React.FC<ITextProps> = ({
     >
       {children}
     </THeadingTertiaryStyle>
-  )
-}
-
-export const THeadingQuaternary: React.FC<ITextProps> = ({
-  txtColor,
-  txtShadow,
-  fontSize = 2.375,
-  display,
-  children,
-}) => {
-  return (
-    <THeadingQuaternaryStyle
-      txtColor={txtColor}
-      txtShadow={txtShadow}
-      fontSize={fontSize}
-      display={display}
-    >
-      {children}
-    </THeadingQuaternaryStyle>
   )
 }
 
@@ -373,24 +335,5 @@ export const THeadingLinearPrimary: React.FC<ITextProps> = ({
     >
       {children}
     </THeadingLinearPrimaryStyle>
-  )
-}
-
-export const THeadingLinearSecondary: React.FC<ITextProps> = ({
-  txtColor,
-  txtShadow,
-  fontSize = 2.5,
-  display,
-  children,
-}) => {
-  return (
-    <THeadingLinearSecondaryStyle
-      txtColor={txtColor}
-      txtShadow={txtShadow}
-      fontSize={fontSize}
-      display={display}
-    >
-      {children}
-    </THeadingLinearSecondaryStyle>
   )
 }
