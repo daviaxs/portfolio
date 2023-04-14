@@ -35,7 +35,7 @@ const IconButtonStyle = styled.button<IIconButtonProps>`
   }
 
   &:active {
-    transform: scale(0.9);
+    transform: scale(.95);
   }
 `
 
