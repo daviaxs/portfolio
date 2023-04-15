@@ -10,6 +10,7 @@ import IconRocket from './rocket.svg'
 import IconXClose from './x_close.svg'
 import Github from './github.svg'
 import Discord from './discord.svg'
+import ErrorLoading from './error_loading.svg'
 
 export default {
   home: IconHome,
@@ -24,4 +25,5 @@ export default {
   xClose: IconXClose,
   github: Github,
   discord: Discord,
+  errorLoading: ErrorLoading
 }

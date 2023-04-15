@@ -10,7 +10,7 @@ export const HeaderSidebar = styled.header<IHeaderSidebarProps>`
   align-items: center;
   justify-content: ${(props) => props.justifyContent};
 
-  width: 244px;
+  width: 100%;
   height: ${themeConstants.sizes["8xl"]}rem;
 
   padding: ${themeConstants.sizes["2xl"]}rem ${themeConstants.sizes.lg}rem;
