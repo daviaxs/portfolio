@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { theme, themeConstants } from "../../theme"
 import icons from "../../assets/icons"
 import { Icon } from "../icon/icon"
-import { TTitleTertiary } from "../../fonts"
 
 interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   to: string
@@ -44,7 +43,7 @@ const NavButtonStyle = styled.button<INavButtonProps>`
 
   white-space: nowrap;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .2s ease-out;
 
   border-bottom: ${(props) => props.borderSize}px solid
     rgba(255, 255, 255, 0.25);
@@ -73,7 +72,7 @@ const NavButtonStyle = styled.button<INavButtonProps>`
   }
 
   &.active .icon {
-    margin-left: ${(props) => props.iconMargin}px;
+    margin-left: ${(props) => props.iconMargin}rem;
   }
 
   &.active .icon {
@@ -122,7 +121,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           {...rest}
         >
           <Icon name={iconName} className="icon" />
-          <TTitleTertiary className="title">{children}</TTitleTertiary>
+          {children}
         </NavButtonStyle>
       )}
     </NavLink>

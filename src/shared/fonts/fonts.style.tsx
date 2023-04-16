@@ -4,7 +4,7 @@ interface ITextProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   txtColor?: string
   txtShadow?: string
   fontSize?: number
-  display?: string
+  display?: "flex" | "none"
   className?: string
   children: React.ReactNode
 }

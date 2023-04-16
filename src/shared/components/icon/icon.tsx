@@ -17,7 +17,7 @@ export const Icon: React.FC<IIconProps> = ({
 
   return (
     <img
-      className={className}
+      className={`${className} ${"animation-scale"}`}
       src={iconSVG}
       alt={`${name} icone`}
       {...rest}
