@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
-import { HeaderSidebar } from "./utils/HeaderSidebar"
+import { HeaderSidebar } from "./utils/SidebarHeader"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { NavButton } from "../navButton/NavButton"

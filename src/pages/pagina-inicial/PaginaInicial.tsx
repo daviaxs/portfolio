@@ -4,7 +4,7 @@ import { LayoutBaseDePagina } from "../../shared/layout"
 
 export const PaginaInicial = () => {
   return (
-    <LayoutBaseDePagina>
+    <LayoutBaseDePagina flexDir="row">
       <THeadingPrimary fontSize={5}>
         Hello world
       </THeadingPrimary>

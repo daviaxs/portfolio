@@ -56,7 +56,7 @@ const TTitleTertiaryStyle = styled.strong<ITextProps>`
   line-height: 100%;
   display: ${(props) => props.display};
 
-  color: ${(props) => props.fontSize}rem;
+  color: ${(props) => props.txtColor};
 `
 
 const TTitleQuaternaryStyle = styled.strong<ITextProps>`
