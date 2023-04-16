@@ -21,6 +21,7 @@ const PageHeaderStyle = styled.header`
 
   height: ${themeConstants.sizes["8xl"]}rem;
   width: 100%;
+  padding-inline: 4rem;
 
   background: ${theme.bg.secondary};
 

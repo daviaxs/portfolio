@@ -25,6 +25,7 @@ export const Sidebar = () => {
     <Container width="" height="100%" display={windowWidth <= 600 ? "none" : "flex"} bg={theme.bg.bg_sidebar}>
       {/* Sidebar permanente */}
       <Container width="" height="" flexDir="column" display={windowWidth <= 900 ? "none" : "flex"}>
+
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
           <TTitleTertiary display={expanded ? "flex" : "none"} className="animation-scale">
             Explorar
@@ -52,14 +53,18 @@ export const Sidebar = () => {
             ))}
           </Nav>
         </Container>
+        
       </Container>
 
       {/* Sidebar responsiva (para telas menores do que 900px) */}
-      <Container width="100%" height="" flexDir="column" display={windowWidth <= 900 ? "flex" : "none"}>
+      <Container width="" height="100%" flexDir="column" display={windowWidth <= 900 ? "flex" : "none"}>
         {/* Sidebar temporaria */}
         <SidebarTemporaryContainer className={tempSidebarVisible ? "open" : "close"}>
+
           <SidebarTemporaryContent className={tempSidebarVisible ? "open" : "close"}>
-            <Container width="" height="" flexDir="column" display="flex">
+
+            <Container width="" height="100%" flexDir="column" display="flex">
+
               <HeaderSidebar justifyContent="space-between">
                 <TTitleTertiary display="flex" className="animation-scale">
                   Explorar
@@ -87,7 +92,9 @@ export const Sidebar = () => {
                   ))}
                 </Nav>
               </Container>
+
             </Container>
+
           </SidebarTemporaryContent>
 
           <Container width="100%" height="100%" display="flex" onClick={toggleTempsidebar} />
@@ -95,7 +102,8 @@ export const Sidebar = () => {
 
         {/* Sidebar pequena */}
         {windowWidth <= 900 && (
-          <Container width="" height="" flexDir="column" display="flex">
+          <Container width="" height="100%" flexDir="column" display="flex">
+
             <HeaderSidebar justifyContent="center">
               <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
                 <Icon name="arrowOpen" />
@@ -118,6 +126,7 @@ export const Sidebar = () => {
                 ))}
               </Nav>
             </Container>
+
           </Container>
         )}
       </Container>
