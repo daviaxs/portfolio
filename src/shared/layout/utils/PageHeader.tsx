@@ -38,7 +38,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
 
   return (
     <PageHeaderStyle>
-      <TTitleTertiary txtColor={theme.text.quaternary} display={expanded || windowWidth <= 900 ? "flex" : "none"}>
+      <TTitleTertiary txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
         {label}
       </TTitleTertiary>
       <IconButton
