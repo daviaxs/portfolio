@@ -10,7 +10,7 @@ import { IconButton } from "../icon/iconButton"
 import { TTitleTertiary } from "../../fonts"
 import { Icon } from "../icon/icon"
 import { Nav } from "../nav/Nav"
-import { SidebarTemporaryContainer, SidebarTemporaryContent } from "./utils" 
+import { SidebarTemporaryContainer, SidebarTemporaryContent } from "./utils"
 
 export const Sidebar = () => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
@@ -43,7 +43,7 @@ export const Sidebar = () => {
                 to={drawerOptions.to}
                 widthDefault={expanded ? 9 : 1}
                 widthFocus={expanded ? 13.25 : 2.5}
-                iconMargin={expanded ? 0 : 0.1}
+                iconMarginLeft={expanded ? 0 : 0.1}
               >
                 <TTitleTertiary className="title animation-scale" display={expanded ? "flex" : "none"}>
                   Página inicial
@@ -111,7 +111,7 @@ export const Sidebar = () => {
                     to={drawerOptions.to}
                     widthDefault={1}
                     widthFocus={2.5}
-                    iconMargin={0.1}
+                    iconMarginLeft={0.1}
                   >
                     {/* children */}
                   </NavButton>

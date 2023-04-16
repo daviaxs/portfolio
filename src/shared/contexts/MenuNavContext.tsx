@@ -16,7 +16,6 @@ export const useMenuNavContext = () => {
 }
 
 export const MenuNavProvider: React.FC<IMenuNavProviderProps> = ({ children }) => {
-
   const [expandedMenu, setExpandedMenu] = useState(false)
 
   const toggleMenuNav = useCallback(() => {
@@ -24,5 +23,7 @@ export const MenuNavProvider: React.FC<IMenuNavProviderProps> = ({ children }) =
     setExpandedMenu(newExpandedMenu)
   }, [expandedMenu])
 
-  return <MenuNavContext.Provider value={{toggleMenuNav, expandedMenu: expandedMenu}}>{children}</MenuNavContext.Provider>
+  return (
+    <MenuNavContext.Provider value={{ toggleMenuNav, expandedMenu: expandedMenu }}>{children}</MenuNavContext.Provider>
+  )
 }

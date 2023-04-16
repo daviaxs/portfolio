@@ -1,11 +1,13 @@
+import { useContext } from "react"
 import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
+import { useMenuNavContext } from "../../contexts/MenuNavContext"
+import { useSidebarContext } from "../../contexts/SidebarContext"
 import { IconButton } from "../../components/icon/iconButton"
 import { theme, themeConstants } from "../../theme"
 import { Icon } from "../../components/icon/icon"
 import { TTitleTertiary } from "../../fonts"
-import { useContext } from "react"
 
 interface IPageHeaderProps {
   label: string
@@ -30,13 +32,23 @@ const PageHeaderStyle = styled.header`
 `
 
 export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
-  const {width: windowWidth} = useContext(WindowDimensionsContext)
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { expandedMenu, toggleMenuNav } = useMenuNavContext()
+  const { expanded } = useSidebarContext()
 
   return (
     <PageHeaderStyle>
-      <TTitleTertiary txtColor={theme.text.quaternary}>{label}</TTitleTertiary>
-      <IconButton display={windowWidth <= 600 ? "flex" : "none"} className="iconMenu" height={2.6} width={2.6} onClick={() => alert('hello world')}>
-        <Icon name="options"/>
+      <TTitleTertiary txtColor={theme.text.quaternary} display={expanded || windowWidth <= 900 ? "flex" : "none"}>
+        {label}
+      </TTitleTertiary>
+      <IconButton
+        display={windowWidth <= 600 ? "flex" : "none"}
+        className="iconMenu"
+        height={2.6}
+        width={2.6}
+        onClick={toggleMenuNav}
+      >
+        <Icon name={expandedMenu ? "arrowBack" : "options"} />
       </IconButton>
     </PageHeaderStyle>
   )

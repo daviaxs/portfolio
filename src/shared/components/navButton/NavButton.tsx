@@ -12,7 +12,7 @@ interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
   height?: number
 
-  iconMargin?: number
+  iconMarginLeft?: number
   bottomMargin?: number
 
   widthDefault: number
@@ -43,10 +43,9 @@ const NavButtonStyle = styled.button<INavButtonProps>`
 
   white-space: nowrap;
   cursor: pointer;
-  transition: .2s ease-out;
+  transition: 0.2s ease-out;
 
-  border-bottom: ${(props) => props.borderSize}px solid
-    rgba(255, 255, 255, 0.25);
+  border-bottom: ${(props) => props.borderSize}px solid rgba(255, 255, 255, 0.25);
 
   &&:hover {
     background: ${theme.sidebarButtons.hover};
@@ -54,7 +53,7 @@ const NavButtonStyle = styled.button<INavButtonProps>`
   }
 
   .title {
-    margin-top: .1rem;
+    margin-top: 0.1rem;
   }
 
   .icon {
@@ -72,7 +71,7 @@ const NavButtonStyle = styled.button<INavButtonProps>`
   }
 
   &.active .icon {
-    margin-left: ${(props) => props.iconMargin}rem;
+    margin-left: ${(props) => props.iconMarginLeft}rem;
   }
 
   &.active .icon {
@@ -85,7 +84,7 @@ const NavButtonStyle = styled.button<INavButtonProps>`
 
   &.inactive .icon {
     background: ${theme.sidebarButtons.default};
-    margin-left: ${(props) => props.iconMargin}px;
+    margin-left: ${(props) => props.iconMarginLeft}px;
   }
 `
 
@@ -95,7 +94,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
   height = 2.5,
   widthDefault,
   widthFocus,
-  iconMargin,
+  iconMarginLeft: iconMargin,
   bottomMargin = 0.5,
   borderSize = 0,
   borderRadius = 0.25,
@@ -112,7 +111,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           height={height}
           widthDefault={widthDefault}
           widthFocus={widthFocus}
-          iconMargin={iconMargin}
+          iconMarginLeft={iconMargin}
           bottomMargin={bottomMargin}
           borderSize={borderSize}
           borderRadius={borderRadius}
