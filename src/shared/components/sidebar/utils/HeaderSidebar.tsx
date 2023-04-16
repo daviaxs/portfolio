@@ -13,6 +13,6 @@ export const HeaderSidebar = styled.header<IHeaderSidebarProps>`
   width: 100%;
   height: ${themeConstants.sizes["8xl"]}rem;
 
-  padding: ${themeConstants.sizes["2xl"]}rem ${themeConstants.sizes.lg}rem;
+  padding: ${themeConstants.sizes["2xl"]}rem ${themeConstants.sizes.xl}rem;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.1);
 `
