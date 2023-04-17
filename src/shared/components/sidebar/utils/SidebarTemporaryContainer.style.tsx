@@ -10,8 +10,8 @@ export const SidebarTemporaryContainer = styled.div`
   right: 0;
   z-index: 999;
 
-  background-color: rgba(0, 0, 0, 0.33);
-  box-shadow: inset 49px 0px 76px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 49px 0px 76px rgba(0, 0, 0, 0.159);
 
   margin-left: 15.25rem;
   display: flex;

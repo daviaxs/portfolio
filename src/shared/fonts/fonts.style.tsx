@@ -6,12 +6,14 @@ interface ITextProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fontSize?: number
   display?: "flex" | "none"
   className?: string
+  whiteSpace?: "nowrap" | "normal"
   children: React.ReactNode
 }
 
 const THeadingPrimaryStyle = styled.h1<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -21,6 +23,7 @@ const THeadingPrimaryStyle = styled.h1<ITextProps>`
 const THeadingSecondaryStyle = styled.h2<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -29,6 +32,7 @@ const THeadingSecondaryStyle = styled.h2<ITextProps>`
 const THeadingTertiaryStyle = styled.h3<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -37,6 +41,7 @@ const THeadingTertiaryStyle = styled.h3<ITextProps>`
 const TTitlePrimaryStyle = styled.strong<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -45,6 +50,7 @@ const TTitlePrimaryStyle = styled.strong<ITextProps>`
 const TTitleSecondaryStyle = styled.strong<ITextProps>`
   font-weight: 900;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -53,6 +59,7 @@ const TTitleSecondaryStyle = styled.strong<ITextProps>`
 const TTitleTertiaryStyle = styled.strong<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
   display: ${(props) => props.display};
 
@@ -62,6 +69,7 @@ const TTitleTertiaryStyle = styled.strong<ITextProps>`
 const TTitleQuaternaryStyle = styled.strong<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
   display: ${(props) => props.display};
 
@@ -71,6 +79,7 @@ const TTitleQuaternaryStyle = styled.strong<ITextProps>`
 const TTextPrimaryStyle = styled.p<ITextProps>`
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -79,6 +88,7 @@ const TTextPrimaryStyle = styled.p<ITextProps>`
 const TTextSecondaryStyle = styled.p<ITextProps>`
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -87,6 +97,7 @@ const TTextSecondaryStyle = styled.p<ITextProps>`
 const TTextTertiaryStyle = styled.p<ITextProps>`
   font-weight: 400;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -95,6 +106,7 @@ const TTextTertiaryStyle = styled.p<ITextProps>`
 const TTextQuaternaryStyle = styled.p<ITextProps>`
   font-weight: 600;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   color: ${(props) => props.txtColor};
@@ -103,6 +115,7 @@ const TTextQuaternaryStyle = styled.p<ITextProps>`
 const THeadingLinearPrimaryStyle = styled.h1<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
+  white-space: ${(props) => props.whiteSpace};
   line-height: 100%;
 
   background: linear-gradient(270deg, #48a7ff 60%, #00fff0 100%);
@@ -111,97 +124,97 @@ const THeadingLinearPrimaryStyle = styled.h1<ITextProps>`
   background-clip: text;
 `
 
-export const THeadingPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 6.5, display, children }) => {
+export const THeadingPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 6.5, display, children }) => {
   return (
-    <THeadingPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <THeadingPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </THeadingPrimaryStyle>
   )
 }
 
-export const THeadingSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 2.5, display, children }) => {
+export const THeadingSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 2.5, display, children }) => {
   return (
-    <THeadingSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <THeadingSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </THeadingSecondaryStyle>
   )
 }
 
-export const THeadingTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 2.5, display, children }) => {
+export const THeadingTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 2.5, display, children }) => {
   return (
-    <THeadingTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <THeadingTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </THeadingTertiaryStyle>
   )
 }
 
-export const TTitlePrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 2.5, display, children }) => {
+export const TTitlePrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 2.5, display, children }) => {
   return (
-    <TTitlePrimaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTitlePrimaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTitlePrimaryStyle>
   )
 }
 
-export const TTitleSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 2, display, children }) => {
+export const TTitleSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 2, display, children }) => {
   return (
-    <TTitleSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTitleSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTitleSecondaryStyle>
   )
 }
 
-export const TTitleTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 1, display, children }) => {
+export const TTitleTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 1, display, children }) => {
   return (
-    <TTitleTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTitleTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTitleTertiaryStyle>
   )
 }
 
-export const TTitleQuaternary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 1.25, display, children }) => {
+export const TTitleQuaternary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 1.25, display, children }) => {
   return (
-    <TTitleQuaternaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTitleQuaternaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTitleQuaternaryStyle>
   )
 }
 
-export const TTextPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 1.5, display, children }) => {
+export const TTextPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 1.5, display, children }) => {
   return (
-    <TTextPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTextPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTextPrimaryStyle>
   )
 }
 
-export const TTextSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 1.25, display, children }) => {
+export const TTextSecondary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 1.25, display, children }) => {
   return (
-    <TTextSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTextSecondaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTextSecondaryStyle>
   )
 }
 
-export const TTextTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 1, display, children }) => {
+export const TTextTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 1, display, children }) => {
   return (
-    <TTextTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTextTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTextTertiaryStyle>
   )
 }
 
-export const TTextQuaternary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 0.625, display, children }) => {
+export const TTextQuaternary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 0.625, display, children }) => {
   return (
-    <TTextQuaternaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <TTextQuaternaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </TTextQuaternaryStyle>
   )
 }
 
-export const THeadingLinearPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, fontSize = 2.5, display, children }) => {
+export const THeadingLinearPrimary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, whiteSpace = "normal", fontSize = 2.5, display, children }) => {
   return (
-    <THeadingLinearPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} fontSize={fontSize} className={className} display={display}>
+    <THeadingLinearPrimaryStyle txtColor={txtColor} txtShadow={txtShadow} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
     </THeadingLinearPrimaryStyle>
   )

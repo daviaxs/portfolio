@@ -3,7 +3,7 @@ import styled from "styled-components"
 interface IContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   display: "flex" | "none" | "grid" | "block"
   flexDir?: "row" | "column"
-  justifyContent?: "start" | "center" | "end"
+  justifyContent?: "start" | "center" | "end" | "space-between"
   align?: "start" | "center" | "end" | "flex-start"
   overflow?: "auto" | "visible" | "hidden"
   // children: React.ReactNode
