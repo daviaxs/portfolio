@@ -1,7 +1,7 @@
-import { Box } from "../components/box/Box"
 import { Sidebar } from "../components/sidebar/Sidebar"
-import { theme } from "../theme"
 import { PageLayout } from "./utils/PageLayout"
+import { Box } from "../components/box/Box"
+import { theme } from "../theme"
 
 interface ILayoutBaseDePaginaProps {
   children: React.ReactNode

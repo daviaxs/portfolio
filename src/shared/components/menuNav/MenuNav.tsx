@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
-import { theme, themeConstants } from "../../theme"
 import { PageHeader } from "../../layout/utils/PageHeader"
+import { theme, themeConstants } from "../../theme"
 import { NavButton } from "../navButton/NavButton"
-import { Nav } from "../nav/Nav"
 import { TTitleTertiary } from "../../fonts"
+import { Nav } from "../nav/Nav"
 
 interface IMenuNavProps {
   display: "flex" | "none"

@@ -1,12 +1,12 @@
+import { useContext } from "react"
 import styled from "styled-components"
 
-import { theme, themeConstants } from "../../theme"
-import { PageHeader } from "./PageHeader"
+import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
-import { useContext } from "react"
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { MenuNav } from "../../components/menuNav/MenuNav"
+import { theme, themeConstants } from "../../theme"
+import { PageHeader } from "./PageHeader"
 
 interface IPageLayoutProps extends IPageContentProps {
   children: React.ReactNode
@@ -32,7 +32,7 @@ const PageContentStyle = styled.main<IPageContentProps>`
   flex: 1;
 
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   margin-top: ${themeConstants.sizes["8xl"]}rem;
 
   background: ${theme.bg.primary};

@@ -44,11 +44,11 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: transparent;
+  background-color: #2b2f5a;
 }
 
 ::-moz-scrollbar-corner {
-  background-color: transparent;
+  background-color: #2b2f5a;
 }
 
 /* -------------------- */

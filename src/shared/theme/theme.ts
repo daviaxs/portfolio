@@ -33,7 +33,7 @@ export const theme = {
   elements: {
     primary: '#2E3153',
     secondary: 'rgba(46, 49, 83, 0.25)',
-  },
+  } as const,
   icons: {
     selected: 1,
     default: 0.6,
