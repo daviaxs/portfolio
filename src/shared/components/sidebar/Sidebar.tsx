@@ -7,9 +7,9 @@ import { HeaderSidebar } from "./utils/SidebarHeader"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { NavButton } from "../navButton/NavButton"
-import { IconButton } from "../icon/iconButton"
+import { IconButton } from "../icon/IconButton"
 import { TTitleTertiary } from "../../fonts"
-import { Icon } from "../icon/icon"
+import { Icon } from "../icon/Icon"
 import { Nav } from "../nav/Nav"
 
 export const Sidebar = () => {
@@ -31,7 +31,7 @@ export const Sidebar = () => {
             Explorar
           </TTitleTertiary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
-            <Icon name={expanded ? "arrowClose" : "arrowOpen"} />
+            <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18}/>
           </IconButton>
         </HeaderSidebar>
 
@@ -70,7 +70,7 @@ export const Sidebar = () => {
                   Explorar
                 </TTitleTertiary>
                 <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
-                  <Icon name="arrowClose" />
+                  <Icon name="arrowClose" size={18}/>
                 </IconButton>
               </HeaderSidebar>
 
@@ -85,8 +85,8 @@ export const Sidebar = () => {
                       widthFocus={13.25}
                       onClick={toggleTempsidebar}
                     >
-                      <TTitleTertiary className="title animation-scale" display="flex">
-                        Página inicial
+                      <TTitleTertiary className="title animation-scale" display="flex" whiteSpace="nowrap">
+                        {drawerOptions.label}
                       </TTitleTertiary>
                     </NavButton>
                   ))}
@@ -106,7 +106,7 @@ export const Sidebar = () => {
 
             <HeaderSidebar justifyContent="center">
               <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
-                <Icon name="arrowOpen" />
+                <Icon name="arrowOpen" size={18}/>
               </IconButton>
             </HeaderSidebar>
 

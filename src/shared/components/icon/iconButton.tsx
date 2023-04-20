@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-interface IIconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width: number
   height: number
   borderRadius?: number
@@ -35,28 +34,13 @@ const IconButtonStyle = styled.button<IIconButtonProps>`
   }
 
   &:active {
-    transform: scale(.95);
+    transform: scale(0.95);
   }
 `
 
-export const IconButton: React.FC<IIconButtonProps> = ({
-  width,
-  height,
-  borderRadius = 9999,
-  display = "flex",
-  onClick,
-  children,
-  ...rest
-}) => {
+export const IconButton: React.FC<IIconButtonProps> = ({ width, height, borderRadius = 9999, display = "flex", onClick, children, ...rest }) => {
   return (
-    <IconButtonStyle
-      onClick={onClick}
-      width={width}
-      height={height}
-      borderRadius={borderRadius}
-      display={display}
-      {...rest}
-    >
+    <IconButtonStyle onClick={onClick} width={width} height={height} borderRadius={borderRadius} display={display} {...rest}>
       {children}
     </IconButtonStyle>
   )

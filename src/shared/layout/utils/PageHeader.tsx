@@ -4,9 +4,9 @@ import styled from "styled-components"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
-import { IconButton } from "../../components/icon/iconButton"
+import { IconButton } from "../../components/icon/IconButton"
 import { theme, themeConstants } from "../../theme"
-import { Icon } from "../../components/icon/icon"
+import { Icon } from "../../components/icon/Icon"
 import { TTitleTertiary } from "../../fonts"
 
 interface IPageHeaderProps {
@@ -49,7 +49,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
         width={2.6}
         onClick={toggleMenuNav}
       >
-        <Icon name={expandedMenu ? "arrowBack" : "options"} />
+        <Icon name={expandedMenu ? "arrowBack" : "options"} size={20} fill={theme.text.quaternary} />
       </IconButton>
     </PageHeaderStyle>
   )

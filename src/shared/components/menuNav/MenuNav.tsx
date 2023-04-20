@@ -45,11 +45,12 @@ export const MenuNav: React.FC<IMenuNavProps> = ({ display }) => {
             to={menuOptions.to}
             onClick={toggleMenuNav}
             borderSize={1}
+            borderRadius={0}
             height={3.8}
-            bottomMargin={1}
+            bottomMargin={0}
             widthDefault={100}
             widthFocus={100}
-            iconMarginLeft={1}
+            iconMarginLeft={themeConstants.sizes.xl}
           >
             <TTitleTertiary className="title animation-scale" display="flex">
               {menuOptions.label}

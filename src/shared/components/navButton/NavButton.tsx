@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { theme, themeConstants } from "../../theme"
 import icons from "../../assets/icons"
-import { Icon } from "../icon/icon"
+import { Icon } from "../icon/Icon"
 
 interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   to: string
@@ -57,7 +57,6 @@ const NavButtonStyle = styled.button<INavButtonProps>`
   }
 
   .icon {
-    opacity: ${theme.icons.default};
     transition: all 0.5s;
   }
 
@@ -72,9 +71,6 @@ const NavButtonStyle = styled.button<INavButtonProps>`
 
   &.active .icon {
     margin-left: ${(props) => props.iconMarginLeft}rem;
-  }
-
-  &.active .icon {
     opacity: ${theme.icons.selected};
   }
 
@@ -83,8 +79,8 @@ const NavButtonStyle = styled.button<INavButtonProps>`
   }
 
   &.inactive .icon {
-    background: ${theme.sidebarButtons.default};
-    margin-left: ${(props) => props.iconMarginLeft}px;
+    opacity: ${theme.icons.default};
+    margin-left: ${(props) => props.iconMarginLeft}rem;
   }
 `
 
@@ -94,15 +90,13 @@ export const NavButton: React.FC<INavButtonProps> = ({
   height = 2.5,
   widthDefault,
   widthFocus,
-  iconMarginLeft: iconMargin,
+  iconMarginLeft,
   bottomMargin = 0.5,
   borderSize = 0,
   borderRadius = 0.25,
   children,
   ...rest
 }) => {
-  const iconSVG = icons[iconName]
-
   return (
     <NavLink to={to}>
       {(props) => (
@@ -111,7 +105,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           height={height}
           widthDefault={widthDefault}
           widthFocus={widthFocus}
-          iconMarginLeft={iconMargin}
+          iconMarginLeft={iconMarginLeft}
           bottomMargin={bottomMargin}
           borderSize={borderSize}
           borderRadius={borderRadius}
@@ -119,7 +113,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           to={to}
           {...rest}
         >
-          <Icon name={iconName} className="icon" />
+          <Icon name={iconName} size={18} />
           {children}
         </NavButtonStyle>
       )}

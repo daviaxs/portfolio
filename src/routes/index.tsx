@@ -13,13 +13,19 @@ export const AppRoutes = () => {
         label: "Página inicial",
         icon: "home",
         to: "/pagina-inicial"
-      }
+      },
+      {
+        label: "Sobre",
+        icon: "person",
+        to: "/pagina-iial"
+      },
     ])
   }, [])
 
   return (
     <Routes>
       <Route path="/pagina-inicial" element={<PaginaInicial />} />
+      <Route path="/pagina-iial" element={<PaginaInicial />} />
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>
