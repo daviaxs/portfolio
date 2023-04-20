@@ -24,7 +24,7 @@ const IconButtonStyle = styled.button<IIconButtonProps>`
   width: ${(props) => props.width}rem;
   height: ${(props) => props.height}rem;
 
-  border-radius: ${(props) => props.borderRadius}px;
+  border-radius: ${(props) => props.borderRadius}rem;
   cursor: pointer;
 
   transition: all 0.2s;

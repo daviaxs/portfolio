@@ -8,6 +8,8 @@ import { Rectangle, Rectangles } from "./utils/Rectangles.style"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import Imgs from "../../shared/assets/index"
 import { theme } from "../../shared/theme"
+import { IconButton } from "../../shared/components/icon/IconButton"
+import { Icon } from "../../shared/components/icon/Icon"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)

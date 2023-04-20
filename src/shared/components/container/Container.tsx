@@ -14,6 +14,8 @@ interface IContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   height: string
   zIndex?: number
 
+  gap?: number
+
   padding?: number
   paddingTop?: number
   paddingRight?: number
@@ -44,6 +46,8 @@ export const Container = styled.div<IContainerProps>`
   height: ${(props) => props.height};
   width: ${(props) => props.width};
   z-index: ${(props) => props.zIndex};
+
+  gap: ${(props) => props.gap}rem;
 
   padding: ${(props) => props.padding}rem;
   padding: ${(props) => props.paddingIncolumn}rem 0;
