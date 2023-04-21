@@ -8,8 +8,6 @@ import { Rectangle, Rectangles } from "./utils/Rectangles.style"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import Imgs from "../../shared/assets/index"
 import { theme } from "../../shared/theme"
-import { IconButton } from "../../shared/components/icon/IconButton"
-import { Icon } from "../../shared/components/icon/Icon"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
@@ -30,7 +28,6 @@ export const PaginaInicial = () => {
         marginLeft={windowWidth <= 600 ? 0 : 1.5}
         marginRight={windowWidth <= 900 ? 0 : expanded ? 2 : windowWidth / 200}
       >
-
         <Rectangles>
           {/* Primarios */}
           <Rectangle height={windowWidth > 900 ? 1.813 : 1.349} width={windowWidth > 900 ? 2.375 : 1.768} className="_1" />
@@ -67,7 +64,6 @@ export const PaginaInicial = () => {
             Desenvolvedor front-end
           </TTitlePrimary>
         </Container>
-
       </Container>
 
       <Container display="flex" height="100%" width="100%" zIndex={0} justifyContent="center" align="center">
@@ -75,7 +71,7 @@ export const PaginaInicial = () => {
           src={Imgs.AvatarImage}
           alt="Desenho de davi alves"
           style={{
-            height: `${windowWidth >= 600 ? "43.75rem" : "31.25rem"}`,
+            height: `${windowWidth > 600 ? "43.75rem" : "31.25rem"}`,
             marginTop: `${
               windowHeight <= 490 && windowHeight >= 410
                 ? "5rem"
@@ -88,7 +84,6 @@ export const PaginaInicial = () => {
           }}
         />
       </Container>
-
     </LayoutBaseDePagina>
   )
 }
