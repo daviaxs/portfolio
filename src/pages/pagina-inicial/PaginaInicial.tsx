@@ -8,6 +8,8 @@ import { Rectangle, Rectangles } from "./utils/Rectangles.style"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import Imgs from "../../shared/assets/index"
 import { theme } from "../../shared/theme"
+import { Button } from "./utils/Button"
+import { Icon } from "../../shared/components/icon/Icon"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
@@ -27,6 +29,8 @@ export const PaginaInicial = () => {
         marginBottom={windowWidth <= 600 ? 0 : 3}
         marginLeft={windowWidth <= 600 ? 0 : 1.5}
         marginRight={windowWidth <= 900 ? 0 : expanded ? 2 : windowWidth / 200}
+        transitionName="margin"
+        transitionTime={0.2}
       >
         <Rectangles>
           {/* Primarios */}
@@ -63,6 +67,16 @@ export const PaginaInicial = () => {
           <TTitlePrimary txtColor={theme.text.secondary} fontSize={windowWidth > 900 ? 2.5 : windowWidth <= 600 ? 1.5 : 2}>
             Desenvolvedor front-end
           </TTitlePrimary>
+
+          <Container display="flex" width="100%" height="" justifyContent="center" gap={2} marginTop={1} marginLeft={windowWidth <= 900 ? 0 : -1}>
+            <Button height={4.125} width={4.125} href="https://github.com/daviaxs">
+              <Icon name="github" fill={theme.bg.primary} size={40} />
+            </Button>
+            <Button height={4.125} width={4.125} onClick={() => alert("Hello world")}>
+              <Icon name="discord" fill={theme.bg.primary} size={40} />
+            </Button>
+          </Container>
+          
         </Container>
       </Container>
 
