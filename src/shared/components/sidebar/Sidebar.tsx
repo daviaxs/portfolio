@@ -13,9 +13,9 @@ import { Icon } from "../icon/Icon"
 import { Nav } from "../nav/Nav"
 
 export const Sidebar = () => {
-  const { width: windowWidth } = useContext(WindowDimensionsContext)
   const { sidebarOptions, expanded, toggleExpanded } = useSidebarContext()
   const [tempSidebarVisible, setTempSidebarVisible] = useState(false)
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   const toggleTempsidebar = () => {
     setTempSidebarVisible(!tempSidebarVisible)
@@ -24,14 +24,21 @@ export const Sidebar = () => {
   return (
     <Container width="" height="100%" display={windowWidth <= 600 ? "none" : "flex"} bg={theme.bg.bg_sidebar}>
       {/* Sidebar permanente */}
-      <Container width="" height="" flexDir="column" display={windowWidth <= 900 ? "none" : "flex"}>
+      <Container
+        width={expanded ? "15.25rem" : "4.5rem"}
+        height=""
+        flexDir="column"
+        display={windowWidth <= 900 ? "none" : "flex"}
 
+        transitionName="width"
+        transitionTime={0.2}
+      >
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
           <TTitleTertiary display={expanded ? "flex" : "none"} className="animation-scale">
             Explorar
           </TTitleTertiary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
-            <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18}/>
+            <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18} />
           </IconButton>
         </HeaderSidebar>
 
@@ -46,31 +53,27 @@ export const Sidebar = () => {
                 widthFocus={expanded ? 13.25 : 2.5}
                 iconMarginLeft={expanded ? 0 : 0.1}
               >
-                <TTitleTertiary className="title animation-scale" display={expanded ? "flex" : "none"} whiteSpace="nowrap">
+                <TTitleTertiary className={`title ${expanded ? "animation-scale" : "animation-scale-out"}`} whiteSpace="nowrap">
                   {drawerOptions.label}
                 </TTitleTertiary>
               </NavButton>
             ))}
           </Nav>
         </Container>
-        
       </Container>
 
       {/* Sidebar responsiva (para telas menores do que 900px) */}
       <Container width="" height="100%" flexDir="column" display={windowWidth <= 900 ? "flex" : "none"}>
         {/* Sidebar temporaria */}
         <SidebarTemporaryContainer className={tempSidebarVisible ? "open" : "close"}>
-
           <SidebarTemporaryContent className={tempSidebarVisible ? "open" : "close"}>
-
             <Container width="" height="100%" flexDir="column" display="flex">
-
               <HeaderSidebar justifyContent="space-between">
                 <TTitleTertiary display="flex" className="animation-scale">
                   Explorar
                 </TTitleTertiary>
                 <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
-                  <Icon name="arrowClose" size={18}/>
+                  <Icon name="arrowClose" size={18} />
                 </IconButton>
               </HeaderSidebar>
 
@@ -92,9 +95,7 @@ export const Sidebar = () => {
                   ))}
                 </Nav>
               </Container>
-
             </Container>
-
           </SidebarTemporaryContent>
 
           <Container width="100%" height="100%" display="flex" onClick={toggleTempsidebar} />
@@ -102,11 +103,10 @@ export const Sidebar = () => {
 
         {/* Sidebar pequena */}
         {windowWidth <= 900 && (
-          <Container width="" height="100%" flexDir="column" display="flex">
-
+          <Container width="4.5rem" height="100%" flexDir="column" display="flex">
             <HeaderSidebar justifyContent="center">
               <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
-                <Icon name="arrowOpen" size={18}/>
+                <Icon name="arrowOpen" size={18} />
               </IconButton>
             </HeaderSidebar>
 
@@ -126,7 +126,6 @@ export const Sidebar = () => {
                 ))}
               </Nav>
             </Container>
-
           </Container>
         )}
       </Container>

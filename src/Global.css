@@ -62,6 +62,10 @@ a {
   animation: animationScale .3s forwards ease-out;
 }
 
+.animation-scale-out {
+  animation: animationScaleOut .3s forwards ease-out;
+}
+
 @keyframes animationScale {
   0% {
     opacity: 0;
@@ -70,5 +74,17 @@ a {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes animationScaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+    visibility: hidden;
   }
 }

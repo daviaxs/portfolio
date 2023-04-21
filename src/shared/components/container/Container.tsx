@@ -29,6 +29,9 @@ interface IContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   marginBottom?: number
   marginRight?: number
 
+  transitionName?: string
+  transitionTime?: number
+
   onClick?: () => void
 }
 
@@ -39,6 +42,8 @@ export const Container = styled.div<IContainerProps>`
   align-items: ${(props) => props.align};
 
   overflow-y: ${(props) => props.overflow};
+
+  transition: ${(props) => props.transitionName} ${(props) => props.transitionTime}s ease-out;
 
   background: ${(props) => props.bg};
   border-radius: ${(props) => props.borderRadius}rem;
