@@ -53,7 +53,7 @@ export const Sidebar = () => {
                 widthFocus={expanded ? 13.25 : 2.5}
                 iconMarginLeft={expanded ? 0 : 0.1}
               >
-                <TTitleTertiary className={`title ${expanded ? "animation-scale" : "animation-scale-out"}`} whiteSpace="nowrap">
+                <TTitleTertiary className={`title animation-scale`} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
                   {drawerOptions.label}
                 </TTitleTertiary>
               </NavButton>
