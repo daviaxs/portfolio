@@ -34,7 +34,7 @@ const ButtonPrimaryStyle = styled.button`
   }
 
   &:focus-visible {
-    outline: 3px solid ${theme.buttons.border_focus_visible};
+    outline: 2.5px solid ${theme.buttons.border_focus_visible};
     outline-offset: -2px;
   }
 `

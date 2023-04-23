@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react"
-import styled from "styled-components"
+import { useContext, useEffect, useState } from "react"
+import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import config from "../../../../config.json"
+import styled from "styled-components"
 
 import userErrorLoading from "../../assets/userErrorLoading.svg"
+import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import { theme, themeConstants } from "../../theme"
+import { Container } from "../container/Container"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
-import { Container } from "../container/Container"
-import { ButtonPrimary } from "../buttons/ButtonPrimary"
+import { IconButton } from "../icon/IconButton"
 
 interface IModalBoxProps {
   width: string | number
@@ -27,6 +29,15 @@ const ModalBoxStyle = styled.div`
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
+
+  .buttonClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+  }
 `
 
 const ModalStyle = styled.div<IModalBoxProps>`
@@ -64,6 +75,7 @@ export function Modal() {
   const url = `https://server-portfolio-jet.vercel.app/user/${config.id}`
 
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   useEffect(() => {
     async function fetchData() {
@@ -103,11 +115,16 @@ export function Modal() {
 
   return (
     <ModalBoxStyle>
+      <IconButton height={3} width={3} className="buttonClose">
+        <Icon name="xClose" size={23} fill={theme.text.fifth} />
+      </IconButton>
       <ModalStyle width="">
+
         <TTitleSecondary textAlign="center" display="flex" whiteSpace="nowrap">
           Entre em contato comigo <br /> pelo Discord
           <Icon name="happyFace" size={33} />
         </TTitleSecondary>
+
         <Container
           display="flex"
           height="8.563rem"
@@ -124,9 +141,11 @@ export function Modal() {
             {userName}#{userTag}
           </TTitleSecondary>
         </Container>
-        <ButtonPrimary className="buttonCopy" onClick={() => alert('Hello world')}>
+
+        <ButtonPrimary className="buttonCopy" onClick={() => alert("Hello world")}>
           Copiar
         </ButtonPrimary>
+
       </ModalStyle>
     </ModalBoxStyle>
   )
