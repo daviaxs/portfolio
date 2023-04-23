@@ -42,7 +42,7 @@ const ButtonPrimaryStyle = styled.button`
 export const ButtonPrimary: React.FC<IButtonProps> = ({ onClick, className, children }) => {
   return (
     <ButtonPrimaryStyle onClick={onClick} className={className}>
-      <TTitleSecondary txtColor={theme.text.fifth}>{children}</TTitleSecondary>
+      {children}
     </ButtonPrimaryStyle>
   )
 }

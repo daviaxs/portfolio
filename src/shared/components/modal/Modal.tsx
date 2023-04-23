@@ -13,6 +13,9 @@ import { IconButton } from "../icon/IconButton"
 
 interface IModalBoxProps {
   width: string | number
+
+  iconMarginLeft: number
+  iconMarginTop: number
 }
 
 const ModalBoxStyle = styled.div`
@@ -57,8 +60,8 @@ const ModalStyle = styled.div<IModalBoxProps>`
 
   .icon {
     position: absolute;
-    margin-left: 18rem;
-    margin-top: 2rem;
+    margin-left: ${(props) => props.iconMarginLeft}rem;
+    margin-top: ${(props) => props.iconMarginTop}rem;
   }
 
   .avatar {
@@ -118,34 +121,35 @@ export function Modal() {
       <IconButton height={3} width={3} className="buttonClose">
         <Icon name="xClose" size={23} fill={theme.text.fifth} />
       </IconButton>
-      <ModalStyle width="">
-
-        <TTitleSecondary textAlign="center" display="flex" whiteSpace="nowrap">
+      <ModalStyle width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""} iconMarginLeft={windowWidth <= 600 ? 16 : 18} iconMarginTop={2}>
+        <TTitleSecondary textAlign="center" display="flex" whiteSpace="nowrap" fontSize={windowWidth <= 600 ? 1.8 : 2}>
           Entre em contato comigo <br /> pelo Discord
-          <Icon name="happyFace" size={33} />
+          <Icon name="happyFace" size={windowWidth <= 600 ? 28 : 34} />
         </TTitleSecondary>
 
         <Container
           display="flex"
-          height="8.563rem"
+          height=""
           width="calc(100% + 5rem)"
           align="center"
           justifyContent="center"
           gap={themeConstants.sizes["4xl"]}
           marginTop={themeConstants.sizes["8xl"]}
           borderRadius={themeConstants.sizes["3xl"]}
+          paddingIncolumn={0.5}
           bg={theme.alert.primary}
         >
           <img src={avatarUrl} alt="Foto de perfil do discord" className="avatar" />
-          <TTitleSecondary>
+          <TTitleSecondary fontSize={windowWidth <= 600 ? 1.5 : 2}>
             {userName}#{userTag}
           </TTitleSecondary>
         </Container>
 
         <ButtonPrimary className="buttonCopy" onClick={() => alert("Hello world")}>
-          Copiar
+          <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
+            Copiar
+          </TTitleSecondary>
         </ButtonPrimary>
-
       </ModalStyle>
     </ModalBoxStyle>
   )
