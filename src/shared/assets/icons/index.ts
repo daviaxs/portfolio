@@ -11,6 +11,7 @@ import IconXClose from './x_close'
 import Github from './github'
 import Discord from './discord'
 import ErrorLoading from './error_loading'
+import HappyFace from './happyFace'
 
 export default {
   home: IconHome,
@@ -25,5 +26,6 @@ export default {
   xClose: IconXClose,
   github: Github,
   discord: Discord,
-  errorLoading: ErrorLoading
+  errorLoading: ErrorLoading,
+  happyFace: HappyFace
 }
