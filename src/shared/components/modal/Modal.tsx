@@ -7,6 +7,7 @@ import { theme, themeConstants } from "../../theme"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
 import { Container } from "../container/Container"
+import { ButtonPrimary } from "../buttons/ButtonPrimary"
 
 interface IModalBoxProps {
   width: string | number
@@ -52,6 +53,10 @@ const ModalStyle = styled.div<IModalBoxProps>`
   .avatar {
     border-radius: 999px;
     height: 94px;
+  }
+
+  .buttonCopy {
+    margin-top: ${themeConstants.sizes.lg}rem;
   }
 `
 
@@ -119,7 +124,9 @@ export function Modal() {
             {userName}#{userTag}
           </TTitleSecondary>
         </Container>
-        
+        <ButtonPrimary className="buttonCopy" onClick={() => alert('Hello world')}>
+          Copiar
+        </ButtonPrimary>
       </ModalStyle>
     </ModalBoxStyle>
   )
