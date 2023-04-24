@@ -3,7 +3,6 @@ import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import MuiAlert, { AlertProps } from "@mui/material/Alert"
 import Snackbar from "@mui/material/Snackbar"
 import config from "../../../../config.json"
-import Button from "@mui/material/Button"
 import Stack from "@mui/material/Stack"
 import styled from "styled-components"
 
@@ -148,22 +147,9 @@ export function Modal() {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
   const { toggleModal, expandedModal } = useModalContext()
 
-  const [shouldRender, setShouldRender] = useState(expandedModal)
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
-
+  const [shouldRender, setShouldRender] = useState(expandedModal)
   const [openSnackbar, setOpenSnackbar] = useState(false)
-
-  const handleSnackbarClick = () => {
-    setOpenSnackbar(true)
-  }
-
-  const handlesnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === "clickaway") {
-      return
-    }
-
-    setOpenSnackbar(false)
-  }
 
   useEffect(() => {
     if (expandedModal) {
@@ -197,6 +183,28 @@ export function Modal() {
   //   fetchData()
   // }, [])
 
+  if (user.username && user.discriminator && user.avatar) {
+    var userName = user.username
+    var userTag = user.discriminator
+    var avatarUrl = `https://cdn.discordapp.com/avatars/${config.id}/${user.avatar}.png`
+  } else {
+    var userName = "Carregando..."
+    var userTag = "0000"
+    var avatarUrl = userErrorLoading
+  }
+
+  const handleSnackbarClick = () => {
+    setOpenSnackbar(true)
+  }
+
+  const handlesnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === "clickaway") {
+      return
+    }
+
+    setOpenSnackbar(false)
+  }
+
   const handleAnimationEnd = useCallback(() => {
     if (!expandedModal) {
       setShouldRender(false)
@@ -207,14 +215,13 @@ export function Modal() {
     return null
   }
 
-  if (user.username && user.discriminator && user.avatar) {
-    var userName = user.username
-    var userTag = user.discriminator
-    var avatarUrl = `https://cdn.discordapp.com/avatars/${config.id}/${user.avatar}.png`
-  } else {
-    var userName = "Carregando..."
-    var userTag = "0000"
-    var avatarUrl = userErrorLoading
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`${userName}#${userTag}`)
+  }
+
+  const handleButtonCopy = () => {
+    handleCopy()
+    handleSnackbarClick()
   }
 
   return (
@@ -259,7 +266,7 @@ export function Modal() {
           </TTitleSecondary>
         </Container>
 
-        <ButtonPrimary className="buttonCopy" onClick={handleSnackbarClick}>
+        <ButtonPrimary className="buttonCopy" onClick={handleButtonCopy} disabled={user.username ? false : true}>
           <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
             Copiar
           </TTitleSecondary>

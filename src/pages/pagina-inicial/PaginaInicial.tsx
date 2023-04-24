@@ -19,8 +19,6 @@ export const PaginaInicial = () => {
 
   return (
     <LayoutBaseDePagina flexDir={windowWidth <= 900 ? "column" : "row"}>
-
-
       <Container
         height=""
         width=""
@@ -35,6 +33,7 @@ export const PaginaInicial = () => {
         marginRight={windowWidth <= 900 ? 0 : expanded ? 2 : windowWidth / 200}
         transitionName="margin"
         transitionTime={0.2}
+        style={windowWidth < 350 ? { transform: "scale(0.80)" } : {}}
       >
         <Rectangles>
           {/* Primarios */}
@@ -83,7 +82,15 @@ export const PaginaInicial = () => {
         </Container>
       </Container>
 
-      <Container display="flex" height="100%" width="100%" zIndex={0} justifyContent="center" align="center">
+      <Container
+        display="flex"
+        height="100%"
+        width="100%"
+        zIndex={0}
+        justifyContent="center"
+        align="center"
+        style={windowWidth < 350 ? { transform: "scale(0.80)" } : {}}
+      >
         <img
           src={Imgs.AvatarImage}
           alt="Desenho de davi alves"
