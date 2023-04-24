@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom"
 import { WindowDimensionsProvider } from "./shared/contexts/WindowDimensionsContext"
 import { SidebarProvider } from "./shared/contexts/SidebarContext"
 import { MenuNavProvider } from "./shared/contexts/MenuNavContext"
+import { ModalProvider } from "./shared/contexts/ModalContext"
 import { AppRoutes } from "./routes"
 
 export const App = () => {
@@ -10,9 +11,11 @@ export const App = () => {
     <WindowDimensionsProvider>
       <MenuNavProvider>
         <SidebarProvider>
+          <ModalProvider>
           <BrowserRouter>
             <AppRoutes />
           </BrowserRouter>
+          </ModalProvider>
         </SidebarProvider>
       </MenuNavProvider>
     </WindowDimensionsProvider>

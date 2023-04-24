@@ -10,6 +10,7 @@ import { Container } from "../container/Container"
 import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
+import { useModalContext } from "../../contexts/ModalContext"
 
 interface IModalBoxProps {
   width: string | number
@@ -51,7 +52,7 @@ const ModalBoxStyle = styled.div`
       background-color: rgba(0, 0, 0, 0);
     }
     100% {
-      background-color:rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(3px);
     }
   }
@@ -62,7 +63,7 @@ const ModalBoxStyle = styled.div`
 
   @keyframes closeModalBG {
     0% {
-      background-color:rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(3px);
     }
     100% {
@@ -122,10 +123,10 @@ const ModalStyle = styled.div<IModalBoxProps>`
 
   @keyframes closeModal {
     0% {
-      transform: scale(0);
+      transform: scale(1);
     }
     100% {
-      transform: scale(1);
+      transform: scale(0);
     }
   }
 `
@@ -133,8 +134,17 @@ const ModalStyle = styled.div<IModalBoxProps>`
 export function Modal() {
   const url = `https://server-portfolio-jet.vercel.app/user/${config.id}`
 
-  const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
+  const { toggleModal, expandedModal } = useModalContext()
+  
+  const [shouldRender, setShouldRender] = useState(expandedModal);
+  const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
+
+  useEffect(() => {
+    if (expandedModal) {
+      setShouldRender(true);
+    }
+  }, [expandedModal]);
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -162,6 +172,16 @@ export function Modal() {
   //   fetchData()
   // }, [])
 
+  const handleAnimationEnd = useCallback(() => {
+    if (!expandedModal) {
+      setShouldRender(false);
+    }
+  }, [expandedModal]);
+
+  if (!shouldRender) {
+    return null;
+  }
+
   if (user.username && user.discriminator && user.avatar) {
     var userName = user.username
     var userTag = user.discriminator
@@ -173,15 +193,16 @@ export function Modal() {
   }
 
   return (
-    <ModalBoxStyle className="closeModalBG">
-      <IconButton height={3} width={3} className="buttonClose">
+    <ModalBoxStyle className={expandedModal ? "openModalBG" : "closeModalBG"}>
+      <IconButton height={3} width={3} className={`buttonClose ${expandedModal ? "animation-scale" : "animation-scale-out"}`} onClick={toggleModal}>
         <Icon name="xClose" size={23} fill={theme.text.fifth} />
       </IconButton>
       <ModalStyle
         width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""}
         iconMarginLeft={windowWidth <= 600 && windowWidth >= 360 ? 16 : windowWidth < 360 ? 11 : 18}
         iconMarginTop={windowWidth < 360 ? 1.3 : 2}
-        className={"closeModal"}
+        className={expandedModal ? "openModal" : "closeModal"}
+        onAnimationEnd={handleAnimationEnd}
       >
         <TTitleSecondary
           textAlign="center"
@@ -212,7 +233,7 @@ export function Modal() {
           </TTitleSecondary>
         </Container>
 
-        <ButtonPrimary className="buttonCopy" onClick={() => alert('Hello world')}>
+        <ButtonPrimary className="buttonCopy" onClick={() => alert("Hello world")}>
           <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
             Copiar
           </TTitleSecondary>

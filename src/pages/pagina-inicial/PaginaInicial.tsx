@@ -3,16 +3,18 @@ import { useContext } from "react"
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { useSidebarContext } from "../../shared/contexts/SidebarContext"
 import { Container } from "../../shared/components/container/Container"
+import { useModalContext } from "../../shared/contexts/ModalContext"
 import { THeadingPrimary, TTitlePrimary } from "../../shared/fonts"
 import { Rectangle, Rectangles } from "./utils/Rectangles.style"
 import { LayoutBaseDePagina } from "../../shared/layout"
+import { Icon } from "../../shared/components/icon/Icon"
 import Imgs from "../../shared/assets/index"
 import { theme } from "../../shared/theme"
 import { Button } from "./utils/Button"
-import { Icon } from "../../shared/components/icon/Icon"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
+  const { toggleModal } = useModalContext()
   const { expanded } = useSidebarContext()
 
   return (
@@ -74,7 +76,7 @@ export const PaginaInicial = () => {
             <Button height={4.125} width={4.125} href="https://github.com/daviaxs">
               <Icon name="github" fill={theme.bg.primary} size={40} />
             </Button>
-            <Button height={4.125} width={4.125} onClick={() => alert("Hello world")}>
+            <Button height={4.125} width={4.125} onClick={toggleModal}>
               <Icon name="discord" fill={theme.bg.primary} size={40} />
             </Button>
           </Container>
