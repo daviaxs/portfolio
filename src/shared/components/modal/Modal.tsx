@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import config from "../../../../config.json"
 import styled from "styled-components"
@@ -7,9 +7,9 @@ import userErrorLoading from "../../assets/userErrorLoading.svg"
 import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
+import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
-import { IconButton } from "../icon/IconButton"
 
 interface IModalBoxProps {
   width: string | number
@@ -30,7 +30,6 @@ const ModalBoxStyle = styled.div`
 
   z-index: 9999;
 
-  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
 
   .buttonClose {
@@ -40,6 +39,37 @@ const ModalBoxStyle = styled.div`
 
     margin-right: 1rem;
     margin-top: 1.5rem;
+  }
+
+  &.openModalBG {
+    animation: openModalBG 0.3s forwards ease-out;
+  }
+
+  @keyframes openModalBG {
+    0% {
+      backdrop-filter: blur(0px);
+      background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background-color:rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(3px);
+    }
+  }
+
+  &.closeModalBG {
+    animation: closeModalBG 0.3s forwards ease-out;
+  }
+
+  @keyframes closeModalBG {
+    0% {
+      background-color:rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(3px);
+    }
+    100% {
+      backdrop-filter: blur(0px);
+      background-color: rgba(0, 0, 0, 0);
+      visibility: hidden;
+    }
   }
 `
 
@@ -72,6 +102,32 @@ const ModalStyle = styled.div<IModalBoxProps>`
   .buttonCopy {
     margin-top: ${themeConstants.sizes.lg}rem;
   }
+
+  &.openModal {
+    animation: openModal 0.3s forwards ease-out;
+  }
+
+  @keyframes openModal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &.closeModal {
+    animation: closeModal 0.3s forwards ease-out;
+  }
+
+  @keyframes closeModal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `
 
 export function Modal() {
@@ -80,31 +136,31 @@ export function Modal() {
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(url)
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await fetch(url)
 
-        if (response.ok) {
-          var data = await response.json()
-        } else {
-          console.error(response.status, response.statusText)
-        }
+  //       if (response.ok) {
+  //         var data = await response.json()
+  //       } else {
+  //         console.error(response.status, response.statusText)
+  //       }
 
-        if (data) {
-          setUser({
-            username: data.username,
-            avatar: data.avatar,
-            discriminator: data.discriminator,
-          })
-        }
-      } catch (error) {
-        console.error(error)
-      }
-    }
+  //       if (data) {
+  //         setUser({
+  //           username: data.username,
+  //           avatar: data.avatar,
+  //           discriminator: data.discriminator,
+  //         })
+  //       }
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   }
 
-    fetchData()
-  }, [])
+  //   fetchData()
+  // }, [])
 
   if (user.username && user.discriminator && user.avatar) {
     var userName = user.username
@@ -117,7 +173,7 @@ export function Modal() {
   }
 
   return (
-    <ModalBoxStyle>
+    <ModalBoxStyle className="closeModalBG">
       <IconButton height={3} width={3} className="buttonClose">
         <Icon name="xClose" size={23} fill={theme.text.fifth} />
       </IconButton>
@@ -125,6 +181,7 @@ export function Modal() {
         width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""}
         iconMarginLeft={windowWidth <= 600 && windowWidth >= 360 ? 16 : windowWidth < 360 ? 11 : 18}
         iconMarginTop={windowWidth < 360 ? 1.3 : 2}
+        className={"closeModal"}
       >
         <TTitleSecondary
           textAlign="center"
@@ -155,7 +212,7 @@ export function Modal() {
           </TTitleSecondary>
         </Container>
 
-        <ButtonPrimary className="buttonCopy" onClick={() => alert("Hello world")}>
+        <ButtonPrimary className="buttonCopy" onClick={() => alert('Hello world')}>
           <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
             Copiar
           </TTitleSecondary>
