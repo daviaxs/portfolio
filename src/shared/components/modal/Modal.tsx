@@ -1,16 +1,20 @@
-import { useCallback, useContext, useEffect, useState } from "react"
+import React, { useCallback, useContext, useEffect, useState } from "react"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
+import MuiAlert, { AlertProps } from "@mui/material/Alert"
+import Snackbar from "@mui/material/Snackbar"
 import config from "../../../../config.json"
+import Button from "@mui/material/Button"
+import Stack from "@mui/material/Stack"
 import styled from "styled-components"
 
 import userErrorLoading from "../../assets/userErrorLoading.svg"
+import { useModalContext } from "../../contexts/ModalContext"
 import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
-import { useModalContext } from "../../contexts/ModalContext"
 
 interface IModalBoxProps {
   width: string | number
@@ -40,6 +44,10 @@ const ModalBoxStyle = styled.div`
 
     margin-right: 1rem;
     margin-top: 1.5rem;
+  }
+
+  .snackbar {
+    position: fixed;
   }
 
   &.openModalBG {
@@ -130,21 +138,38 @@ const ModalStyle = styled.div<IModalBoxProps>`
     }
   }
 `
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+})
 
 export function Modal() {
   const url = `https://server-portfolio-jet.vercel.app/user/${config.id}`
 
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
   const { toggleModal, expandedModal } = useModalContext()
-  
-  const [shouldRender, setShouldRender] = useState(expandedModal);
+
+  const [shouldRender, setShouldRender] = useState(expandedModal)
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
+
+  const [openSnackbar, setOpenSnackbar] = useState(false)
+
+  const handleSnackbarClick = () => {
+    setOpenSnackbar(true)
+  }
+
+  const handlesnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === "clickaway") {
+      return
+    }
+
+    setOpenSnackbar(false)
+  }
 
   useEffect(() => {
     if (expandedModal) {
-      setShouldRender(true);
+      setShouldRender(true)
     }
-  }, [expandedModal]);
+  }, [expandedModal])
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -174,12 +199,12 @@ export function Modal() {
 
   const handleAnimationEnd = useCallback(() => {
     if (!expandedModal) {
-      setShouldRender(false);
+      setShouldRender(false)
     }
-  }, [expandedModal]);
+  }, [expandedModal])
 
   if (!shouldRender) {
-    return null;
+    return null
   }
 
   if (user.username && user.discriminator && user.avatar) {
@@ -197,6 +222,7 @@ export function Modal() {
       <IconButton height={3} width={3} className={`buttonClose ${expandedModal ? "animation-scale" : "animation-scale-out"}`} onClick={toggleModal}>
         <Icon name="xClose" size={23} fill={theme.text.fifth} />
       </IconButton>
+
       <ModalStyle
         width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""}
         iconMarginLeft={windowWidth <= 600 && windowWidth >= 360 ? 16 : windowWidth < 360 ? 11 : 18}
@@ -233,12 +259,19 @@ export function Modal() {
           </TTitleSecondary>
         </Container>
 
-        <ButtonPrimary className="buttonCopy" onClick={() => alert("Hello world")}>
+        <ButtonPrimary className="buttonCopy" onClick={handleSnackbarClick}>
           <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
             Copiar
           </TTitleSecondary>
         </ButtonPrimary>
       </ModalStyle>
+      <Stack spacing={2} sx={{ width: "100%" }} className="snackbar">
+        <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handlesnackbarClose}>
+          <Alert onClose={handlesnackbarClose} severity="success" sx={{ width: "100%" }}>
+            Copiado!
+          </Alert>
+        </Snackbar>
+      </Stack>
     </ModalBoxStyle>
   )
 }
