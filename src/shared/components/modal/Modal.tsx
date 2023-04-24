@@ -78,7 +78,7 @@ export function Modal() {
   const url = `https://server-portfolio-jet.vercel.app/user/${config.id}`
 
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
-  const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
 
   useEffect(() => {
     async function fetchData() {
@@ -121,26 +121,36 @@ export function Modal() {
       <IconButton height={3} width={3} className="buttonClose">
         <Icon name="xClose" size={23} fill={theme.text.fifth} />
       </IconButton>
-      <ModalStyle width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""} iconMarginLeft={windowWidth <= 600 ? 16 : 18} iconMarginTop={2}>
-        <TTitleSecondary textAlign="center" display="flex" whiteSpace="nowrap" fontSize={windowWidth <= 600 ? 1.8 : 2}>
+      <ModalStyle
+        width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""}
+        iconMarginLeft={windowWidth <= 600 && windowWidth >= 360 ? 16 : windowWidth < 360 ? 11 : 18}
+        iconMarginTop={windowWidth < 360 ? 1.3 : 2}
+      >
+        <TTitleSecondary
+          textAlign="center"
+          display="flex"
+          whiteSpace="nowrap"
+          fontSize={windowWidth <= 600 && windowWidth >= 360 ? 1.8 : windowWidth < 360 ? 1.2 : 2}
+        >
           Entre em contato comigo <br /> pelo Discord
-          <Icon name="happyFace" size={windowWidth <= 600 ? 28 : 34} />
+          <Icon name="happyFace" size={windowWidth <= 600 && windowWidth >= 360 ? 28 : windowWidth < 360 ? 24 : 34} />
         </TTitleSecondary>
 
         <Container
           display="flex"
+          flexDir={windowWidth < 450 ? "column" : "row"}
           height=""
-          width="calc(100% + 5rem)"
+          width={windowWidth < 360 ? "calc(100% + 8rem)" : "calc(100% + 5rem)"}
           align="center"
           justifyContent="center"
           gap={themeConstants.sizes["4xl"]}
-          marginTop={themeConstants.sizes["8xl"]}
+          marginTop={windowHeight < 350 ? themeConstants.sizes["2xl"] : themeConstants.sizes["8xl"]}
           borderRadius={themeConstants.sizes["3xl"]}
           paddingIncolumn={0.5}
           bg={theme.alert.primary}
         >
           <img src={avatarUrl} alt="Foto de perfil do discord" className="avatar" />
-          <TTitleSecondary fontSize={windowWidth <= 600 ? 1.5 : 2}>
+          <TTitleSecondary fontSize={windowWidth <= 600 && windowWidth >= 360 ? 1.5 : windowWidth < 360 ? 1.2 : 2}>
             {userName}#{userTag}
           </TTitleSecondary>
         </Container>

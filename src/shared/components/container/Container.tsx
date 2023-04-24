@@ -56,7 +56,7 @@ export const Container = styled.div<IContainerProps>`
 
   padding: ${(props) => props.padding}rem;
   padding: ${(props) => props.paddingIncolumn}rem 0;
-  padding: 0 ${(props) => props.paddingInline}rem;
+  padding-inline: ${(props) => props.paddingInline}rem;
   padding-top: ${(props) => props.paddingTop}rem;
   padding-right: ${(props) => props.paddingRight}rem;
   padding-bottom: ${(props) => props.paddingBottom}rem;
