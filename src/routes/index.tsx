@@ -17,7 +17,7 @@ export const AppRoutes = () => {
       {
         label: "Sobre",
         icon: "person",
-        to: "/pagina-iial"
+        to: "/sobre"
       },
     ])
   }, [])
@@ -25,7 +25,7 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/pagina-inicial" element={<PaginaInicial />} />
-      <Route path="/pagina-iial" element={<Sobre />} />
+      <Route path="/sobre" element={<Sobre />} />
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>

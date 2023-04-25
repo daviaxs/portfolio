@@ -28,7 +28,7 @@ export const Sidebar = () => {
         width={expanded ? "15.25rem" : "4.5rem"}
         height=""
         flexDir="column"
-        display={windowWidth <= 900 ? "none" : "flex"}
+        display={windowWidth <= 912 ? "none" : "flex"}
 
         transitionName="width"
         transitionTime={0.2}
@@ -63,7 +63,7 @@ export const Sidebar = () => {
       </Container>
 
       {/* Sidebar responsiva (para telas menores do que 900px) */}
-      <Container width="" height="100%" flexDir="column" display={windowWidth <= 900 ? "flex" : "none"}>
+      <Container width="" height="100%" flexDir="column" display={windowWidth <= 912 ? "flex" : "none"}>
         {/* Sidebar temporaria */}
         <SidebarTemporaryContainer className={tempSidebarVisible ? "open" : "close"}>
           <SidebarTemporaryContent className={tempSidebarVisible ? "open" : "close"}>
@@ -102,7 +102,7 @@ export const Sidebar = () => {
         </SidebarTemporaryContainer>
 
         {/* Sidebar pequena */}
-        {windowWidth <= 900 && (
+        {windowWidth <= 912 && (
           <Container width="4.5rem" height="100%" flexDir="column" display="flex">
             <HeaderSidebar justifyContent="center">
               <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>

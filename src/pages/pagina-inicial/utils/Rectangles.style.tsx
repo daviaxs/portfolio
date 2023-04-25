@@ -259,7 +259,7 @@ export const Rectangle = styled.span<IRectangleProps>`
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 912px) {
     &._1 {
       transform: translateY(-0.313rem) translateX(-0.625rem);
       animation: rectangleAnimation_1 infinite 5s linear;
@@ -494,7 +494,7 @@ export const Rectangle = styled.span<IRectangleProps>`
     }
   }
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     &._1 {
       transform: translateY(-0.313rem) translateX(-0.625rem);
       animation: rectangleAnimation_1 infinite 5s linear;
@@ -727,5 +727,5 @@ export const Rectangle = styled.span<IRectangleProps>`
         }
       }
     }
-  }
+  } */
 `

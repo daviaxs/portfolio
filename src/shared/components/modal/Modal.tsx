@@ -43,6 +43,7 @@ const ModalBoxStyle = styled.div`
 
     margin-right: 1rem;
     margin-top: 1.5rem;
+    z-index: 9999;
   }
 
   .snackbar {
