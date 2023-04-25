@@ -1,11 +1,36 @@
 import { useContext } from "react"
+import { NavLink } from "react-router-dom"
+import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
-import { LayoutBaseDePagina } from "../../shared/layout"
-import { themeConstants } from "../../shared/theme"
-import { CardProfile } from "./utils/CardProfile"
-import { TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
+import { theme, themeConstants } from "../../shared/theme"
+import { LayoutBaseDePagina } from "../../shared/layout"
+import { TTextPrimary } from "../../shared/fonts"
+import { CardProfile } from "./utils/CardProfile"
+
+interface ItextStyleProps {
+  txtColor: string
+  link?: boolean
+}
+
+const TextStyle = styled.span<ItextStyleProps>`
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+
+  color: ${(props) => props.txtColor};
+`
+
+const TextLinkStyle = styled.a<ItextStyleProps>`
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+
+  text-decoration-line: underline;
+  color: ${(props) => props.txtColor};
+  cursor: pointer;
+`
 
 export const Sobre = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
@@ -21,8 +46,10 @@ export const Sobre = () => {
       />
       <Container display="flex" width="" height="" marginTop={themeConstants.sizes["6xl"]}>
         <TTextPrimary fontSize={1.3}>
-          Olá, seja bem-vindo ao meu mundo digital! Me chamo Davi, e tenho a paixão de criar experiências incríveis para as pessoas através da
-          programação. Sou um jovem de 17 anos, atualmente desenvolvedor front-end. E sempre busco alcançar a excelência em tudo o que faço.
+          Olá, seja bem-vindo ao meu mundo digital! Me chamo <TextStyle txtColor={theme.text.secondary}>Davi</TextStyle>, e tenho a paixão de criar
+          experiências incríveis para as pessoas através da programação. Sou um jovem de{" "}
+          <TextStyle txtColor={theme.text.secondary}>17 anos</TextStyle>, atualmente desenvolvedor front-end. E sempre busco alcançar a excelência em
+          tudo o que faço.
           <br />
           <br />
           Sou movido por desafios, e é isso que me motiva a buscar sempre o próximo nível em minhas aplicações. Aperfeiçoar cada detalhe, criar
@@ -33,8 +60,15 @@ export const Sobre = () => {
           aplicações. Busco constantemente me atualizar em relação às tendências do mercado e estar sempre um passo à frente.
           <br />
           <br />
-          Navegue pelo meu portfólio e confira alguns dos meus projetos. E se precisar de ajuda para criar algo inovador e desafiador, entre em
-          contato comigo agora mesmo!
+          Navegue pelo meu{" "}
+          <NavLink to={"/pagina-inicial"}>
+            <TextLinkStyle txtColor={theme.text.fifth}>portfólio</TextLinkStyle>
+          </NavLink>{" "}
+          e confira alguns dos meus projetos. E se precisar de ajuda para criar algo inovador e desafiador, entre em{" "}
+          <NavLink to={"/pagina-inicial"}>
+            <TextLinkStyle txtColor={theme.text.fifth}>contato</TextLinkStyle>
+          </NavLink>{" "}
+          comigo agora mesmo!
         </TTextPrimary>
       </Container>
     </LayoutBaseDePagina>
