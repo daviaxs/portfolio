@@ -7,7 +7,7 @@ import { useSidebarContext } from "../../contexts/SidebarContext"
 import { IconButton } from "../../components/icon/IconButton"
 import { theme, themeConstants } from "../../theme"
 import { Icon } from "../../components/icon/Icon"
-import { TTitleTertiary } from "../../fonts"
+import { TTitleSecondary } from "../../fonts"
 
 interface IPageHeaderProps {
   label: string
@@ -39,9 +39,9 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
 
   return (
     <PageHeaderStyle>
-      <TTitleTertiary txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
+      <TTitleSecondary fontSize={1} txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
         {label}
-      </TTitleTertiary>
+      </TTitleSecondary>
       <IconButton
         display={windowWidth <= 600 ? "flex" : "none"}
         className="iconMenu"

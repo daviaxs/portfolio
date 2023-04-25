@@ -8,7 +8,7 @@ import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { NavButton } from "../navButton/NavButton"
 import { IconButton } from "../icon/IconButton"
-import { TTitleTertiary } from "../../fonts"
+import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
 import { Nav } from "../nav/Nav"
 
@@ -34,9 +34,9 @@ export const Sidebar = () => {
         transitionTime={0.2}
       >
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
-          <TTitleTertiary display={expanded ? "flex" : "none"} className="animation-scale">
+          <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"} className="animation-scale">
             Explorar
-          </TTitleTertiary>
+          </TTitleSecondary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
             <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18} />
           </IconButton>
@@ -53,9 +53,9 @@ export const Sidebar = () => {
                 widthFocus={expanded ? 13.25 : 2.5}
                 iconMarginLeft={expanded ? 0 : 0.1}
               >
-                <TTitleTertiary className={`title animation-scale`} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
+                <TTitleSecondary fontSize={1} className={`title animation-scale`} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
                   {drawerOptions.label}
-                </TTitleTertiary>
+                </TTitleSecondary>
               </NavButton>
             ))}
           </Nav>
@@ -69,9 +69,9 @@ export const Sidebar = () => {
           <SidebarTemporaryContent className={tempSidebarVisible ? "open" : "close"}>
             <Container width="" height="100%" flexDir="column" display="flex">
               <HeaderSidebar justifyContent="space-between">
-                <TTitleTertiary display="flex" className="animation-scale">
+                <TTitleSecondary fontSize={1} display="flex" className="animation-scale">
                   Explorar
-                </TTitleTertiary>
+                </TTitleSecondary>
                 <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
                   <Icon name="arrowClose" size={18} />
                 </IconButton>
@@ -88,9 +88,9 @@ export const Sidebar = () => {
                       widthFocus={13.25}
                       onClick={toggleTempsidebar}
                     >
-                      <TTitleTertiary className="title animation-scale" display="flex" whiteSpace="nowrap">
+                      <TTitleSecondary fontSize={1} className="title animation-scale" display="flex" whiteSpace="nowrap">
                         {drawerOptions.label}
-                      </TTitleTertiary>
+                      </TTitleSecondary>
                     </NavButton>
                   ))}
                 </Nav>

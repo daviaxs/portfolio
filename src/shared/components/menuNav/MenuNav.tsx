@@ -5,7 +5,7 @@ import { useSidebarContext } from "../../contexts/SidebarContext"
 import { PageHeader } from "../../layout/utils/PageHeader"
 import { theme, themeConstants } from "../../theme"
 import { NavButton } from "../navButton/NavButton"
-import { TTitleTertiary } from "../../fonts"
+import { TTitleSecondary } from "../../fonts"
 import { Nav } from "../nav/Nav"
 
 interface IMenuNavProps {
@@ -52,9 +52,9 @@ export const MenuNav: React.FC<IMenuNavProps> = ({ display }) => {
             widthFocus={100}
             iconMarginLeft={themeConstants.sizes.xl}
           >
-            <TTitleTertiary className="title animation-scale" display="flex">
+            <TTitleSecondary fontSize={1} className="title animation-scale" display="flex">
               {menuOptions.label}
-            </TTitleTertiary>
+            </TTitleSecondary>
           </NavButton>
         ))}
       </Nav>
