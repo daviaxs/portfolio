@@ -57,7 +57,7 @@ const TTextPrimaryStyle = styled.p<ITextProps>`
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
   white-space: ${(props) => props.whiteSpace};
-  line-height: 100%;
+  line-height: 1.5rem;
   text-align: ${(props) => props.textAlign};
 
   color: ${(props) => props.txtColor};
@@ -73,7 +73,7 @@ const TTextSecondaryStyle = styled.p<ITextProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TTextQuaternaryStyle = styled.p<ITextProps>`
+const TTextTertiaryStyle = styled.p<ITextProps>`
   font-weight: 600;
   font-size: ${(props) => props.fontSize}rem;
   white-space: ${(props) => props.whiteSpace};
@@ -144,11 +144,11 @@ export const TTextSecondary: React.FC<ITextProps> = ({ txtColor, className, txtS
   )
 }
 
-export const TTextQuaternary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, textAlign, whiteSpace = "normal", fontSize = 0.625, display, children }) => {
+export const TTextTertiary: React.FC<ITextProps> = ({ txtColor, className, txtShadow, textAlign, whiteSpace = "normal", fontSize = 0.625, display, children }) => {
   return (
-    <TTextQuaternaryStyle txtColor={txtColor} txtShadow={txtShadow} textAlign={textAlign} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
+    <TTextTertiaryStyle txtColor={txtColor} txtShadow={txtShadow} textAlign={textAlign} whiteSpace={whiteSpace} fontSize={fontSize} className={className} display={display}>
       {children}
-    </TTextQuaternaryStyle>
+    </TTextTertiaryStyle>
   )
 }
 
