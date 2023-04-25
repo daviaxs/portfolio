@@ -6,15 +6,16 @@ import { Modal } from "../components/modal/Modal"
 
 interface ILayoutBaseDePaginaProps {
   children: React.ReactNode
+  paddingInline?: number
   flexDir: "column" | "row"
 }
 
-export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ flexDir, children }) => {
+export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ flexDir, paddingInline, children }) => {
   return (
     <Box bg={theme.bg.bg_linear} flexDir="row">
       <Sidebar />
       <Modal/>
-      <PageLayout flexDir={flexDir}>{children}</PageLayout>
+      <PageLayout flexDir={flexDir} paddingInline={paddingInline}>{children}</PageLayout>
     </Box>
   )
 }
