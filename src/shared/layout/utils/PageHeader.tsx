@@ -42,13 +42,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
       <TTitleSecondary fontSize={1} txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
         {label}
       </TTitleSecondary>
-      <IconButton
-        display={windowWidth <= 600 ? "flex" : "none"}
-        className="iconMenu"
-        height={2.6}
-        width={2.6}
-        onClick={toggleMenuNav}
-      >
+      <IconButton display={windowWidth <= 600 ? "flex" : "none"} className="iconMenu" height={2.6} width={2.6} onClick={toggleMenuNav}>
         <Icon name={expandedMenu ? "arrowBack" : "options"} size={20} fill={theme.text.quaternary} />
       </IconButton>
     </PageHeaderStyle>

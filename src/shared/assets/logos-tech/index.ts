@@ -8,12 +8,12 @@ import TypeScriptLogo from './typescriptLogo.svg'
 import StyledComponentsLogo from './styledComponentsLogo.png'
 
 export default {
-  CssLogo,
-  FigmaLogo,
-  GitLogo,
-  JavaScriptLogo,
-  MuiLogo,
-  ReactLogo,
-  TypeScriptLogo,
-  StyledComponentsLogo
+  css: CssLogo,
+  figma: FigmaLogo,
+  git: GitLogo,
+  javaScript: JavaScriptLogo,
+  mui: MuiLogo,
+  react: ReactLogo,
+  typeScript: TypeScriptLogo,
+  styledComponents: StyledComponentsLogo
 }

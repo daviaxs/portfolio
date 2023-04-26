@@ -29,7 +29,6 @@ export const Sidebar = () => {
         height=""
         flexDir="column"
         display={windowWidth <= 912 ? "none" : "flex"}
-
         transitionName="width"
         transitionTime={0.2}
       >

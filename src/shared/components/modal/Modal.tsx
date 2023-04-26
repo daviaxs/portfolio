@@ -258,7 +258,8 @@ export function Modal() {
           gap={themeConstants.sizes["4xl"]}
           marginTop={windowHeight < 350 ? themeConstants.sizes["2xl"] : themeConstants.sizes["8xl"]}
           borderRadius={themeConstants.sizes["3xl"]}
-          paddingIncolumn={0.5}
+          paddingTop={0.5}
+          paddingBottom={0.5}
           bg={theme.alert.primary}
         >
           <img src={avatarUrl} alt="Foto de perfil do discord" className="avatar" />

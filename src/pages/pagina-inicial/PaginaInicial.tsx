@@ -91,7 +91,7 @@ export const PaginaInicial = () => {
         width="100%"
         justifyContent="center"
         align="center"
-        marginLeft={.50}
+        marginLeft={0.5}
         style={
           windowWidth <= 600 && windowWidth >= 390
             ? { transform: "scale(1)" }

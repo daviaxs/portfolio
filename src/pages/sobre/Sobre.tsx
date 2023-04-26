@@ -9,6 +9,7 @@ import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { CardProfile } from "./utils/CardProfile"
+import { CardTech, CardTechContainer } from "./utils/CardTech"
 
 interface ItextStyleProps {
   txtColor: string
@@ -73,32 +74,23 @@ export const Sobre = () => {
       </Container>
       <Container
         display="flex"
+        justifyContent="center"
+        flexDir="column"
+        align="center"
         width=" 100%"
         height=""
-        justifyContent="center"
         marginTop={themeConstants.sizes["8xl"]}
         style={{ transform: `${windowWidth <= 320 ? "scale(0.80)" : ""}` }}
       >
         <Rectangles>
-          <Rectangle height={1.625} width={2.25} style={{ right: "-1.5rem", top: "-0.3rem" }} />
-          <Rectangle height={1.625} width={2.25} style={{ left: "16.8rem", top: "0.8rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ right: "8rem", top: "-0.3rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ left: "8rem", top: "0.6rem" }} />
         </Rectangles>
-        <Container display="flex" flexDir="column" width="" height="" zIndex={2} gap={themeConstants.sizes["4xl"]}>
+        <Container display="flex" flexDir="column" align="center" height="" width="100%" zIndex={2} gap={themeConstants.sizes["4xl"]}>
           <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
-          <Container
-            display="flex"
-            justifyContent="center"
-            padding={themeConstants.sizes["5xl"]}
-            //
-            width="100%"
-            height=""
-            //
-            bg={theme.caixas.hover}
-            borderRadius={themeConstants.sizes.md}
-            style={{ outline: `1px solid ${theme.buttons.bg_default_secondary}` }}
-          >
-            Hello world
-          </Container>
+          <CardTechContainer>
+            <CardTech img="javaScript" label="JavaScript" description="Desciption..." />
+          </CardTechContainer>
         </Container>
       </Container>
     </LayoutBaseDePagina>
