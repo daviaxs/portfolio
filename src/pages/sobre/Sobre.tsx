@@ -6,10 +6,10 @@ import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactan
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { Container } from "../../shared/components/container/Container"
 import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
+import { CardTech, CardTechContainer } from "./utils/CardTech"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { CardProfile } from "./utils/CardProfile"
-import { CardTech, CardTechContainer } from "./utils/CardTech"
 
 interface ItextStyleProps {
   txtColor: string
@@ -96,9 +96,41 @@ export const Sobre = () => {
               description="JavaScript é uma linguagem dinâmica e versátil, permitindo a criação de interações ricas e complexas nas páginas web, utilizada principalmente no desenvolvimento de aplicações web front-end e back-end."
             />
             <CardTech
+              img="react"
+              label="ReactJS"
+              description="ReactJS é uma biblioteca JavaScript que permite criar interfaces de usuário (UI) por meio de componentes 
+              reutilizáveis. Ele é projetado para criar aplicações web escaláveis, eficientes e fáceis de manter."
+            />
+            <CardTech
+              img="typeScript"
+              label="TypeScript"
+              description="TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem
+              estática ao JavaScript. Ele é projetado para ajudar a escrever código mais seguro, escalável e fácil de manter em aplicações web e outras plataformas que usam JavaScript."
+            />
+            <CardTech
+              img="css"
+              label="CSS"
+              description="CSS é uma linguagem de estilo utilizada para estilizar elementos HTML e torná-los mais atraentes visualmente. É amplamente utilizado para criar layouts e estilos para sites e aplicativos web."
+            />
+            <CardTech
+              img="styledComponents"
+              label="Styled components"
+              description="Styled Components é uma biblioteca para React que permite escrever estilos de forma mais legível e fácil de manter, usando JavaScript e CSS-in-JS."
+            />
+            <CardTech
               img="mui"
               label="Material UI"
               description="Material UI é uma biblioteca de componentes React que fornece uma ampla gama de componentes pré-construídos, prontos para uso, para criar interfaces de usuário modernas e atraentes...."
+            />
+            <CardTech
+              img="figma"
+              label="Figma"
+              description="Figma é uma ferramenta de design de interface de usuário baseada em navegador, que permite criar, colaborar e compartilhar designs de maneira eficiente e escalável."
+            />
+            <CardTech
+              img="git"
+              label="Git"
+              description="Git é um sistema de controle de versão distribuído que permite rastrear mudanças no código-fonte de um projeto de software. Ele facilita o trabalho colaborativo em equipe, permitindo que os membros compartilhem e combinem suas alterações com segurança."
             />
           </CardTechContainer>
         </Container>
