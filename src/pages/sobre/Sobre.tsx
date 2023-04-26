@@ -80,6 +80,7 @@ export const Sobre = () => {
         width=" 100%"
         height=""
         marginTop={themeConstants.sizes["8xl"]}
+        marginBottom={themeConstants.sizes["8xl"]}
         style={{ transform: `${windowWidth <= 320 ? "scale(0.80)" : ""}` }}
       >
         <Rectangles>
@@ -89,7 +90,16 @@ export const Sobre = () => {
         <Container display="flex" flexDir="column" align="center" height="" width="100%" zIndex={2} gap={themeConstants.sizes["4xl"]}>
           <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
           <CardTechContainer>
-            <CardTech img="styledComponents" label="JavaScript" description="Desciption..." />
+            <CardTech
+              img="javaScript"
+              label="JavaScript"
+              description="JavaScript é uma linguagem dinâmica e versátil, permitindo a criação de interações ricas e complexas nas páginas web, utilizada principalmente no desenvolvimento de aplicações web front-end e back-end."
+            />
+            <CardTech
+              img="mui"
+              label="Material UI"
+              description="Material UI é uma biblioteca de componentes React que fornece uma ampla gama de componentes pré-construídos, prontos para uso, para criar interfaces de usuário modernas e atraentes...."
+            />
           </CardTechContainer>
         </Container>
       </Container>

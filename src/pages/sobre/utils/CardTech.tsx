@@ -17,6 +17,7 @@ export const CardTechContainer = styled.ul`
   align-items: center;
 
   padding: ${themeConstants.sizes["5xl"]}rem;
+  gap: ${themeConstants.sizes.lg}rem;
   width: 100%;
 
   background: ${theme.caixas.hover};
@@ -26,7 +27,10 @@ export const CardTechContainer = styled.ul`
 
 const CardTechStyle = styled.li`
   display: flex;
+  align-items: start;
+
   width: 100%;
+  gap: ${themeConstants.sizes.lg}rem;
   padding: ${themeConstants.sizes.md}rem;
 
   background: ${theme.caixas.hover};
@@ -37,9 +41,11 @@ export const CardTech: React.FC<ICardTechProps> = ({ label, description, img }) 
   return (
     <CardTechStyle>
       <ImageTech img={img} />
-      <Container display="flex" flexDir="column" width="" height="">
+      <Container display="flex" flexDir="column" width="" height="" gap={0.2}>
         <TTitlePrimary fontSize={2}>{label}</TTitlePrimary>
-        <TTextTertiary txtColor={theme.text.secondary}>{description}</TTextTertiary>
+        <TTextTertiary txtColor={theme.text.secondary} fontSize={1}>
+          {description}
+        </TTextTertiary>
       </Container>
     </CardTechStyle>
   )
