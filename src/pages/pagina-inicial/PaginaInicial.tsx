@@ -1,11 +1,11 @@
 import { useContext } from "react"
 
+import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { useSidebarContext } from "../../shared/contexts/SidebarContext"
 import { Container } from "../../shared/components/container/Container"
 import { useModalContext } from "../../shared/contexts/ModalContext"
 import { THeadingPrimary, TTitlePrimary } from "../../shared/fonts"
-import { Rectangle, Rectangles } from "./utils/Rectangles.style"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
 import Imgs from "../../shared/assets/index"

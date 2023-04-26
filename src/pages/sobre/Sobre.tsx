@@ -6,8 +6,9 @@ import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsC
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
-import { TTextPrimary } from "../../shared/fonts"
+import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { CardProfile } from "./utils/CardProfile"
+import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 
 interface ItextStyleProps {
   txtColor: string
@@ -70,6 +71,22 @@ export const Sobre = () => {
           </NavLink>{" "}
           comigo agora mesmo!
         </TTextPrimary>
+      </Container>
+      <Container
+        display="flex"
+        width=" 100%"
+        height=""
+        justifyContent="center"
+        marginTop={themeConstants.sizes["8xl"]}
+        style={{ transform: `${windowWidth <= 320 ? "scale(0.80)" : ""}` }}
+      >
+        <Container display="flex" width="" height="" zIndex={2}>
+          <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
+        </Container>
+        <Rectangles>
+          <Rectangle height={1.625} width={2.25} style={{ right: "16.8rem", top: "-0.3rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ left: "-1.5rem", top: "0.8rem" }} />
+        </Rectangles>
       </Container>
     </LayoutBaseDePagina>
   )
