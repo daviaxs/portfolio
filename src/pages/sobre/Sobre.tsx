@@ -81,15 +81,16 @@ export const Sobre = () => {
         height=""
         marginTop={themeConstants.sizes["8xl"]}
         marginBottom={themeConstants.sizes["8xl"]}
-        style={{ transform: `${windowWidth <= 320 ? "scale(0.80)" : ""}` }}
       >
         <Rectangles>
-          <Rectangle height={1.625} width={2.25} style={{ right: "8rem", top: "-0.3rem" }} />
-          <Rectangle height={1.625} width={2.25} style={{ left: "8rem", top: "0.6rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ right: `${windowWidth <= 400 ? "6.5rem" : "8rem"}`, top: "-0.3rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ left: `${windowWidth <= 400 ? "6.5rem" : "8rem"}`, top: "0.6rem" }} />
         </Rectangles>
         <Container display="flex" flexDir="column" align="center" height="" width="100%" zIndex={2} gap={themeConstants.sizes["4xl"]}>
-          <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
-          <CardTechContainer>
+          <TTitleSecondary whiteSpace="nowrap" fontSize={windowWidth <= 400 ? 1.8 : 2}>
+            Minhas habilidades
+          </TTitleSecondary>
+          <CardTechContainer flexDir={windowWidth <= 450 ? "row" : "column"} height="">
             <CardTech
               img="javaScript"
               label="JavaScript"
@@ -98,8 +99,7 @@ export const Sobre = () => {
             <CardTech
               img="react"
               label="ReactJS"
-              description="ReactJS é uma biblioteca JavaScript que permite criar interfaces de usuário (UI) por meio de componentes 
-              reutilizáveis. Ele é projetado para criar aplicações web escaláveis, eficientes e fáceis de manter."
+              description="ReactJS é uma biblioteca JavaScript que permite criar interfaces de usuário (UI) por meio de componentes reutilizáveis. Ele é projetado para criar aplicações web escaláveis, eficientes e fáceis de manter."
             />
             <CardTech
               img="typeScript"
