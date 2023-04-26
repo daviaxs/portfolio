@@ -2,17 +2,16 @@ import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
+import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { Container } from "../../shared/components/container/Container"
+import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
-import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { CardProfile } from "./utils/CardProfile"
-import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 
 interface ItextStyleProps {
   txtColor: string
-  link?: boolean
 }
 
 const TextStyle = styled.span<ItextStyleProps>`
@@ -23,7 +22,7 @@ const TextStyle = styled.span<ItextStyleProps>`
   color: ${(props) => props.txtColor};
 `
 
-const TextLinkStyle = styled.a<ItextStyleProps>`
+const TextLinkStyle = styled.span<ItextStyleProps>`
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 1.5rem;
@@ -80,13 +79,27 @@ export const Sobre = () => {
         marginTop={themeConstants.sizes["8xl"]}
         style={{ transform: `${windowWidth <= 320 ? "scale(0.80)" : ""}` }}
       >
-        <Container display="flex" width="" height="" zIndex={2}>
-          <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
-        </Container>
         <Rectangles>
-          <Rectangle height={1.625} width={2.25} style={{ right: "16.8rem", top: "-0.3rem" }} />
-          <Rectangle height={1.625} width={2.25} style={{ left: "-1.5rem", top: "0.8rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ right: "-1.5rem", top: "-0.3rem" }} />
+          <Rectangle height={1.625} width={2.25} style={{ left: "16.8rem", top: "0.8rem" }} />
         </Rectangles>
+        <Container display="flex" flexDir="column" width="" height="" zIndex={2} gap={themeConstants.sizes["4xl"]}>
+          <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
+          <Container
+            display="flex"
+            justifyContent="center"
+            padding={themeConstants.sizes["5xl"]}
+            //
+            width="100%"
+            height=""
+            //
+            bg={theme.caixas.hover}
+            borderRadius={themeConstants.sizes.md}
+            style={{ outline: `1px solid ${theme.buttons.bg_default_secondary}` }}
+          >
+            Hello world
+          </Container>
+        </Container>
       </Container>
     </LayoutBaseDePagina>
   )

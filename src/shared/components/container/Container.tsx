@@ -20,9 +20,8 @@ interface IContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   paddingTop?: number
   paddingRight?: number
   paddingBottom?: number
-  paddingIncolumn?: number
-  paddingInline?: number
   paddingLeft?: number
+  paddingInline?: number
 
   marginTop?: number
   marginLeft?: number
@@ -55,7 +54,6 @@ export const Container = styled.div<IContainerProps>`
   gap: ${(props) => props.gap}rem;
 
   padding: ${(props) => props.padding}rem;
-  padding: ${(props) => props.paddingIncolumn}rem 0;
   padding-inline: ${(props) => props.paddingInline}rem;
   padding-top: ${(props) => props.paddingTop}rem;
   padding-right: ${(props) => props.paddingRight}rem;

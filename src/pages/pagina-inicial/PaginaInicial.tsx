@@ -6,10 +6,10 @@ import { useSidebarContext } from "../../shared/contexts/SidebarContext"
 import { Container } from "../../shared/components/container/Container"
 import { useModalContext } from "../../shared/contexts/ModalContext"
 import { THeadingPrimary, TTitlePrimary } from "../../shared/fonts"
+import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
 import Imgs from "../../shared/assets/index"
-import { theme } from "../../shared/theme"
 import { Button } from "./utils/Button"
 
 export const PaginaInicial = () => {
@@ -29,7 +29,7 @@ export const PaginaInicial = () => {
         align={windowWidth <= 912 ? "center" : "start"}
         marginTop={windowWidth <= 912 && windowWidth > 600 ? 5 : windowWidth <= 600 ? 2 : 0}
         marginBottom={windowWidth <= 600 ? 0 : 3}
-        marginLeft={windowWidth <= 600 ? 0 : 1.5}
+        marginLeft={windowWidth <= 600 ? 0 : themeConstants.sizes["5xl"]}
         marginRight={windowWidth <= 912 ? 0 : expanded ? 2 : windowWidth / 200}
         transitionName="margin"
         transitionTime={0.2}
@@ -108,11 +108,11 @@ export const PaginaInicial = () => {
           style={{
             height: `${windowWidth > 600 ? "43.75rem" : "31.25rem"}`,
             marginTop: `${
-              windowHeight <= 490 && windowHeight >= 410 && windowWidth >= 390
+              windowHeight <= 490 && windowHeight >= 410 && windowWidth >= 390 && windowWidth <= 912
                 ? "5rem"
-                : windowHeight <= 410 && windowHeight >= 345 && windowWidth >= 390
+                : windowHeight <= 410 && windowHeight >= 345 && windowWidth >= 390 && windowWidth <= 912
                 ? "10rem"
-                : windowHeight <= 345 && windowWidth >= 390
+                : windowHeight <= 345 && windowWidth >= 390 && windowWidth <= 912
                 ? "18rem"
                 : windowWidth <= 390
                 ? "-4rem"
