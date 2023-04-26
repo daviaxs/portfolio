@@ -11,7 +11,7 @@ export const ImageTech: React.FC<IImageTechProps> = ({ img, className, ...rest }
 
   return (
     <div className={className} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <ImgTech/>
+      <ImgTech size={5.9}/>
     </div>
   )
 }

@@ -1,11 +1,11 @@
-import CssLogo from './cssLogo.svg'
-import FigmaLogo from './figmaLogo.svg'
-import GitLogo from './GitLogo.svg'
-import JavaScriptLogo from './javascriptLogo.svg'
-import MuiLogo from './muiLogo.svg'
-import ReactLogo from './reactLogo.svg'
-import TypeScriptLogo from './typescriptLogo.svg'
-import StyledComponentsLogo from './styledComponentsLogo.png'
+import CssLogo from './cssLogo'
+import FigmaLogo from './figmaLogo'
+import GitLogo from './gitLogo'
+import JavaScriptLogo from './javaScriptLogo'
+import MuiLogo from './muiLogo'
+import ReactLogo from './reactLogo'
+import TypeScriptLogo from './typeScriptLogo'
+import StyledComponentsLogo from './styledComponentsLogo'
 
 export default {
   css: CssLogo,

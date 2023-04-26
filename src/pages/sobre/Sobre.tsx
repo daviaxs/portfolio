@@ -89,7 +89,7 @@ export const Sobre = () => {
         <Container display="flex" flexDir="column" align="center" height="" width="100%" zIndex={2} gap={themeConstants.sizes["4xl"]}>
           <TTitleSecondary whiteSpace="nowrap">Minhas habilidades</TTitleSecondary>
           <CardTechContainer>
-            <CardTech img="javaScript" label="JavaScript" description="Desciption..." />
+            <CardTech img="styledComponents" label="JavaScript" description="Desciption..." />
           </CardTechContainer>
         </Container>
       </Container>
