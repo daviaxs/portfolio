@@ -17,6 +17,7 @@ interface ICardTechProps {
   img: keyof typeof logosTech
   label: string
   description: string
+  labelWidth: number
 }
 
 export const CardTechContainer = styled.ul<ICardTechContainerProps>`
@@ -60,15 +61,15 @@ const CardTechStyle = styled.li<ICardTechProps>`
   border-radius: ${themeConstants.sizes.md}rem;
 
   .label {
-    width: 15rem;
+    width: ${(props) => props.labelWidth}rem;
   }
 `
 
-export const CardTech: React.FC<ICardTechProps> = ({ label, description, img }) => {
+export const CardTech: React.FC<ICardTechProps> = ({ label, description, labelWidth, img }) => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   return (
-    <CardTechStyle description={description} img={img} label={label}>
+    <CardTechStyle description={description} img={img} label={label} labelWidth={labelWidth}>
       {windowWidth > 450 && <ImageTech img={img} />}
       <Container display="flex" flexDir="column" width="" height="" gap={0.2}>
         {windowWidth <= 450 && <ImageTech img={img} />}
