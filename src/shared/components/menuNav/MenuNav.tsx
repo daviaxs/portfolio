@@ -16,7 +16,7 @@ const MenuNavStyle = styled.div<IMenuNavProps>`
   display: ${(props) => props.display};
   position: fixed;
   flex-direction: column;
-  z-index: 2;
+  z-index: 999;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -24,7 +24,7 @@ const MenuNavStyle = styled.div<IMenuNavProps>`
   width: 100vw;
 
   .navigation {
-    margin-top: ${themeConstants.sizes["8xl"]}rem;
+    margin-top: 3.55rem;
     background: ${theme.bg.primary};
     z-index: -1;
   }
