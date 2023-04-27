@@ -143,7 +143,6 @@ export const Sobre = () => {
           </CardTechContainer>
         </Container>
       </Container>
-      
     </LayoutBaseDePagina>
   )
 }
