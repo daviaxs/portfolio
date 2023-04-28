@@ -4,6 +4,7 @@ import IconPaint from './paint'
 import IconArrowBack from './arrow_back'
 import IconArrowClose from './arrow_close'
 import IconArrowOpen from './arrow_open'
+import IconArrowDown from './arrow_down'
 import IconChat from './chat'
 import IconOptions from './options'
 import IconRocket from './rocket'
@@ -20,6 +21,7 @@ export default {
   arrowBack: IconArrowBack,
   arrowClose: IconArrowClose,
   arrowOpen: IconArrowOpen,
+  arrowDown: IconArrowDown,
   chat: IconChat,
   options: IconOptions,
   rocket: IconRocket,
