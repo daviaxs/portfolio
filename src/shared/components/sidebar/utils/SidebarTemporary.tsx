@@ -121,7 +121,7 @@ export const SidebarTemporary = () => {
       <SidebarTemporaryContent className={expandedSidebarTemporary ? "open" : "close"}>
         <Container width="" height="100%" flexDir="column" display="flex">
           <HeaderSidebar justifyContent="space-between">
-            <TTitleSecondary fontSize={1} display="flex" className="animation-scale">
+            <TTitleSecondary fontSize={1} display="flex">
               Explorar
             </TTitleSecondary>
             <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
@@ -140,7 +140,7 @@ export const SidebarTemporary = () => {
                   widthFocus={13.25}
                   onClick={toggleSidebarTemporary}
                 >
-                  <TTitleSecondary fontSize={1} className="title animation-scale" display="flex" whiteSpace="nowrap">
+                  <TTitleSecondary fontSize={1} className="title" display="flex" whiteSpace="nowrap">
                     {drawerOptions.label}
                   </TTitleSecondary>
                 </NavButton>

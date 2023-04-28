@@ -30,7 +30,7 @@ export const Sidebar = () => {
         transitionTime={0.2}
       >
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
-          <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"} className="animation-scale">
+          <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"}>
             Explorar
           </TTitleSecondary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
@@ -49,7 +49,7 @@ export const Sidebar = () => {
                 widthFocus={expanded ? 13.25 : 2.5}
                 iconMarginLeft={expanded ? 0 : 0.1}
               >
-                <TTitleSecondary fontSize={1} className={`title animation-scale`} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
+                <TTitleSecondary fontSize={1} className={`title`} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
                   {drawerOptions.label}
                 </TTitleSecondary>
               </NavButton>
@@ -60,7 +60,6 @@ export const Sidebar = () => {
 
       {/* Sidebar responsiva (para telas menores do que 900px) */}
       <Container width="" height="100%" flexDir="column" display={windowWidth <= 912 ? "flex" : "none"}>
-        {/* Sidebar temporaria */}
         {windowWidth <= 912 && windowWidth >= 600 && <SidebarTemporary />}
 
         {/* Sidebar pequena */}
