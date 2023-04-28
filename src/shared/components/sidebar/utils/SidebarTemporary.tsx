@@ -51,7 +51,8 @@ const SidebarTemporaryContainer = styled.div`
     }
     100% {
       left: -16rem;
-      opacity: 0;
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: inset 49px 0px 76px rgba(0, 0, 0, 0);
       visibility: hidden;
     }
   }
