@@ -1,8 +1,9 @@
-import { useContext, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 
+import { useSidebarTemporaryContext } from "../../contexts/SidebarTemporaryContext"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
-import { SidebarTemporaryContainer, SidebarTemporaryContent } from "./utils"
 import { useSidebarContext } from "../../contexts/SidebarContext"
+import { SidebarTemporary } from "./utils/SidebarTemporary"
 import { HeaderSidebar } from "./utils/SidebarHeader"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
@@ -14,12 +15,8 @@ import { Nav } from "../nav/Nav"
 
 export const Sidebar = () => {
   const { sidebarOptions, expanded, toggleExpanded } = useSidebarContext()
-  const [tempSidebarVisible, setTempSidebarVisible] = useState(false)
   const { width: windowWidth } = useContext(WindowDimensionsContext)
-
-  const toggleTempsidebar = () => {
-    setTempSidebarVisible(!tempSidebarVisible)
-  }
+  const { toggleSidebarTemporary } = useSidebarTemporaryContext()
 
   return (
     <Container width="" height="100%" display={windowWidth <= 600 ? "none" : "flex"} bg={theme.bg.bg_sidebar}>
@@ -64,47 +61,13 @@ export const Sidebar = () => {
       {/* Sidebar responsiva (para telas menores do que 900px) */}
       <Container width="" height="100%" flexDir="column" display={windowWidth <= 912 ? "flex" : "none"}>
         {/* Sidebar temporaria */}
-        <SidebarTemporaryContainer className={tempSidebarVisible ? "open" : "close"}>
-          <SidebarTemporaryContent className={tempSidebarVisible ? "open" : "close"}>
-            <Container width="" height="100%" flexDir="column" display="flex">
-              <HeaderSidebar justifyContent="space-between">
-                <TTitleSecondary fontSize={1} display="flex" className="animation-scale">
-                  Explorar
-                </TTitleSecondary>
-                <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
-                  <Icon name="arrowClose" size={18} />
-                </IconButton>
-              </HeaderSidebar>
-
-              <Container width="" height="100%" display="flex" overflow="auto">
-                <Nav paddingInline={themeConstants.sizes.xl}>
-                  {sidebarOptions.map((drawerOptions) => (
-                    <NavButton
-                      key={drawerOptions.to}
-                      iconName={drawerOptions.icon}
-                      to={drawerOptions.to}
-                      widthDefault={9}
-                      widthFocus={13.25}
-                      onClick={toggleTempsidebar}
-                    >
-                      <TTitleSecondary fontSize={1} className="title animation-scale" display="flex" whiteSpace="nowrap">
-                        {drawerOptions.label}
-                      </TTitleSecondary>
-                    </NavButton>
-                  ))}
-                </Nav>
-              </Container>
-            </Container>
-          </SidebarTemporaryContent>
-
-          <Container width="100%" height="100%" display="flex" onClick={toggleTempsidebar} />
-        </SidebarTemporaryContainer>
+        {windowWidth <= 912 && windowWidth >= 600 && <SidebarTemporary />}
 
         {/* Sidebar pequena */}
         {windowWidth <= 912 && (
           <Container width="4.5rem" height="100%" flexDir="column" display="flex">
             <HeaderSidebar justifyContent="center">
-              <IconButton height={2.25} width={2.25} onClick={toggleTempsidebar}>
+              <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
                 <Icon name="arrowOpen" size={18} />
               </IconButton>
             </HeaderSidebar>

@@ -198,7 +198,7 @@ export function Modal() {
     setOpenSnackbar(true)
   }
 
-  const handlesnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleSnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === "clickaway") {
       return
     }
@@ -275,8 +275,8 @@ export function Modal() {
         </ButtonPrimary>
       </ModalStyle>
       <Stack spacing={2} sx={{ width: "100%" }} className="snackbar">
-        <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handlesnackbarClose}>
-          <Alert onClose={handlesnackbarClose} severity="success" sx={{ width: "100%" }}>
+        <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handleSnackbarClose}>
+          <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: "100%" }}>
             Copiado!
           </Alert>
         </Snackbar>
