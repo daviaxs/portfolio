@@ -87,7 +87,7 @@ const THeadingLinearPrimaryStyle = styled.h1<ITextProps>`
   font-weight: 700;
   font-size: ${(props) => props.fontSize}rem;
   white-space: ${(props) => props.whiteSpace};
-  line-height: 100%;
+  line-height: 115%;
   text-align: ${(props) => props.textAlign};
 
   background: linear-gradient(270deg, #48a7ff 60%, #00fff0 100%);
