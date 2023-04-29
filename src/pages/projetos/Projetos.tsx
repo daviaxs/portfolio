@@ -15,7 +15,7 @@ const Separator = styled.span`
 `
 
 const Line = styled.span`
-  background: ${theme.text.tertiary};
+  background: ${theme.buttons.bg_default_secondary};
   width: 100%;
   height: 0.05rem;
 `
@@ -36,7 +36,7 @@ export const Projetos = () => {
         <Line />
       </Separator>
       <CardContainerStyle>
-        <Card img="" description="" label=""/>
+        <Card img="habits" description="Description" label="Project name" toDeploy="" toGithub="" />
       </CardContainerStyle>
     </LayoutBaseDePagina>
   )
