@@ -1,10 +1,11 @@
+import styled from "styled-components"
+
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
+import { Container } from "../../shared/components/container/Container"
+import { Card, CardContainerStyle, TechUsed } from "./utils/Card"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
-import { Container } from "../../shared/components/container/Container"
 import { Icon } from "../../shared/components/icon/Icon"
-import styled from "styled-components"
-import { Card, CardContainerStyle } from "./utils/Card"
 
 const Separator = styled.span`
   display: flex;
@@ -32,11 +33,23 @@ export const Projetos = () => {
       </Container>
       <Separator>
         <Line />
-        <Icon name="arrowDown" size={32} />
+        <Icon name="arrowDown" size={32} fill={theme.buttons.bg_default_secondary} />
         <Line />
       </Separator>
       <CardContainerStyle>
-        <Card img="habits" description="Description" label="Project name" toDeploy="" toGithub="" />
+        <Card
+          img="habits"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
+          label="Project name"
+          toDeploy=""
+          toGithub=""
+        >
+          <TechUsed label="html" />
+          <TechUsed label="css" />
+          <TechUsed label="js" />
+          <TechUsed label="git" />
+          <TechUsed label="figma" />
+        </Card>
       </CardContainerStyle>
     </LayoutBaseDePagina>
   )
