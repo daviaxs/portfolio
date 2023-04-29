@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import { Skeleton, Stack } from "@mui/material"
 
 import { Container } from "../../../shared/components/container/Container"
 import { TTextSecondary, TTitleSecondary } from "../../../shared/fonts"
@@ -59,6 +61,7 @@ const CardSTyle = styled.div<ICardSTyleProps>`
 
   .image {
     width: 13.875rem;
+    height: 10.875rem;
     border-radius: 1rem;
   }
 
@@ -128,9 +131,18 @@ export const TechUsed = styled.li<ITechContainerProps>`
 `
 
 export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, flexDir, align, justifyContent, children }) => {
+  const [imgLoading, setImgLoading] = useState(false)
+
   return (
     <CardSTyle flexDir={flexDir} align={align} justifyContent={justifyContent}>
-      <img src={projectsCovers[img]} alt={`${img} capa`} className="image" />
+      <Stack>
+        {imgLoading ? (
+          <img src={projectsCovers[img]} alt={`${img} capa`} className="image" />
+        ) : (
+          <Skeleton variant="rounded" className="image" style={{ background: "#292f67a1" }} />
+        )}
+        <img src={projectsCovers[img]} alt={`${img} capa`} className="image" onLoad={() => setImgLoading(true)} style={{ display: "none" }} />
+      </Stack>
 
       <Container display="flex" flexDir="column" width="100%" height="100%" paddingTop={0.5} paddingBottom={0.5} gap={2}>
         <Container display="flex" flexDir="column" width="100%" height="100%" align={align} gap={1}>
