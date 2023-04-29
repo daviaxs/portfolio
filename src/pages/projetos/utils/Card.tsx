@@ -15,7 +15,16 @@ interface ICardProps {
   toDeploy: string
   toGithub: string
 
+  flexDir: "row" | "column"
+  align: "start" | "center"
+  justifyContent: "start" | "center"
   children: React.ReactNode
+}
+
+interface ICardSTyleProps {
+  align: "start" | "center"
+  justifyContent: "start" | "center"
+  flexDir: "row" | "column"
 }
 
 interface ITechContainerProps {
@@ -32,14 +41,14 @@ export const CardContainerStyle = styled.div`
   margin-bottom: ${themeConstants.sizes["5xl"]}rem;
 `
 
-const CardSTyle = styled.div`
+const CardSTyle = styled.div<ICardSTyleProps>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => props.flexDir};
 
-  align-items: start;
-  justify-content: start;
+  align-items: ${(props) => props.align};
+  justify-content: ${(props) => props.justifyContent};
 
-  width: 100%;
+  width: fit-content;
   border: 1px solid ${theme.buttons.bg_default_secondary};
   border-radius: ${themeConstants.sizes.lg}rem;
   padding: ${themeConstants.sizes["2xl"]}rem;
@@ -49,7 +58,7 @@ const CardSTyle = styled.div`
   transition: background 0.2s ease-out;
 
   .image {
-    width: 222px;
+    width: 13.875rem;
     border-radius: 1rem;
   }
 
@@ -118,23 +127,23 @@ export const TechUsed = styled.li<ITechContainerProps>`
   }
 `
 
-export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, children }) => {
+export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, flexDir, align, justifyContent, children }) => {
   return (
-    <CardSTyle>
+    <CardSTyle flexDir={flexDir} align={align} justifyContent={justifyContent}>
       <img src={projectsCovers[img]} alt={`${img} capa`} className="image" />
 
       <Container display="flex" flexDir="column" width="100%" height="100%" paddingTop={0.5} paddingBottom={0.5} gap={2}>
-        <Container display="flex" flexDir="column" width="100%" height="100%" align="start" gap={1}>
+        <Container display="flex" flexDir="column" width="100%" height="100%" align={align} gap={1}>
           <TTitleSecondary fontSize={1}>{label}</TTitleSecondary>
           <TTextSecondary fontSize={1} txtColor={theme.text.quaternary}>
             {description}
           </TTextSecondary>
         </Container>
 
-        <Container display="flex" flexDir="column" width="100%" height="100%" align="start" justifyContent="end" gap={1}>
+        <Container display="flex" flexDir="column" width="100%" height="100%" align={align} justifyContent="end" gap={1}>
           <TechContainer>{children}</TechContainer>
-          <Container display="flex" width="100%" height="" gap={1} align="end">
-            <Link to={toGithub}>
+          <Container display="flex" width="100%" height="" gap={1} align="end" justifyContent={justifyContent}>
+            <Link to={toGithub} target="_blank">
               <ButtonLink>
                 <Icon name="github" size={21} fill={theme.text.quaternary} />
                 <TTextSecondary txtColor={theme.text.quaternary} fontSize={1}>
@@ -142,7 +151,7 @@ export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, 
                 </TTextSecondary>
               </ButtonLink>
             </Link>
-            <Link to={toDeploy}>
+            <Link to={toDeploy} target="_blank">
               <ButtonLink>
                 <Icon name="rocket" size={21} fill={theme.text.quaternary} />
                 <TTextSecondary txtColor={theme.text.quaternary} fontSize={1}>

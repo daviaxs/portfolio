@@ -1,5 +1,7 @@
+import { useContext } from "react"
 import styled from "styled-components"
 
+import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { Card, CardContainerStyle, TechUsed } from "./utils/Card"
@@ -21,16 +23,21 @@ const Line = styled.span`
   height: 0.05rem;
 `
 
-export const Projetos = () => {
+export const Projetos: React.FC = () => {
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
+
   return (
     <LayoutBaseDePagina flexDir="column" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
-      <Container display="flex" flexDir="column" width="100%" height="" gap={0.5}>
-        <THeadingLinearPrimary fontSize={2.5}>Bem-vindo à minha seção de Projetos!</THeadingLinearPrimary>
-        <TTextPrimary fontSize={1.25} txtColor={theme.text.secondary}>
+      <Container display="flex" flexDir="column" width="100%" height="100%" gap={0.5}>
+        <THeadingLinearPrimary fontSize={windowWidth <= 600 ? 1.5 : 2.5} textAlign={windowWidth <= 600 ? "center" : "start"}>
+          Bem-vindo à minha seção de Projetos!
+        </THeadingLinearPrimary>
+        <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} txtColor={theme.text.secondary} textAlign={windowWidth <= 600 ? "center" : "start"}>
           Aqui você encontrará uma seleção de trabalhos que desenvolvi durante minha jornada como programador, com informações sobre as tecnologias e
           muito mais!
         </TTextPrimary>
       </Container>
+
       <Separator>
         <Line />
         <Icon name="arrowDown" size={32} fill={theme.buttons.bg_default_secondary} />
@@ -43,6 +50,57 @@ export const Projetos = () => {
           label="Project name"
           toDeploy=""
           toGithub=""
+          flexDir={windowWidth <= 600 ? "column" : "row"}
+          align={windowWidth <= 600 ? "center" : "start"}
+          justifyContent={windowWidth <= 600 ? "center" : "start"}
+        >
+          <TechUsed label="html" />
+          <TechUsed label="css" />
+          <TechUsed label="js" />
+          <TechUsed label="git" />
+          <TechUsed label="figma" />
+        </Card>
+        <Card
+          img="habits"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
+          label="Project name"
+          toDeploy=""
+          toGithub=""
+          flexDir={windowWidth <= 600 ? "column" : "row"}
+          align={windowWidth <= 600 ? "center" : "start"}
+          justifyContent={windowWidth <= 600 ? "center" : "start"}
+        >
+          <TechUsed label="html" />
+          <TechUsed label="css" />
+          <TechUsed label="js" />
+          <TechUsed label="git" />
+          <TechUsed label="figma" />
+        </Card>
+        <Card
+          img="habits"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
+          label="Project name"
+          toDeploy=""
+          toGithub=""
+          flexDir={windowWidth <= 600 ? "column" : "row"}
+          align={windowWidth <= 600 ? "center" : "start"}
+          justifyContent={windowWidth <= 600 ? "center" : "start"}
+        >
+          <TechUsed label="html" />
+          <TechUsed label="css" />
+          <TechUsed label="js" />
+          <TechUsed label="git" />
+          <TechUsed label="figma" />
+        </Card>
+        <Card
+          img="habits"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
+          label="Project name"
+          toDeploy=""
+          toGithub=""
+          flexDir={windowWidth <= 600 ? "column" : "row"}
+          align={windowWidth <= 600 ? "center" : "start"}
+          justifyContent={windowWidth <= 600 ? "center" : "start"}
         >
           <TechUsed label="html" />
           <TechUsed label="css" />
