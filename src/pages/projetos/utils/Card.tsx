@@ -29,10 +29,6 @@ interface ICardSTyleProps {
   flexDir: "row" | "column"
 }
 
-interface ITechContainerProps {
-  label: string
-}
-
 export const CardContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,7 +94,7 @@ const TechContainer = styled.ul`
   flex-wrap: wrap;
   gap: 0.5rem;
 `
-export const TechUsed = styled.li<ITechContainerProps>`
+export const TechUsed = styled.li<{label: string}>`
   display: flex;
   align-items: center;
   justify-content: start;
