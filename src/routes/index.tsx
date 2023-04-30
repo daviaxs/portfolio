@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
 import { useSidebarContext } from "../shared/contexts/SidebarContext"
-import { PaginaInicial, Sobre, Projetos } from "../pages"
+import { PaginaInicial, Sobre, Projetos, Contato } from "../pages"
 
 export const AppRoutes = () => {
   const { setSidebarOptions: setDrawerOptions } = useSidebarContext()
@@ -24,6 +24,11 @@ export const AppRoutes = () => {
         icon: "paint",
         to: "/projetos"
       },
+      {
+        label: "Contato",
+        icon: "chat",
+        to: "/contato"
+      },
     ])
   }, [])
 
@@ -32,6 +37,7 @@ export const AppRoutes = () => {
       <Route path="/pagina-inicial" element={<PaginaInicial />} />
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/projetos" element={<Projetos />} />
+      <Route path="/contato" element={<Contato />} />
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>
