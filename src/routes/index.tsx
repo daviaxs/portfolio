@@ -2,8 +2,7 @@ import { useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
 import { useSidebarContext } from "../shared/contexts/SidebarContext"
-import { PaginaInicial, Sobre } from "../pages"
-import { Projetos } from "../pages/projetos/Projetos"
+import { PaginaInicial, Sobre, Projetos } from "../pages"
 
 export const AppRoutes = () => {
   const { setSidebarOptions: setDrawerOptions } = useSidebarContext()
