@@ -1,4 +1,4 @@
-const Github = ({fill = "white", size}: {fill?: string, size: number}) => {
+const Github = ({ fill = "white", size }: { fill?: string; size: number }) => {
   return (
     <svg width={size + 8} height={size} viewBox="0 0 50 42" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
