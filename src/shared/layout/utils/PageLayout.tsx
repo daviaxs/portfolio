@@ -15,6 +15,7 @@ interface IPageLayoutProps extends IPageContentProps {
 interface IPageContentProps {
   paddingInline?: number
   paddingTop?: number
+  paddingBottom?: number
   flexDir: string
 }
 
@@ -39,11 +40,12 @@ const PageContentStyle = styled.main<IPageContentProps>`
   margin-top: ${themeConstants.sizes["8xl"]}rem;
   padding-inline: ${(props) => props.paddingInline}rem;
   padding-top: ${(props) => props.paddingTop}rem;
+  padding-bottom: ${(props) => props.paddingBottom}rem;
 
   background: ${theme.bg.primary};
 `
 
-export const PageLayout: React.FC<IPageLayoutProps> = ({ flexDir, paddingInline, paddingTop, children }) => {
+export const PageLayout: React.FC<IPageLayoutProps> = ({ flexDir, paddingInline, paddingTop, paddingBottom, children }) => {
   const { expandedMenu } = useMenuNavContext()
   const { sidebarOptions } = useSidebarContext()
   const { width: windowWidth } = useContext(WindowDimensionsContext)
@@ -54,7 +56,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ flexDir, paddingInline,
     <PageLayoutStyle>
       <PageHeader label={selectedOption?.label || ""} />
       <MenuNav display={expandedMenu && windowWidth <= 600 ? "flex" : "none"} />
-      <PageContentStyle flexDir={flexDir} paddingInline={paddingInline} paddingTop={paddingTop}>
+      <PageContentStyle flexDir={flexDir} paddingInline={paddingInline} paddingTop={paddingTop} paddingBottom={paddingBottom}>
         {children}
       </PageContentStyle>
     </PageLayoutStyle>

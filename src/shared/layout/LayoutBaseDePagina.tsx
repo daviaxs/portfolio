@@ -8,15 +8,16 @@ interface ILayoutBaseDePaginaProps {
   children: React.ReactNode
   paddingInline?: number
   paddingTop?: number
+  paddingBottom?: number
   flexDir: "column" | "row"
 }
 
-export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ flexDir, paddingInline, paddingTop, children }) => {
+export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ flexDir, paddingInline, paddingTop, paddingBottom, children }) => {
   return (
     <Box bg={theme.bg.bg_linear} flexDir="row">
       <Sidebar />
       <Modal/>
-      <PageLayout flexDir={flexDir} paddingInline={paddingInline} paddingTop={paddingTop}>{children}</PageLayout>
+      <PageLayout flexDir={flexDir} paddingInline={paddingInline} paddingTop={paddingTop} paddingBottom={paddingBottom}>{children}</PageLayout>
     </Box>
   )
 }
