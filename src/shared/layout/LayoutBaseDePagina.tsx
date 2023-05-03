@@ -1,8 +1,8 @@
 import { Sidebar } from "../components/sidebar/Sidebar"
+import { Modal } from "../components/modal/Modal"
 import { PageLayout } from "./utils/PageLayout"
 import { Box } from "../components/box/Box"
 import { theme } from "../theme"
-import { Modal } from "../components/modal/Modal"
 
 interface ILayoutBaseDePaginaProps {
   children: React.ReactNode
