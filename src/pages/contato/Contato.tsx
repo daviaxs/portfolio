@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { THeadingLinearPrimary, THeadingPrimary, TTextPrimary, TTitleSecondary } from "../../shared/fonts"
+import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
@@ -9,89 +9,89 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
-
-  height: 100%;
-  width: 80rem;
-
-  gap: 1.625rem;
-  padding: ${themeConstants.sizes["2xl"]}rem ${themeConstants.sizes["8xl"]}rem;
-
-  border-radius: 0.625rem;
-  background: ${theme.bg.tertiary};
-
-  .label {
-    margin-left: 0.5rem;
-  }
-
-  & {
-    &::-webkit-scrollbar {
-      width: 0px;
-      height: 0px;
-    }
-  }
-`
-
-const VTextField = styled.input`
-  outline: none;
-  border: none;
-  border-radius: ${themeConstants.sizes.md}rem;
 
   width: 100%;
-  height: ${themeConstants.sizes["8xl"]}rem;
-  padding-inline: 1rem;
+  height: 100%;
+  margin-top: 2rem;
+`
 
-  background-color: ${theme.buttons.bg_default_secondary};
+const VTextField = styled.div`
+  position: relative;
+  width: 100%;
 
-  &::placeholder {
-    color: ${theme.text.quaternary};
-    font-size: 1.25rem;
-    font-weight: 500;
+  & > input {
+    outline: none;
+    border: 1.5px solid ${theme.buttons.bg_default_secondary};
+    border-radius: ${themeConstants.sizes.md}rem;
+
+    width: 100%;
+    height: ${themeConstants.sizes["8xl"]}rem;
+    padding-inline: 1rem;
+
+    background-color: transparent;
+    transition: background 0.2s ease-out;
+
+    &::placeholder {
+      color: ${theme.buttons.bg_default_secondary};
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: ${theme.bg.tertiary};
+    }
+
+    &:focus {
+      background-color: ${theme.bg.tertiary};
+      border: 1.5px solid ${theme.buttons.border_focus_visible};
+      & + label {
+        opacity: 1;
+        top: -0.5rem;
+        left: 1rem;
+        transform: scale(1);
+      }
+    }
+  }
+
+  & > label {
+    position: absolute;
+    transform: scale(0);
+    opacity: 1;
+    z-index: 2;
+    top: 1rem;
+    left: 2rem;
+
+    padding-inline: 0.625rem;
+    font-size: 0.75rem;
+    width: fit-content;
+    height: 1.2rem;
+
+    color: ${theme.buttons.bg_default_secondary};
+    background-color: ${theme.bg.primary};
+    border-radius: 0.2rem;
+
+    transition: all .3s ease-out;
   }
 `
 
 export const Contato = () => {
   return (
-    <LayoutBaseDePagina
-      flexDir="row"
-      paddingInline={themeConstants.sizes["5xl"]}
-      paddingTop={themeConstants.sizes["5xl"]}
-      paddingBottom={themeConstants.sizes["5xl"]}
-    >
-      <Container display="flex" flexDir="row" height="100%" width="100%" justifyContent="center" align="center" gap={1}>
-        <Container display="flex" flexDir="column" height="100%" width="" justifyContent="center">
-          <THeadingLinearPrimary fontSize={themeConstants.sizes["6xl"]}>Contate-me</THeadingLinearPrimary>
-          <TTextPrimary txtColor={theme.text.secondary} fontSize={themeConstants.sizes["2xl"]}>
+    <LayoutBaseDePagina flexDir="row" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
+      <Container display="flex" flexDir="column" align="center" height="100%" width="100%">
+        <Container display="flex" flexDir="column" align="center" height="" width="100%">
+          <THeadingLinearPrimary fontSize={2.5} textAlign="center">
+            Formulário de contato
+          </THeadingLinearPrimary>
+          <TTextPrimary fontSize={1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary}>
             Se você tem um projeto interessante em mente ou precisa de ajuda em um projeto já existente, entre em contato comigo agora mesmo!
-            <br /> <br /> Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.
           </TTextPrimary>
         </Container>
 
-        <FormContainer action="https://formsubmit.co/cadwvk@email.com" method="POST">
-          <THeadingPrimary fontSize={2.375} whiteSpace="nowrap">
-            Formulário de contato
-          </THeadingPrimary>
-
-          <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-            <TTitleSecondary fontSize={1} className="label">
-              Nome
-            </TTitleSecondary>
-            <VTextField type="text" name="name" placeholder="Digite seu nome" required />
-          </Container>
-
-          <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-            <TTitleSecondary fontSize={1} className="label">
-              Email
-            </TTitleSecondary>
-            <VTextField type="email" name="email" placeholder="Digite seu email" required />
-          </Container>
-
-          <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-            <TTitleSecondary fontSize={1} className="label">
-              Messagem
-            </TTitleSecondary>
-            <VTextField type="text" name="message" placeholder="Digite sua mensagem..." required />
-          </Container>
+        <FormContainer>
+          <VTextField>
+            <input type="text" name="name" placeholder="Digite seu nome" />
+            <label>Nome</label>
+          </VTextField>
         </FormContainer>
       </Container>
     </LayoutBaseDePagina>
