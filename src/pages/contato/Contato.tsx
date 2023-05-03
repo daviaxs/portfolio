@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { THeadingLinearPrimary, THeadingPrimary, TTextPrimary } from "../../shared/fonts"
+import { THeadingLinearPrimary, THeadingPrimary, TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
@@ -10,7 +10,7 @@ const FormContainer = styled.form`
   flex-direction: column;
   align-items: center;
 
-  height: 40rem;
+  height: fit-content;
   width: 80rem;
 
   gap: 1.625rem;
@@ -18,6 +18,10 @@ const FormContainer = styled.form`
 
   border-radius: 0.625rem;
   background: ${theme.bg.tertiary};
+
+  .label {
+    margin-left: 0.5rem;
+  }
 `
 
 const VTextField = styled.input`
@@ -34,7 +38,7 @@ const VTextField = styled.input`
   &::placeholder {
     color: ${theme.text.quaternary};
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 400;
   }
 `
 
@@ -53,11 +57,28 @@ export const Contato = () => {
           <br /> <br /> Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.
         </TTextPrimary>
       </Container>
-      <FormContainer>
+      <FormContainer action="https://formsubmit.co/cadwvk@email.com" method="POST">
         <THeadingPrimary fontSize={2.375} whiteSpace="nowrap">
           Formulário de contato
         </THeadingPrimary>
-        <VTextField type="text" placeholder="Email" />
+        <Container display="flex" flexDir="column" height="fit-content" width="100%" gap={0.2}>
+          <TTitleSecondary fontSize={1} className="label">
+            Nome
+          </TTitleSecondary>
+          <VTextField type="text" name="name" placeholder="Digite seu nome" required />
+        </Container>
+        <Container display="flex" flexDir="column" height="fit-content" width="100%" gap={0.2}>
+          <TTitleSecondary fontSize={1} className="label">
+            Email
+          </TTitleSecondary>
+          <VTextField type="email" name="email" placeholder="Digite seu email" required />
+        </Container>
+        <Container display="flex" flexDir="column" height="fit-content" width="100%" gap={0.2}>
+          <TTitleSecondary fontSize={1} className="label">
+            Messagem
+          </TTitleSecondary>
+          <VTextField type="text" name="message" placeholder="Digite sua mensagem..." required />
+        </Container>
       </FormContainer>
     </LayoutBaseDePagina>
   )
