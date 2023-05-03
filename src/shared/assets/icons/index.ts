@@ -13,6 +13,9 @@ import Github from './github'
 import Discord from './discord'
 import ErrorLoading from './error_loading'
 import HappyFace from './happyFace'
+import Person02 from './person02'
+import Email from './email'
+import Message from './message'
 
 export default {
   home: IconHome,
@@ -29,5 +32,8 @@ export default {
   github: Github,
   discord: Discord,
   errorLoading: ErrorLoading,
-  happyFace: HappyFace
+  happyFace: HappyFace,
+  person02: Person02,
+  email: Email,
+  message: Message,
 }
