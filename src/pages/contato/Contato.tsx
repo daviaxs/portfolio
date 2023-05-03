@@ -23,6 +23,13 @@ const FormContainer = styled.form`
   .label {
     margin-left: 0.5rem;
   }
+
+  & {
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+  }
 `
 
 const VTextField = styled.input`
@@ -66,23 +73,23 @@ export const Contato = () => {
           </THeadingPrimary>
 
           <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-              <TTitleSecondary fontSize={1} className="label">
-                Nome
-              </TTitleSecondary>
+            <TTitleSecondary fontSize={1} className="label">
+              Nome
+            </TTitleSecondary>
             <VTextField type="text" name="name" placeholder="Digite seu nome" required />
           </Container>
 
           <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-              <TTitleSecondary fontSize={1} className="label">
-                Email
-              </TTitleSecondary>
+            <TTitleSecondary fontSize={1} className="label">
+              Email
+            </TTitleSecondary>
             <VTextField type="email" name="email" placeholder="Digite seu email" required />
           </Container>
 
           <Container display="flex" flexDir="column" align="start" height="auto" width="100%" gap={0.2}>
-              <TTitleSecondary fontSize={1} className="label">
-                Messagem
-              </TTitleSecondary>
+            <TTitleSecondary fontSize={1} className="label">
+              Messagem
+            </TTitleSecondary>
             <VTextField type="text" name="message" placeholder="Digite sua mensagem..." required />
           </Container>
         </FormContainer>
