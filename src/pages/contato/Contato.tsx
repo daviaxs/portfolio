@@ -105,20 +105,21 @@ export const Contato = () => {
           </TTextPrimary>
         </Container>
 
-        <FormContainer>
+        <FormContainer action="https://formsubmit.co/cadwvk@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="" />
           <VTextField>
             <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input type="text" name="name" placeholder="Digite seu nome" />
+            <input type="text" name="name" placeholder="Digite seu nome" required/>
             <label>Nome</label>
           </VTextField>
           <VTextField>
             <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input type="email" name="email" placeholder="Digite seu email" />
+            <input type="email" name="email" placeholder="Digite seu email" required/>
             <label>Email</label>
           </VTextField>
           <VTextField>
             <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input type="text" name="message" placeholder="Digite sua mensagem" />
+            <input type="text" name="message" placeholder="Digite sua mensagem" required/>
             <label>Mensagem</label>
           </VTextField>
           <ButtonSecondary type="submit">Enviar</ButtonSecondary>

@@ -21,7 +21,7 @@ const ButtonSecondaryStyle = styled.button`
   justify-content: center;
 
   background: ${theme.buttons.bg_default_secondary};
-  padding-inline: ${themeConstants.sizes["6xl"]}rem;
+  padding: 1rem ${themeConstants.sizes["6xl"]}rem;
   height: ${themeConstants.sizes["8xl"]}rem;
   width: 100%;
 
