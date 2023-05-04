@@ -1,5 +1,7 @@
+import { useContext } from "react"
 import styled from "styled-components"
 
+import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
@@ -180,14 +182,16 @@ const VTextFieldMessage = styled.div`
 `
 
 export const Contato = () => {
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
+
   return (
-    <LayoutBaseDePagina flexDir="row" paddingInline={10} paddingTop={themeConstants.sizes["5xl"]}>
+    <LayoutBaseDePagina flexDir="row" paddingInline={windowWidth <= 912 ? themeConstants.sizes["5xl"] : 11} paddingTop={themeConstants.sizes["5xl"]}>
       <Container display="flex" flexDir="column" align="center" height="100%" width="100%">
         <Container display="flex" flexDir="column" align="center" height="" width="100%" gap={0.625}>
-          <THeadingLinearPrimary fontSize={2.5} textAlign="center">
+          <THeadingLinearPrimary fontSize={windowWidth <= 600 ? 2 : 2.5} textAlign="center">
             Formulário de contato
           </THeadingLinearPrimary>
-          <TTextPrimary fontSize={1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary}>
+          <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary}>
             Se você tem um projeto interessante em mente ou precisa de ajuda em um projeto já existente, entre em contato comigo agora mesmo!
           </TTextPrimary>
         </Container>
@@ -215,7 +219,7 @@ export const Contato = () => {
 
           <ButtonSecondary type="submit">Enviar</ButtonSecondary>
 
-          <TTextPrimary fontSize={1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary} className="title">
+          <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary} className="title">
             Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.
           </TTextPrimary>
         </FormContainer>
