@@ -1,12 +1,11 @@
 import styled from "styled-components"
 
+import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
-import { ButtonPrimary } from "../../shared/components/buttons/ButtonPrimary"
-import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
 
 const FormContainer = styled.form`
   display: flex;
@@ -34,6 +33,11 @@ const VTextField = styled.div`
 
     background-color: transparent;
     transition: background 0.2s ease-out;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px ${theme.bg.tertiary} inset; 
+      -webkit-text-fill-color: ${theme.text.fifth};
+    }
 
     &::placeholder {
       color: ${theme.buttons.bg_default_secondary};
@@ -103,23 +107,21 @@ export const Contato = () => {
 
         <FormContainer>
           <VTextField>
-            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
+            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
             <input type="text" name="name" placeholder="Digite seu nome" />
             <label>Nome</label>
           </VTextField>
           <VTextField>
-            <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
+            <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
             <input type="email" name="email" placeholder="Digite seu email" />
             <label>Email</label>
           </VTextField>
           <VTextField>
-            <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
+            <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
             <input type="text" name="message" placeholder="Digite sua mensagem" />
             <label>Mensagem</label>
           </VTextField>
-          <ButtonSecondary type="submit">
-            Enviar
-          </ButtonSecondary>
+          <ButtonSecondary type="submit">Enviar</ButtonSecondary>
         </FormContainer>
       </Container>
     </LayoutBaseDePagina>
