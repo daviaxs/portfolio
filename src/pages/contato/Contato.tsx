@@ -5,6 +5,8 @@ import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
+import { ButtonPrimary } from "../../shared/components/buttons/ButtonPrimary"
+import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
 
 const FormContainer = styled.form`
   display: flex;
@@ -14,6 +16,7 @@ const FormContainer = styled.form`
   width: 100%;
   height: 100%;
   margin-top: 2rem;
+  gap: 2.5rem;
 `
 
 const VTextField = styled.div`
@@ -51,9 +54,6 @@ const VTextField = styled.div`
         top: -0.5rem;
         left: 1rem;
         transform: scale(1);
-      }
-      &.icon {
-        background-color: red;
       }
     }
   }
@@ -103,10 +103,23 @@ export const Contato = () => {
 
         <FormContainer>
           <VTextField>
-            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} />
+            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
             <input type="text" name="name" placeholder="Digite seu nome" />
-            <label>Ngwagawgawome</label>
+            <label>Nome</label>
           </VTextField>
+          <VTextField>
+            <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
+            <input type="email" name="email" placeholder="Digite seu email" />
+            <label>Email</label>
+          </VTextField>
+          <VTextField>
+            <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{display: "none"}}/>
+            <input type="text" name="message" placeholder="Digite sua mensagem" />
+            <label>Mensagem</label>
+          </VTextField>
+          <ButtonSecondary type="submit">
+            Enviar
+          </ButtonSecondary>
         </FormContainer>
       </Container>
     </LayoutBaseDePagina>

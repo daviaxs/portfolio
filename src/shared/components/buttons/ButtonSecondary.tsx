@@ -9,28 +9,26 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void
 }
 
-const ButtonPrimaryStyle = styled.button`
+const ButtonSecondaryStyle = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
   box-shadow: none;
-  border-radius: 8rem;
+  border-radius: 0.625rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: ${theme.buttons.bg_default_primary};
-  padding: ${themeConstants.sizes.lg}rem ${themeConstants.sizes["6xl"]}rem;
+  background: ${theme.buttons.bg_default_secondary};
+  padding-inline: ${themeConstants.sizes["6xl"]}rem;
+  height: ${themeConstants.sizes["8xl"]}rem;
+  width: 100%;
 
   transition: background 0.3s ease-out, transform 0.1s ease-in;
 
   &:hover {
-    background: ${theme.buttons.hover};
-  }
-
-  &:active {
-    transform: scale(0.98);
+    background: ${theme.buttons.border_focus_visible};
   }
 
   &:focus-visible {
@@ -44,10 +42,10 @@ const ButtonPrimaryStyle = styled.button`
   }
 `
 
-export const ButtonPrimary: React.FC<IButtonProps> = ({ onClick, className, disabled, children }) => {
+export const ButtonSecondary: React.FC<IButtonProps> = ({ onClick, className, disabled, children }) => {
   return (
-    <ButtonPrimaryStyle onClick={onClick} className={className} disabled={disabled}>
+    <ButtonSecondaryStyle onClick={onClick} className={className} disabled={disabled}>
       {children}
-    </ButtonPrimaryStyle>
+    </ButtonSecondaryStyle>
   )
 }
