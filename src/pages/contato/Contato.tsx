@@ -4,6 +4,7 @@ import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
+import { Icon } from "../../shared/components/icon/Icon"
 
 const FormContainer = styled.form`
   display: flex;
@@ -21,12 +22,12 @@ const VTextField = styled.div`
 
   & > input {
     outline: none;
-    border: 1.5px solid ${theme.buttons.bg_default_secondary};
+    border: 0.094rem solid ${theme.buttons.bg_default_secondary};
     border-radius: ${themeConstants.sizes.md}rem;
 
     width: 100%;
     height: ${themeConstants.sizes["8xl"]}rem;
-    padding-inline: 1rem;
+    padding-inline: 2.5rem;
 
     background-color: transparent;
     transition: background 0.2s ease-out;
@@ -43,12 +44,16 @@ const VTextField = styled.div`
 
     &:focus {
       background-color: ${theme.bg.tertiary};
-      border: 1.5px solid ${theme.buttons.border_focus_visible};
+      border: 0.094rem solid ${theme.buttons.border_focus_visible};
+      color: ${theme.text.fifth};
       & + label {
         opacity: 1;
         top: -0.5rem;
         left: 1rem;
         transform: scale(1);
+      }
+      &.icon {
+        background-color: red;
       }
     }
   }
@@ -70,7 +75,16 @@ const VTextField = styled.div`
     background-color: ${theme.bg.primary};
     border-radius: 0.2rem;
 
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
+  .icon {
+    height: fit-content;
+    width: fit-content;
+
+    position: absolute;
+    top: 30%;
+    left: 0.5rem;
   }
 `
 
@@ -89,8 +103,9 @@ export const Contato = () => {
 
         <FormContainer>
           <VTextField>
+            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} />
             <input type="text" name="name" placeholder="Digite seu nome" />
-            <label>Nome</label>
+            <label>Ngwagawgawome</label>
           </VTextField>
         </FormContainer>
       </Container>
