@@ -57,7 +57,7 @@ export const FormEnviado = () => {
           height: `${windowWidth <= 950 ? "30rem" : "35rem"}`,
           bottom: `${windowWidth <= 780 ? "-4rem" : 0}`,
           right: `${windowWidth <= 400 ? "-5rem" : 0}`,
-          transform: `scale(${windowWidth <= 400 ? 0.80 : 1})`,
+          transform: `scale(${windowWidth <= 400 ? 0.8 : 1})`,
         }}
       />
       <span className="light" style={{ right: `${windowWidth <= 780 ? "5rem" : "18rem"}` }}></span>
@@ -71,12 +71,17 @@ export const FormEnviado = () => {
         gap={2}
         justifyContent="center"
         align={windowWidth <= 400 ? "center" : "start"}
-        marginBottom={windowWidth <= 900 ? 20 : 0}
+        marginBottom={windowWidth <= 850 ? 20 : 0}
       >
-        <THeadingLinearPrimary fontSize={windowWidth <= 600 && windowWidth > 400 ? 2 : windowWidth <= 400 ? 1.8 : 2.5 } whiteSpace="nowrap">
+        <THeadingLinearPrimary fontSize={windowWidth <= 600 && windowWidth > 400 ? 2 : windowWidth <= 400 ? 1.8 : 2.5} whiteSpace="nowrap">
           Formulário entregue!
         </THeadingLinearPrimary>
-        <TTitleSecondary fontSize={windowWidth <= 600 ? 1.3 : 1.5} txtColor={theme.text.secondary} textAlign={windowWidth <= 400 ? "center" : "start"} className="text">
+        <TTitleSecondary
+          fontSize={windowWidth <= 600 ? 1.3 : 1.5}
+          txtColor={theme.text.secondary}
+          textAlign={windowWidth <= 400 ? "center" : "start"}
+          className="text"
+        >
           Seu formulário foi entregue com sucesso! <br /> Aguarde minha resposta em breve.
         </TTitleSecondary>
         <NavLink to={"/pagina-inicial"}>

@@ -62,11 +62,11 @@ export const Sobre = () => {
           <br />
           <br />
           Navegue pelo meu{" "}
-          <NavLink to={"/pagina-inicial"}>
+          <NavLink to={"/projetos"}>
             <TextLinkStyle txtColor={theme.text.fifth}>portfólio</TextLinkStyle>
           </NavLink>{" "}
           e confira alguns dos meus projetos. E se precisar de ajuda para criar algo inovador e desafiador, entre em{" "}
-          <NavLink to={"/pagina-inicial"}>
+          <NavLink to={"/contato"}>
             <TextLinkStyle txtColor={theme.text.fifth}>contato</TextLinkStyle>
           </NavLink>{" "}
           comigo agora mesmo!
