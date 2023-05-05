@@ -217,7 +217,9 @@ export const Contato = () => {
             <label>Mensagem</label>
           </VTextFieldMessage>
 
-          <ButtonSecondary type="submit">Enviar</ButtonSecondary>
+          <ButtonSecondary type="submit" width="100%" height={`${themeConstants.sizes["6xl"]}rem`}>
+            Enviar
+          </ButtonSecondary>
 
           <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary} className="title">
             Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.
