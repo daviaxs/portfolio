@@ -217,7 +217,7 @@ export const Contato = () => {
             <label>Mensagem</label>
           </VTextFieldMessage>
 
-          <ButtonSecondary type="submit" width="100%" height={`${themeConstants.sizes["6xl"]}rem`}>
+          <ButtonSecondary type="submit" width="100%" height={`${themeConstants.sizes["8xl"]}rem`}>
             Enviar
           </ButtonSecondary>
 
