@@ -3,7 +3,7 @@ import icons from "../assets/icons"
 
 interface ISettingsContextData {
   settings: IOption[]
-  setOptions: (newSettingsOptions: IOption[]) => void
+  setOptions: (newSettingOption: IOption[]) => void
 }
 
 interface IOption {
