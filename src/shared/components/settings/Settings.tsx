@@ -14,6 +14,7 @@ const SettingsStyle = styled.div`
   align-items: center;
 
   background: ${theme.bg.secondary};
+  box-shadow: 9px 11px 0px #0A0D22;
   border-radius: 1.125rem;
 
   padding: 0.625rem;
