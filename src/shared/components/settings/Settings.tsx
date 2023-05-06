@@ -26,6 +26,13 @@ const SettingsStyle = styled.div`
     border-radius: 0.25rem;
     padding: 0.188rem 0.313rem;
   }
+
+  .line {
+    width: 100%;
+    height: 0px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
 `
 
 export const Settings = () => {
@@ -33,6 +40,10 @@ export const Settings = () => {
 
   return (
     <SettingsStyle>
+      <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
+        <TTitleSecondary fontSize={1.25}>Configurações</TTitleSecondary>
+        <span className="line"></span>
+      </Container>
       <Container display="flex" flexDir="column" height="" width="100%" gap={0.5}>
         {settings.map((option) => (
           <Container
