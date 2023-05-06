@@ -12,15 +12,27 @@ export const Test = () => {
       {
         icon: "home",
         label: "Teste",
-        description: "Teste",
+        description: "PT-BR",
         onClick: () => alert("Hello world")
-      }
+      },
+      {
+        icon: "home",
+        label: "Teste",
+        description: "PT-BR",
+        onClick: () => alert("Hello world")
+      },
+      {
+        icon: "home",
+        label: "Teste",
+        description: "PT-BR",
+        onClick: () => alert("Hello world")
+      },
     ])
   }, [])
 
   return (
     <LayoutBaseDePagina flexDir="column">
-      <Settings/>
+      <Settings />
     </LayoutBaseDePagina>
   )
 }
