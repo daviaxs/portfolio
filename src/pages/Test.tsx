@@ -10,23 +10,11 @@ export const Test = () => {
   useEffect(() => {
     setOptions([
       {
-        icon: "home",
-        label: "Teste",
+        icon: "world",
+        label: "Idioma",
         description: "PT-BR",
         onClick: () => alert("Hello world")
-      },
-      {
-        icon: "home",
-        label: "Teste",
-        description: "PT-BR",
-        onClick: () => alert("Hello world")
-      },
-      {
-        icon: "home",
-        label: "Teste",
-        description: "PT-BR",
-        onClick: () => alert("Hello world")
-      },
+      }
     ])
   }, [])
 

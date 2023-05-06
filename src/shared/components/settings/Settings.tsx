@@ -29,7 +29,7 @@ const SettingsStyle = styled.div`
 `
 
 export const Settings = () => {
-  const { settings } = useSettingsContext()
+  const { options: settings } = useSettingsContext()
 
   return (
     <SettingsStyle>

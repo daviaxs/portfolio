@@ -2,8 +2,10 @@ import { createContext, useCallback, useContext, useState } from "react"
 import icons from "../assets/icons"
 
 interface ISettingsContextData {
-  settings: IOption[]
+  options: IOption[]
   setOptions: (newSettingOption: IOption[]) => void
+  openSettings: boolean
+  handleOpenSettings: () => void
 }
 
 interface IOption {
@@ -26,16 +28,20 @@ export const useSettingsContext = () => {
 export const SettingsProvider: React.FC<IOptionsProviderProps> = ({ children }) => {
   const [settings, setSettings] = useState<IOption[]>([])
 
-  const [expanded, setExpanded] = useState(false)
+  const [openSettings, setOpenSettings] = useState(false)
 
-  const toggleExpanded = useCallback(() => {
-    const newExpanded = !expanded
-    setExpanded(newExpanded)
-  }, [expanded])
+  const toggleOpenSettings = useCallback(() => {
+    const newOpenSettings = !openSettings
+    setOpenSettings(newOpenSettings)
+  }, [openSettings])
 
-  const handleSetSettings = useCallback((newSidebarOptions: IOption[]) => {
-    setSettings(newSidebarOptions)
+  const handleSetSettings = useCallback((newSettingsOptions: IOption[]) => {
+    setSettings(newSettingsOptions)
   }, [])
 
-  return <SettingsContext.Provider value={{ settings: settings, setOptions: handleSetSettings }}>{children}</SettingsContext.Provider>
+  return (
+    <SettingsContext.Provider value={{ options: settings, setOptions: handleSetSettings, openSettings, handleOpenSettings: toggleOpenSettings }}>
+      {children}
+    </SettingsContext.Provider>
+  )
 }
