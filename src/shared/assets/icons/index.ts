@@ -16,6 +16,7 @@ import HappyFace from './happyFace'
 import Person02 from './person02'
 import Email from './email'
 import Message from './message'
+import World from './world'
 
 export default {
   home: IconHome,
@@ -36,4 +37,5 @@ export default {
   person02: Person02,
   email: Email,
   message: Message,
+  world: World,
 }
