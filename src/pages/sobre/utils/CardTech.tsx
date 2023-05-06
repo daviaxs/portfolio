@@ -18,6 +18,7 @@ interface ICardTechProps {
   label: string
   description: string
   labelWidth: number
+  width?: "fit-content" | "100%"
 }
 
 export const CardTechContainer = styled.ul<ICardTechContainerProps>`
@@ -52,7 +53,7 @@ const CardTechStyle = styled.li<ICardTechProps>`
   display: flex;
   align-items: start;
 
-  width: fit-content;
+  width: ${(props) => props.width};
   height: 100%;
   gap: ${themeConstants.sizes.lg}rem;
   padding: ${themeConstants.sizes.md}rem;
@@ -69,7 +70,7 @@ export const CardTech: React.FC<ICardTechProps> = ({ label, description, labelWi
   const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   return (
-    <CardTechStyle description={description} img={img} label={label} labelWidth={labelWidth}>
+    <CardTechStyle description={description} img={img} label={label} labelWidth={labelWidth} width={windowWidth <= 600 ? "fit-content" : "100%"}>
       {windowWidth > 450 && <ImageTech img={img} />}
       <Container display="flex" flexDir="column" width="" height="" gap={0.2}>
         {windowWidth <= 450 && <ImageTech img={img} />}
