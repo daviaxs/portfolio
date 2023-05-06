@@ -14,7 +14,7 @@ const SettingsStyle = styled.div`
   align-items: center;
 
   background: ${theme.bg.secondary};
-  box-shadow: 9px 11px 0px #0A0D22;
+  box-shadow: 9px 11px 0px #0a0d22;
   border-radius: 1.125rem;
 
   padding: 0.625rem;
@@ -48,6 +48,7 @@ export const Settings = () => {
       <Container display="flex" flexDir="column" height="" width="100%" gap={0.5}>
         {settings.map((option) => (
           <Container
+            key={option.label}
             display="flex"
             flexDir="row"
             align="center"
