@@ -6,10 +6,13 @@ import icons from "../../assets/icons"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
 
+type IconName = keyof typeof icons
+
 interface ISetting {
-  icon: keyof typeof icons
+  icon: IconName
   label: string
   description?: string
+  onClick: () => void
 }
 
 interface ISettingsProps {

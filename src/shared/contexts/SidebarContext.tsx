@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from "react"
-import icons from "../assets/icons"
 import { WindowDimensionsContext } from "./WindowDimensionsContext"
+import icons from "../assets/icons"
 
 interface ISidebarContextData {
   sidebarOptions: ISidebarOptions[]
