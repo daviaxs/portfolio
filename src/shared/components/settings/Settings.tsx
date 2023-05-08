@@ -1,13 +1,17 @@
 import styled from "styled-components"
 
 import { useSettingsContext } from "../../contexts/SettingsContext"
-import { Container } from "../container/Container"
 import { TTextSecondary, TTitleSecondary } from "../../fonts"
+import { Container } from "../container/Container"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
 
 const SettingsStyle = styled.div`
-  margin-top: 5rem;
+  position: fixed;
+  right: 0;
+
+  margin-top: 1rem;
+  margin-right: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -19,7 +23,6 @@ const SettingsStyle = styled.div`
 
   padding: 0.625rem;
   gap: 0.625rem;
-
   width: 18.75rem;
 
   .icon {
@@ -33,6 +36,15 @@ const SettingsStyle = styled.div`
     height: 0px;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .button {
+    cursor: pointer;
+    transition: background .2s ease-out;
+
+    &:active {
+      background: #24253d;
+    }
   }
 `
 
@@ -58,6 +70,8 @@ export const Settings = () => {
             paddingInline={0.625}
             bg={theme.alert.secondary}
             borderRadius={0.75}
+            className="button"
+            onClick={option.onClick}
           >
             <Container display="flex" align="center" height="" width="" gap={0.5}>
               <Icon name={option.icon} size={28} />
