@@ -5,7 +5,7 @@ import { Settings } from "../shared/components/settings/Settings"
 import { LayoutBaseDePagina } from "../shared/layout"
 
 export const Test = () => {
-  const { setOptions } = useSettingsContext()
+  const { setOptions, openSettings, handleOpenSettings } = useSettingsContext()
 
   useEffect(() => {
     setOptions([
@@ -13,14 +13,15 @@ export const Test = () => {
         icon: "world",
         label: "Idioma",
         description: "PT-BR",
-        onClick: () => alert("Hello world")
+        onClick: handleOpenSettings
       }
     ])
-  }, [])
+  }, [handleOpenSettings])
 
   return (
     <LayoutBaseDePagina flexDir="column">
       <Settings />
+      <p>{openSettings ? "Teste1" : "Teste2"}</p>
     </LayoutBaseDePagina>
   )
 }
