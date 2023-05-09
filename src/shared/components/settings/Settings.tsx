@@ -1,3 +1,4 @@
+import { useCallback, useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 
 import { useSettingsContext } from "../../contexts/SettingsContext"
@@ -5,14 +6,19 @@ import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
-import { useCallback, useEffect, useState } from "react"
+import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 
-const SettingsStyle = styled.div`
+interface ISettingsStyleProps {
+  width: "18.75rem" | "90%"
+  marginRight: number
+}
+
+const SettingsStyle = styled.div<ISettingsStyleProps>`
   position: fixed;
   right: 0;
 
   margin-top: 1rem;
-  margin-right: 3rem;
+  margin-right: ${(props) => props.marginRight}rem;
 
   display: flex;
   flex-direction: column;
@@ -24,7 +30,7 @@ const SettingsStyle = styled.div`
 
   padding: 0.625rem;
   gap: 0.625rem;
-  width: 18.75rem;
+  width: ${(props) => props.width};
 
   .icon {
     background-color: ${theme.buttons.bg_default_secondary};
@@ -58,7 +64,6 @@ const SettingsStyle = styled.div`
     }
     100% {
       transform: translateX(0rem);
-
     }
   }
 
@@ -71,13 +76,14 @@ const SettingsStyle = styled.div`
       transform: translateX(0rem);
     }
     100% {
-      transform:  translateX(25rem);
+      transform: translateX(25rem);
     }
   }
 `
 
 export const Settings = () => {
-  const { options: settings, openSettings, handleOpenSettings } = useSettingsContext()
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { options: settings, openSettings } = useSettingsContext()
 
   const [shouldRender, setShouldRender] = useState(openSettings)
 
@@ -98,7 +104,12 @@ export const Settings = () => {
   }
 
   return (
-    <SettingsStyle onAnimationEnd={handleAnimationEnd} className={openSettings ? "openSettings" : "closeSettings"}>
+    <SettingsStyle
+      onAnimationEnd={handleAnimationEnd}
+      className={openSettings ? "openSettings" : "closeSettings"}
+      marginRight={windowWidth <= 450 ? 1 : 3}
+      width={windowWidth <= 450 ? "90%" : "18.75rem"}
+    >
       <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
         <TTitleSecondary fontSize={1.25}>Configurações</TTitleSecondary>
         <span className="line"></span>
