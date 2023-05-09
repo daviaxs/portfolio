@@ -5,6 +5,7 @@ import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
+import { useCallback, useEffect, useState } from "react"
 
 const SettingsStyle = styled.div`
   position: fixed;
@@ -40,19 +41,63 @@ const SettingsStyle = styled.div`
 
   .button {
     cursor: pointer;
-    transition: background .2s ease-out;
+    transition: background 0.2s ease-out;
 
     &:active {
       background: #24253d;
     }
   }
+
+  &.openSettings {
+    animation: openSettings 0.3s forwards ease-out;
+  }
+
+  @keyframes openSettings {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &.closeSettings {
+    animation: closeSettings 0.3s forwards ease-out;
+  }
+
+  @keyframes closeSettings {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
 `
 
 export const Settings = () => {
-  const { options: settings } = useSettingsContext()
+  const { options: settings, openSettings, handleOpenSettings } = useSettingsContext()
+
+  const [shouldRender, setShouldRender] = useState(openSettings)
+
+  useEffect(() => {
+    if (openSettings) {
+      setShouldRender(true)
+    }
+  }, [openSettings])
+
+  const handleAnimationEnd = useCallback(() => {
+    if (!openSettings) {
+      setShouldRender(false)
+    }
+  }, [openSettings])
+
+  if (shouldRender === false) {
+    return null
+  }
 
   return (
-    <SettingsStyle>
+    <SettingsStyle onAnimationEnd={handleAnimationEnd} className={openSettings ? "openSettings" : "closeSettings"}>
       <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
         <TTitleSecondary fontSize={1.25}>Configurações</TTitleSecondary>
         <span className="line"></span>
