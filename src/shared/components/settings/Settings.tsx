@@ -54,10 +54,11 @@ const SettingsStyle = styled.div`
 
   @keyframes openSettings {
     0% {
-      transform: scale(0);
+      transform: translateX(25rem);
     }
     100% {
-      transform: scale(1);
+      transform: translateX(0rem);
+
     }
   }
 
@@ -67,10 +68,10 @@ const SettingsStyle = styled.div`
 
   @keyframes closeSettings {
     0% {
-      transform: scale(1);
+      transform: translateX(0rem);
     }
     100% {
-      transform: scale(0);
+      transform:  translateX(25rem);
     }
   }
 `
