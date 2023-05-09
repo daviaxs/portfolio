@@ -1,12 +1,12 @@
 import { useCallback, useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 
+import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useSettingsContext } from "../../contexts/SettingsContext"
 import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 
 interface ISettingsStyleProps {
   width: "18.75rem" | "90%"
