@@ -201,20 +201,20 @@ export const Contato = () => {
 
           <VTextField height={3.75}>
             <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input type="text" name="name" placeholder="Digite seu nome" required />
-            <label>Nome</label>
+            <input id="name" type="text" name="name" placeholder="Digite seu nome" required autoComplete="off" />
+            <label htmlFor="name">Nome</label>
           </VTextField>
 
           <VTextField height={3.75}>
             <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input type="email" name="email" placeholder="Digite seu email" required />
-            <label>Email</label>
+            <input id="email" type="email" name="email" placeholder="Digite seu email" required autoComplete="off" />
+            <label htmlFor="email">Email</label>
           </VTextField>
 
           <VTextFieldMessage>
             <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <textarea name="message" placeholder="Digite sua mensagem..." required />
-            <label>Mensagem</label>
+            <textarea id="message" name="message" placeholder="Digite sua mensagem..." required autoComplete="off" />
+            <label htmlFor="message">Mensagem</label>
           </VTextFieldMessage>
 
           <ButtonSecondary type="submit" width="100%" height={`${themeConstants.sizes["8xl"]}rem`}>
