@@ -4,10 +4,10 @@ import styled from "styled-components"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
+import { Settings } from "../../components/settings/Settings"
 import { MenuNav } from "../../components/menuNav/MenuNav"
 import { theme, themeConstants } from "../../theme"
 import { PageHeader } from "./PageHeader"
-import { Settings } from "../../components/settings/Settings"
 
 interface IPageLayoutProps extends IPageContentProps {
   children: React.ReactNode

@@ -79,7 +79,7 @@ export const PaginaInicial = () => {
               <Icon name="github" fill={theme.bg.primary} size={40} />
             </Button>
             <Button height={4.125} width={4.125} onClick={toggleModal}>
-              <Icon name="discord" fill={theme.bg.primary} size={40} />
+              <Icon name="discord" fill={theme.bg.primary} size={50} className="iconDiscord"/>
             </Button>
           </Container>
         </Container>

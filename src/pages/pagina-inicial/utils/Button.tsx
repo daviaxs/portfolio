@@ -13,9 +13,6 @@ interface IButtonProps extends React.LinkHTMLAttributes<HTMLLinkElement> {
 }
 
 const ButtonStyle = styled.a<IButtonProps>`
-  /* border: none;
-  background-color: transparent;
-  outline: none; */
   cursor: pointer;
   opacity: 70%;
 
@@ -40,6 +37,10 @@ const ButtonStyle = styled.a<IButtonProps>`
 
   &:active {
     transform: scale(0.95);
+  }
+
+  .iconDiscord {
+    margin-left: 0.04rem;
   }
 `
 export const Button: React.FC<IButtonProps> = ({ height, width, href, onClick, children }) => {

@@ -26,7 +26,7 @@ const SettingsStyle = styled.div<ISettingsStyleProps>`
   align-items: center;
 
   background: ${theme.bg.secondary};
-  box-shadow: 9px 11px 0px #0a0d22;
+  box-shadow: 0px 0px 108px rgba(0, 0, 0, 0.5), 9px 11px 0px #0a0d22;
   border-radius: 1.125rem;
 
   padding: 0.625rem;
