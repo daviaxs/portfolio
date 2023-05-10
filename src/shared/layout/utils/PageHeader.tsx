@@ -2,19 +2,19 @@ import { useContext } from "react"
 import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
+import { useSettingsContext } from "../../contexts/SettingsContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
 import { IconButton } from "../../components/icon/IconButton"
 import { theme, themeConstants } from "../../theme"
 import { Icon } from "../../components/icon/Icon"
 import { TTitleSecondary } from "../../fonts"
-import { useSettingsContext } from "../../contexts/SettingsContext"
 
 interface IPageHeaderProps {
   label: string
 }
 
-const PageHeaderStyle = styled.header`
+const PageHeaderStyle = styled.header<{ displaySettings: "flex" | "none" }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +36,8 @@ const PageHeaderStyle = styled.header`
     position: fixed;
     right: 0;
     margin-right: ${themeConstants.sizes.xl}rem;
+
+    display: ${(props) => props.displaySettings};
   }
 `
 
@@ -46,7 +48,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
   const { expanded } = useSidebarContext()
 
   return (
-    <PageHeaderStyle>
+    <PageHeaderStyle displaySettings={expandedMenu ? "none" : "flex"}>
       <TTitleSecondary fontSize={1} txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
         {label}
       </TTitleSecondary>
