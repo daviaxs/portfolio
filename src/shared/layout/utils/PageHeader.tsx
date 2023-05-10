@@ -8,6 +8,7 @@ import { IconButton } from "../../components/icon/IconButton"
 import { theme, themeConstants } from "../../theme"
 import { Icon } from "../../components/icon/Icon"
 import { TTitleSecondary } from "../../fonts"
+import { useSettingsContext } from "../../contexts/SettingsContext"
 
 interface IPageHeaderProps {
   label: string
@@ -30,11 +31,18 @@ const PageHeaderStyle = styled.header`
     left: 0;
     margin-left: ${themeConstants.sizes.xl}rem;
   }
+
+  .iconSettings {
+    position: fixed;
+    right: 0;
+    margin-right: ${themeConstants.sizes.xl}rem;
+  }
 `
 
 export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
   const { expandedMenu, toggleMenuNav } = useMenuNavContext()
+  const { openSettings, handleOpenSettings } = useSettingsContext()
   const { expanded } = useSidebarContext()
 
   return (
@@ -44,6 +52,9 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
       </TTitleSecondary>
       <IconButton display={windowWidth <= 600 ? "flex" : "none"} className="iconMenu" height={2.6} width={2.6} onClick={toggleMenuNav}>
         <Icon name={expandedMenu ? "arrowBack" : "options"} size={20} fill={theme.text.quaternary} />
+      </IconButton>
+      <IconButton className="iconSettings" height={2.6} width={2.6} onClick={handleOpenSettings}>
+        <Icon name={openSettings ? "xClose" : "settings"} size={25} fill={theme.text.quaternary} />
       </IconButton>
     </PageHeaderStyle>
   )

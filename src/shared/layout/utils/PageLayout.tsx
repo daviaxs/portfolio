@@ -7,6 +7,7 @@ import { useSidebarContext } from "../../contexts/SidebarContext"
 import { MenuNav } from "../../components/menuNav/MenuNav"
 import { theme, themeConstants } from "../../theme"
 import { PageHeader } from "./PageHeader"
+import { Settings } from "../../components/settings/Settings"
 
 interface IPageLayoutProps extends IPageContentProps {
   children: React.ReactNode
@@ -54,6 +55,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ flexDir, paddingInline,
 
   return (
     <PageLayoutStyle>
+      <Settings />
       <PageHeader label={selectedOption?.label || ""} />
       <MenuNav display={expandedMenu && windowWidth <= 600 ? "flex" : "none"} />
       <PageContentStyle flexDir={flexDir} paddingInline={paddingInline} paddingTop={paddingTop} paddingBottom={paddingBottom}>

@@ -16,8 +16,9 @@ interface ISettingsStyleProps {
 const SettingsStyle = styled.div<ISettingsStyleProps>`
   position: fixed;
   right: 0;
+  z-index: 999;
 
-  margin-top: 1rem;
+  margin-top: 5rem;
   margin-right: ${(props) => props.marginRight}rem;
 
   display: flex;
