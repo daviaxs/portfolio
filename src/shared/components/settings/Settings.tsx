@@ -83,7 +83,7 @@ const SettingsStyle = styled.div<ISettingsStyleProps>`
 `
 
 export const Settings = () => {
-  const settingsRef = useRef(null)
+  const settingsRef = useRef<HTMLDivElement>(null)
   const { width: windowWidth } = useContext(WindowDimensionsContext)
   const { options: settings, openSettings, handleOpenSettings } = useSettingsContext()
 
@@ -91,7 +91,7 @@ export const Settings = () => {
 
   useEffect(() => {
     const handleClickOutsideSettings = (event: MouseEvent) => {
-      const target = event.target as EventTarget | null
+      const target = event.target as HTMLElement | null
 
       if (settingsRef.current && target && !settingsRef.current.contains(target)) {
         handleOpenSettings()
