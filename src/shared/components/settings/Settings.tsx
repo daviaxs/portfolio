@@ -91,8 +91,9 @@ export const Settings = () => {
 
   useEffect(() => {
     const handleClickOutsideSettings = (event: MouseEvent) => {
+      const target = event.target as EventTarget | null
 
-      if (settingsRef.current) {
+      if (settingsRef.current && target && !settingsRef.current.contains(target)) {
         handleOpenSettings()
       }
     }
