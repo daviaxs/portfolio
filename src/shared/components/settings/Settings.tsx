@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
@@ -83,10 +83,32 @@ const SettingsStyle = styled.div<ISettingsStyleProps>`
 `
 
 export const Settings = () => {
+  const settingsRef = useRef(null)
   const { width: windowWidth } = useContext(WindowDimensionsContext)
-  const { options: settings, openSettings } = useSettingsContext()
+  const { options: settings, openSettings, handleOpenSettings } = useSettingsContext()
 
   const [shouldRender, setShouldRender] = useState(openSettings)
+
+  useEffect(() => {
+    const handleClickOutsideSettings = (event: MouseEvent) => {
+
+      if (settingsRef.current) {
+        handleOpenSettings()
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutsideSettings)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideSettings)
+    }
+  }, [handleOpenSettings])
+
+  useEffect(() => {
+    if (openSettings) {
+      setShouldRender(true)
+    }
+  }, [openSettings])
 
   useEffect(() => {
     if (openSettings) {
@@ -110,6 +132,7 @@ export const Settings = () => {
       className={openSettings ? "openSettings" : "closeSettings"}
       marginRight={windowWidth <= 450 ? 1 : 3}
       width={windowWidth <= 450 ? "90%" : "18.75rem"}
+      ref={settingsRef}
     >
       <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
         <TTitleSecondary fontSize={1.25}>Configurações</TTitleSecondary>
