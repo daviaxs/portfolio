@@ -62,6 +62,10 @@ export const languageTexts = {
         text1: "Se você tem um projeto interessante em mente ou precisa de ajuda em um projeto já existente, entre em contato comigo agora mesmo!",
         text2: "Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.",
         inputs: {
+          validation: {
+            alert: "Preencha este campo.",
+            emailAlert: "Digite um email válido"
+          },
           name: {
             label: "Nome",
             placeholder: "Digite seu nome",
@@ -142,6 +146,10 @@ export const languageTexts = {
         text1: "If you have an interesting project in mind or need assistance with an existing project, please contact me right away!",
         text2: "I'm looking forward to working with you and helping you achieve success in your projects.",
         inputs: {
+          validation: {
+            alert: "Fill in this field.",
+            emailAlert: "Enter a valid email."
+          },
           name: {
             label: "Name",
             placeholder: "Enter your name",

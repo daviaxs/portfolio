@@ -3,12 +3,12 @@ import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
 import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
-import { useLanguageContext } from "../../shared/contexts/LanguageContext"
 import { languageTexts } from "../../shared/language"
 
 interface IVTextFieldProps {
@@ -215,6 +215,14 @@ export const Contato = () => {
               }
               required
               autoComplete="off"
+              onInvalid={(e) =>
+                (e.target as HTMLInputElement).setCustomValidity(
+                  currentLanguage
+                    ? languageTexts["pt-br"].contactPage.texts.inputs.validation.alert
+                    : languageTexts["en"].contactPage.texts.inputs.validation.alert
+                )
+              }
+              onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
             />
             <label htmlFor="name">
               {currentLanguage ? languageTexts["pt-br"].contactPage.texts.inputs.name.label : languageTexts["en"].contactPage.texts.inputs.name.label}
@@ -234,6 +242,23 @@ export const Contato = () => {
               }
               required
               autoComplete="off"
+              onInvalid={(e) => {
+                let target = e.target as HTMLInputElement
+                if (target.validity.typeMismatch) {
+                  target.setCustomValidity(
+                    currentLanguage
+                      ? languageTexts["pt-br"].contactPage.texts.inputs.validation.emailAlert
+                      : languageTexts["en"].contactPage.texts.inputs.validation.emailAlert
+                  )
+                } else {
+                  target.setCustomValidity(
+                    currentLanguage
+                      ? languageTexts["pt-br"].contactPage.texts.inputs.validation.alert
+                      : languageTexts["en"].contactPage.texts.inputs.validation.alert
+                  )
+                }
+              }}
+              onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
             />
             <label htmlFor="email">
               {currentLanguage
@@ -254,6 +279,14 @@ export const Contato = () => {
               }
               required
               autoComplete="off"
+              onInvalid={(e) =>
+                (e.target as HTMLInputElement).setCustomValidity(
+                  currentLanguage
+                    ? languageTexts["pt-br"].contactPage.texts.inputs.validation.alert
+                    : languageTexts["en"].contactPage.texts.inputs.validation.alert
+                )
+              }
+              onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
             />
             <label htmlFor="message">
               {currentLanguage
