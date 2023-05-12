@@ -8,6 +8,8 @@ import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
+import { languageTexts } from "../../shared/language"
 
 interface IVTextFieldProps {
   height: number
@@ -183,16 +185,17 @@ const VTextFieldMessage = styled.div`
 
 export const Contato = () => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <LayoutBaseDePagina flexDir="row" paddingInline={windowWidth <= 912 ? themeConstants.sizes["5xl"] : 11} paddingTop={themeConstants.sizes["5xl"]}>
       <Container display="flex" flexDir="column" align="center" height="100%" width="100%">
         <Container display="flex" flexDir="column" align="center" height="" width="100%" gap={0.625}>
           <THeadingLinearPrimary fontSize={windowWidth <= 600 ? 2 : 2.5} textAlign="center">
-            Formulário de contato
+            {currentLanguage ? languageTexts["pt-br"].contactPage.texts.heading : languageTexts["en"].contactPage.texts.heading}
           </THeadingLinearPrimary>
           <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary}>
-            Se você tem um projeto interessante em mente ou precisa de ajuda em um projeto já existente, entre em contato comigo agora mesmo!
+            {currentLanguage ? languageTexts["pt-br"].contactPage.texts.text1 : languageTexts["en"].contactPage.texts.text1}
           </TTextPrimary>
         </Container>
 
@@ -200,29 +203,71 @@ export const Contato = () => {
           <input type="hidden" name="_next" value="http://localhost:5173/formulario-enviado" />
 
           <VTextField height={3.75}>
-            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input id="name" type="text" name="name" placeholder="Digite seu nome" required autoComplete="off" />
-            <label htmlFor="name">Nome</label>
+            <Icon name="person02" size={22} fill={theme.buttons.bg_default_secondary} />
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder={
+                currentLanguage
+                  ? languageTexts["pt-br"].contactPage.texts.inputs.name.placeholder
+                  : languageTexts["en"].contactPage.texts.inputs.name.placeholder
+              }
+              required
+              autoComplete="off"
+            />
+            <label htmlFor="name">
+              {currentLanguage ? languageTexts["pt-br"].contactPage.texts.inputs.name.label : languageTexts["en"].contactPage.texts.inputs.name.label}
+            </label>
           </VTextField>
 
           <VTextField height={3.75}>
-            <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <input id="email" type="email" name="email" placeholder="Digite seu email" required autoComplete="off" />
-            <label htmlFor="email">Email</label>
+            <Icon name="email" size={22} fill={theme.buttons.bg_default_secondary} />
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder={
+                currentLanguage
+                  ? languageTexts["pt-br"].contactPage.texts.inputs.email.placeholder
+                  : languageTexts["en"].contactPage.texts.inputs.email.placeholder
+              }
+              required
+              autoComplete="off"
+            />
+            <label htmlFor="email">
+              {currentLanguage
+                ? languageTexts["pt-br"].contactPage.texts.inputs.email.label
+                : languageTexts["en"].contactPage.texts.inputs.email.label}
+            </label>
           </VTextField>
 
           <VTextFieldMessage>
-            <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} style={{ display: "none" }} />
-            <textarea id="message" name="message" placeholder="Digite sua mensagem..." required autoComplete="off" />
-            <label htmlFor="message">Mensagem</label>
+            <Icon name="message" size={22} fill={theme.buttons.bg_default_secondary} />
+            <textarea
+              id="message"
+              name="message"
+              placeholder={
+                currentLanguage
+                  ? languageTexts["pt-br"].contactPage.texts.inputs.message.placeholder
+                  : languageTexts["en"].contactPage.texts.inputs.message.placeholder
+              }
+              required
+              autoComplete="off"
+            />
+            <label htmlFor="message">
+              {currentLanguage
+                ? languageTexts["pt-br"].contactPage.texts.inputs.message.label
+                : languageTexts["en"].contactPage.texts.inputs.message.label}
+            </label>
           </VTextFieldMessage>
 
           <ButtonSecondary type="submit" width="100%" height={`${themeConstants.sizes["8xl"]}rem`}>
-            Enviar
+            {currentLanguage ? languageTexts["pt-br"].contactPage.texts.submit : languageTexts["en"].contactPage.texts.submit}
           </ButtonSecondary>
 
           <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} textAlign="center" txtColor={theme.buttons.bg_default_secondary} className="title">
-            Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.
+            {currentLanguage ? languageTexts["pt-br"].contactPage.texts.text2 : languageTexts["en"].contactPage.texts.text2}
           </TTextPrimary>
         </FormContainer>
       </Container>

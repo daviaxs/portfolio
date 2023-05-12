@@ -54,6 +54,29 @@ export const languageTexts = {
         title: "Bem-vindo à minha seção de Projetos!",
         text: "Aqui você encontrará uma seleção de trabalhos que desenvolvi durante minha jornada como programador, com informações sobre as tecnologias e muito mais!"
       }
+    },
+    contactPage: {
+      label: "Contato",
+      texts: {
+        heading: "Formulário de contato",
+        text1: "Se você tem um projeto interessante em mente ou precisa de ajuda em um projeto já existente, entre em contato comigo agora mesmo!",
+        text2: "Estou ansioso para trabalhar com você e ajudá-lo a alcançar o sucesso em seus projetos.",
+        inputs: {
+          name: {
+            label: "Nome",
+            placeholder: "Digite seu nome",
+          },
+          email: {
+            label: "Email",
+            placeholder: "Digite seu email"
+          },
+          message: {
+            label: "Mensagem",
+            placeholder: "Digite sua mensagem..."
+          }
+        },
+        submit: "Enviar"
+      }
     }
   },
   "en": {
@@ -110,6 +133,29 @@ export const languageTexts = {
       texts: {
         title: "Welcome to my Projects section!",
         text: "Here you will find a selection of projects that I have developed during my journey as a programmer, with information about the technologies and much more!"
+      }
+    },
+    contactPage: {
+      label: "Contact",
+      texts: {
+        heading: "Contact Form",
+        text1: "If you have an interesting project in mind or need assistance with an existing project, please contact me right away!",
+        text2: "I'm looking forward to working with you and helping you achieve success in your projects.",
+        inputs: {
+          name: {
+            label: "Name",
+            placeholder: "Enter your name",
+          },
+          email: {
+            label: "Email",
+            placeholder: "Enter your email"
+          },
+          message: {
+            label: "Message",
+            placeholder: "Enter your message..."
+          }
+        },
+        submit: "Submit"
       }
     }
   }

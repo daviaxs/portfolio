@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
 import { PaginaInicial, Sobre, Projetos, Contato, FormEnviado } from "../pages"
-import { useSidebarContext } from "../shared/contexts/SidebarContext"
 import { useSettingsContext } from "../shared/contexts/SettingsContext"
 import { useLanguageContext } from "../shared/contexts/LanguageContext"
+import { useSidebarContext } from "../shared/contexts/SidebarContext"
 import { languageTexts } from "../shared/language"
 
 export const AppRoutes = () => {
@@ -30,7 +30,7 @@ export const AppRoutes = () => {
         to: "/projetos",
       },
       {
-        label: "Contato",
+        label: currentLanguage ? languageTexts["pt-br"].contactPage.label : languageTexts["en"].contactPage.label,
         icon: "chat",
         to: "/contato",
       },
