@@ -16,7 +16,7 @@ export const languageTexts = {
       }
     },
     aboutPage: {
-      label: "About",
+      label: "Sobre",
       texts: {
         title: "Sobre mim",
         textAbout: {
@@ -32,6 +32,19 @@ export const languageTexts = {
           part10: "e confira alguns dos meus projetos. E se precisar de ajuda para criar algo inovador e desafiador, entre em",
           part11: "contato",
           part12: "comigo agora mesmo!"
+        },
+        skills: {
+          title: "Minhas habilidades",
+          texts: {
+            js: "JavaScript é uma linguagem dinâmica e versátil, permitindo a criação de interações ricas e complexas nas páginas web, utilizada principalmente no desenvolvimento de aplicações web front-end e back-end.",
+            reactJs: "ReactJS é uma biblioteca JavaScript que permite criar interfaces de usuário (UI) por meio de componentes reutilizáveis. Ele é projetado para criar aplicações web escaláveis, eficientes e fáceis de manter.",
+            ts: "TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem estática ao JavaScript. Ele é projetado para ajudar a escrever código mais seguro, escalável e fácil de manter em aplicações web e outras plataformas que usam JavaScript.",
+            css: "CSS é uma linguagem de estilo utilizada para estilizar elementos HTML e torná-los mais atraentes visualmente. É amplamente utilizado para criar layouts e estilos para sites e aplicativos web.",
+            styledComponents: "Styled Components é uma biblioteca para React que permite escrever estilos de forma mais legível e fácil de manter, usando JavaScript e CSS-in-JS.",
+            mui: "Material UI é uma biblioteca de componentes React que fornece uma ampla gama de componentes pré-construídos, prontos para uso, para criar interfaces de usuário modernas e atraentes.",
+            figma: "Figma é uma ferramenta de design de interface de usuário baseada em navegador, que permite criar, colaborar e compartilhar designs de maneira eficiente e escalável.",
+            git: "Git é um sistema de controle de versão distribuído que permite rastrear mudanças no código-fonte de um projeto de software. Ele facilita o trabalho colaborativo em equipe, permitindo que os membros compartilhem e combinem suas alterações com segurança."
+          }
         }
       }
     }
@@ -57,19 +70,32 @@ export const languageTexts = {
       texts: {
         title: "About Me",
         textAbout: {
-        part1: "Hello, welcome to my digital world! My name is",
-        part2: "Davi",
-        part3: "and I have a passion for creating amazing experiences for people through programming. I'm a",
-        part4: "17 years",
-        part5: "currently a front-end developer. I always strive for excellence in everything I do.",
-        part6: "I am driven by challenges, and that's what motivates me to always reach the next level in my applications. Perfecting every detail, creating intuitive and dynamic interfaces, and providing a unique user experience are some of my goals.",
-        part7: "I'm always seeking new knowledge and technologies that can enhance my skills and bring even more quality to my applications. I constantly keep myself updated on market trends and stay one step ahead.",
-        part8: "Browse through my",
-        part9: "portfolio",
-        part10: "and check out some of my projects. And if you need help creating something innovative and challenging,",
-        part11: "contact",
-        part12: "me right away!"
-       }
+          part1: "Hello, welcome to my digital world! My name is",
+          part2: "Davi",
+          part3: "and I have a passion for creating amazing experiences for people through programming. I'm a",
+          part4: "17 years",
+          part5: "currently a front-end developer. I always strive for excellence in everything I do.",
+          part6: "I am driven by challenges, and that's what motivates me to always reach the next level in my applications. Perfecting every detail, creating intuitive and dynamic interfaces, and providing a unique user experience are some of my goals.",
+          part7: "I'm always seeking new knowledge and technologies that can enhance my skills and bring even more quality to my applications. I constantly keep myself updated on market trends and stay one step ahead.",
+          part8: "Browse through my",
+          part9: "portfolio",
+          part10: "and check out some of my projects. And if you need help creating something innovative and challenging,",
+          part11: "contact",
+          part12: "me right away!"
+        },
+        skills: {
+          title: "My skills",
+          texts: {
+            js: "avaScript is a dynamic and versatile language, allowing the creation of rich and complex interactions on web pages. It is primarily used in front-end and back-end web development.",
+            reactJs: "ReactJS is a JavaScript library that allows you to create user interfaces (UI) through reusable components. It is designed to build scalable, efficient, and easy-to-maintain web applications.",
+            ts: "TypeScript is a programming language based on JavaScript that adds static typing features to JavaScript. It is designed to help write safer, more scalable, and easier-to-maintain code in web applications and other platforms that use JavaScript.",
+            css: "CSS is a styling language used to style HTML elements and make them visually appealing. It is widely used to create layouts and styles for websites and web applications.",
+            styledComponents: "Styled Components is a library for React that allows you to write styles in a more readable and maintainable way using JavaScript and CSS-in-JS.",
+            mui: "Material UI is a React component library that provides a wide range of pre-built, ready-to-use components for creating modern and visually appealing user interfaces.",
+            figma: "Figma is a browser-based user interface design tool that allows you to efficiently and scalably create, collaborate, and share designs.",
+            git: "Git is a distributed version control system that allows you to track changes in the source code of a software project. It facilitates collaborative teamwork by enabling team members to safely share and merge their changes."
+          }
+        }
       }
     }
   }

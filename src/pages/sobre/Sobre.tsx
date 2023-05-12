@@ -43,7 +43,7 @@ export const Sobre = () => {
     <LayoutBaseDePagina flexDir="column" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
       <CardProfile
         flexDir={windowWidth <= 350 ? "column" : "row"}
-        label="Sobre mim"
+        label={currentLanguage ? languageTexts["pt-br"].aboutPage.texts.title : languageTexts["en"].aboutPage.texts.title}
         width={windowWidth <= 600 ? "100%" : "25rem"}
         fontSize={windowWidth <= 380 ? 2 : 2.5}
         lineWidth={windowWidth <= 380 ? 5 : 7}
@@ -91,62 +91,95 @@ export const Sobre = () => {
         marginBottom={themeConstants.sizes["8xl"]}
       >
         <Rectangles>
-          <Rectangle height={1.625} width={2.25} style={{ right: `${windowWidth <= 400 ? "6.5rem" : "7.7rem"}`, top: "-0.3rem" }} />
-          <Rectangle height={1.625} width={2.25} style={{ left: `${windowWidth <= 400 ? "6.5rem" : "7.7rem"}`, top: "0.6rem" }} />
+          <Rectangle
+            height={1.625}
+            width={2.25}
+            style={{
+              right: `${currentLanguage ? (windowWidth <= 400 ? "6.5rem" : "7.7rem") : windowWidth <= 400 ? "2.5rem" : "3rem"}`,
+              top: "-0.3rem",
+            }}
+          />
+          <Rectangle
+            height={1.625}
+            width={2.25}
+            style={{
+              left: `${currentLanguage ? (windowWidth <= 400 ? "6.5rem" : "7.7rem") : windowWidth <= 400 ? "2.5rem" : "3rem"}`,
+              top: "0.6rem",
+            }}
+          />
         </Rectangles>
         <Container display="flex" flexDir="column" align="center" height="" width="100%" zIndex={2} gap={themeConstants.sizes["4xl"]}>
           <TTitleSecondary whiteSpace="nowrap" fontSize={windowWidth <= 400 ? 1.8 : 2}>
-            Minhas habilidades
+            {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.title : languageTexts["en"].aboutPage.texts.skills.title}
           </TTitleSecondary>
           <CardTechContainer flexDir={windowWidth <= 600 ? "row" : "column"} height="">
             <CardTech
               img="javaScript"
               label="JavaScript"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="JavaScript é uma linguagem dinâmica e versátil, permitindo a criação de interações ricas e complexas nas páginas web, utilizada principalmente no desenvolvimento de aplicações web front-end e back-end."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.js : languageTexts["en"].aboutPage.texts.skills.texts.js
+              }
             />
             <CardTech
               img="react"
               label="ReactJS"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="ReactJS é uma biblioteca JavaScript que permite criar interfaces de usuário (UI) por meio de componentes reutilizáveis. Ele é projetado para criar aplicações web escaláveis, eficientes e fáceis de manter."
+              description={
+                currentLanguage
+                  ? languageTexts["pt-br"].aboutPage.texts.skills.texts.reactJs
+                  : languageTexts["en"].aboutPage.texts.skills.texts.reactJs
+              }
             />
             <CardTech
               img="typeScript"
               label="TypeScript"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem
-              estática ao JavaScript. Ele é projetado para ajudar a escrever código mais seguro, escalável e fácil de manter em aplicações web e outras plataformas que usam JavaScript."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.ts : languageTexts["en"].aboutPage.texts.skills.texts.ts
+              }
             />
             <CardTech
               img="css"
               label="CSS"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="CSS é uma linguagem de estilo utilizada para estilizar elementos HTML e torná-los mais atraentes visualmente. É amplamente utilizado para criar layouts e estilos para sites e aplicativos web."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.css : languageTexts["en"].aboutPage.texts.skills.texts.css
+              }
             />
             <CardTech
               img="styledComponents"
               label="Styled components"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="Styled Components é uma biblioteca para React que permite escrever estilos de forma mais legível e fácil de manter, usando JavaScript e CSS-in-JS."
+              description={
+                currentLanguage
+                  ? languageTexts["pt-br"].aboutPage.texts.skills.texts.styledComponents
+                  : languageTexts["en"].aboutPage.texts.skills.texts.styledComponents
+              }
             />
             <CardTech
               img="mui"
               label="Material UI"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="Material UI é uma biblioteca de componentes React que fornece uma ampla gama de componentes pré-construídos, prontos para uso, para criar interfaces de usuário modernas e atraentes."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.mui : languageTexts["en"].aboutPage.texts.skills.texts.mui
+              }
             />
             <CardTech
               img="figma"
               label="Figma"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="Figma é uma ferramenta de design de interface de usuário baseada em navegador, que permite criar, colaborar e compartilhar designs de maneira eficiente e escalável."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.figma : languageTexts["en"].aboutPage.texts.skills.texts.figma
+              }
             />
             <CardTech
               img="git"
               label="Git"
               labelWidth={windowWidth <= 600 ? 15 : 18}
-              description="Git é um sistema de controle de versão distribuído que permite rastrear mudanças no código-fonte de um projeto de software. Ele facilita o trabalho colaborativo em equipe, permitindo que os membros compartilhem e combinem suas alterações com segurança."
+              description={
+                currentLanguage ? languageTexts["pt-br"].aboutPage.texts.skills.texts.git : languageTexts["en"].aboutPage.texts.skills.texts.git
+              }
             />
           </CardTechContainer>
         </Container>

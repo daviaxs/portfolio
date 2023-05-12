@@ -20,7 +20,7 @@ export const AppRoutes = () => {
         to: "/pagina-inicial",
       },
       {
-        label: "Sobre",
+        label: currentLanguage ? languageTexts["pt-br"].aboutPage.label : languageTexts["en"].aboutPage.label,
         icon: "person",
         to: "/sobre",
       },
