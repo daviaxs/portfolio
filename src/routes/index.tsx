@@ -4,32 +4,34 @@ import { Routes, Route, Navigate } from "react-router-dom"
 import { PaginaInicial, Sobre, Projetos, Contato, FormEnviado } from "../pages"
 import { useSidebarContext } from "../shared/contexts/SidebarContext"
 import { useSettingsContext } from "../shared/contexts/SettingsContext"
+import { useLanguageContext } from "../shared/contexts/LanguageContext"
 
 export const AppRoutes = () => {
   const { setSidebarOptions: setDrawerOptions } = useSidebarContext()
   const { setOptions } = useSettingsContext()
+  const { toggleCurrentLanguage } = useLanguageContext()
 
   useEffect(() => {
     setDrawerOptions([
       {
         label: "Página inicial",
         icon: "home",
-        to: "/pagina-inicial"
+        to: "/pagina-inicial",
       },
       {
         label: "Sobre",
         icon: "person",
-        to: "/sobre"
+        to: "/sobre",
       },
       {
         label: "Projetos",
         icon: "paint",
-        to: "/projetos"
+        to: "/projetos",
       },
       {
         label: "Contato",
         icon: "chat",
-        to: "/contato"
+        to: "/contato",
       },
     ])
   }, [])
@@ -40,8 +42,8 @@ export const AppRoutes = () => {
         icon: "world",
         label: "Idioma",
         description: "PT-BR",
-        onClick: () => alert("hello world")
-      }
+        onClick: toggleCurrentLanguage,
+      },
     ])
   }, [])
 

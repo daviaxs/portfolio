@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useState } from "react"
 
 interface ILanguageContextData {
-  language: boolean
-  toggleLanguage: () => void
+  currentLanguage: boolean
+  toggleCurrentLanguage: () => void
 }
 
 interface ILanguageProviderProps {
@@ -16,14 +16,16 @@ export const useLanguageContext = () => {
 }
 
 export const LanguageProvider: React.FC<ILanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState(false)
 
   const toggleLanguage = useCallback(() => {
-    const newLanguage = !language
-    setLanguage(newLanguage)
-  }, [language])
+    const newLanguage = !currentLanguage
+    setCurrentLanguage(newLanguage)
+  }, [currentLanguage])
 
   return (
-    <LanguageContext.Provider value={{ toggleLanguage: toggleLanguage, language: language }}>{children}</LanguageContext.Provider>
+    <LanguageContext.Provider value={{ toggleCurrentLanguage: toggleLanguage, currentLanguage: currentLanguage }}>
+      {children}
+    </LanguageContext.Provider>
   )
 }

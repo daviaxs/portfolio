@@ -2,6 +2,7 @@ import { useContext } from "react"
 
 import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
 import { useSidebarContext } from "../../shared/contexts/SidebarContext"
 import { Container } from "../../shared/components/container/Container"
 import { useModalContext } from "../../shared/contexts/ModalContext"
@@ -9,12 +10,13 @@ import { THeadingPrimary, TTitlePrimary } from "../../shared/fonts"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
+import { languageTexts } from "../../shared/language"
 import Imgs from "../../shared/assets/index"
 import { Button } from "./utils/Button"
-import { language } from "../../shared/language"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
+  const { currentLanguage } = useLanguageContext()
   const { toggleModal } = useModalContext()
   const { expanded } = useSidebarContext()
 
@@ -80,7 +82,7 @@ export const PaginaInicial = () => {
               <Icon name="github" fill={theme.bg.primary} size={40} />
             </Button>
             <Button height={4.125} width={4.125} onClick={toggleModal}>
-              <Icon name="discord" fill={theme.bg.primary} size={50} className="iconDiscord"/>
+              <Icon name="discord" fill={theme.bg.primary} size={50} className="iconDiscord" />
             </Button>
           </Container>
         </Container>

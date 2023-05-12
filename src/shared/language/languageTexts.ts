@@ -1,4 +1,4 @@
-export const language = {
+export const languageTexts = {
   "pt-br": {
     homePage: {
       label: "Página inicial",
