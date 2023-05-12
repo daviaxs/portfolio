@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react"
 import styled from "styled-components"
 
 import { useSidebarTemporaryContext } from "../../../contexts/SidebarTemporaryContext"
+import { useLanguageContext } from "../../../contexts/LanguageContext"
 import { useSidebarContext } from "../../../contexts/SidebarContext"
 import { theme, themeConstants } from "../../../theme"
 import { Container } from "../../container/Container"
@@ -38,9 +39,11 @@ const SidebarTemporaryContainer = styled.div`
   @keyframes bgIn {
     0% {
       left: -16rem;
+      background-color: rgba(0, 0, 0, 0);
     }
     100% {
       left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -97,6 +100,7 @@ const SidebarTemporaryContent = styled.div`
 
 export const SidebarTemporary = () => {
   const { sidebarOptions } = useSidebarContext()
+  const { currentLanguage } = useLanguageContext()
   const { toggleSidebarTemporary, expandedSidebarTemporary } = useSidebarTemporaryContext()
   const [shouldRenderSidebar, setShouldRenderSidebar] = useState(expandedSidebarTemporary)
 
@@ -122,7 +126,7 @@ export const SidebarTemporary = () => {
         <Container width="" height="100%" flexDir="column" display="flex">
           <HeaderSidebar justifyContent="space-between">
             <TTitleSecondary fontSize={1} display="flex">
-              Explorar
+              {currentLanguage ? "Explorar" : "To explore"}
             </TTitleSecondary>
             <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
               <Icon name="arrowClose" size={18} />

@@ -2,6 +2,7 @@ import { useCallback, useContext, useEffect, useState } from "react"
 
 import { useSidebarTemporaryContext } from "../../contexts/SidebarTemporaryContext"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
+import { useLanguageContext } from "../../contexts/LanguageContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
 import { SidebarTemporary } from "./utils/SidebarTemporary"
 import { HeaderSidebar } from "./utils/SidebarHeader"
@@ -17,6 +18,7 @@ export const Sidebar = () => {
   const { sidebarOptions, expanded, toggleExpanded } = useSidebarContext()
   const { width: windowWidth } = useContext(WindowDimensionsContext)
   const { toggleSidebarTemporary } = useSidebarTemporaryContext()
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <Container width="" height="100%" display={windowWidth <= 600 ? "none" : "flex"} bg={theme.bg.bg_sidebar}>
@@ -30,8 +32,8 @@ export const Sidebar = () => {
         transitionTime={0.2}
       >
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
-          <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"}>
-            Explorar
+          <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
+            {currentLanguage ? "Explorar" : "To explore"}
           </TTitleSecondary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
             <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18} />
