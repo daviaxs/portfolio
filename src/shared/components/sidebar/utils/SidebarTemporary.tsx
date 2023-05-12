@@ -126,7 +126,7 @@ export const SidebarTemporary = () => {
         <Container width="" height="100%" flexDir="column" display="flex">
           <HeaderSidebar justifyContent="space-between">
             <TTitleSecondary fontSize={1} display="flex">
-              {currentLanguage ? "Explorar" : "To explore"}
+              {currentLanguage ? "Explorar" : "Explore"}
             </TTitleSecondary>
             <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
               <Icon name="arrowClose" size={18} />

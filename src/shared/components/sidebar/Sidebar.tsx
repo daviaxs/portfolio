@@ -33,7 +33,7 @@ export const Sidebar = () => {
       >
         <HeaderSidebar justifyContent={expanded ? "space-between" : "center"}>
           <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
-            {currentLanguage ? "Explorar" : "To explore"}
+            {currentLanguage ? "Explorar" : "Explore"}
           </TTitleSecondary>
           <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
             <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18} />

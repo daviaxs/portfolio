@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+import { useLanguageContext } from "../../contexts/LanguageContext"
 import { useMenuNavContext } from "../../contexts/MenuNavContext"
 import { useSidebarContext } from "../../contexts/SidebarContext"
 import { PageHeader } from "../../layout/utils/PageHeader"
@@ -33,10 +34,11 @@ const MenuNavStyle = styled.div<IMenuNavProps>`
 export const MenuNav: React.FC<IMenuNavProps> = ({ display }) => {
   const { toggleMenuNav } = useMenuNavContext()
   const { sidebarOptions } = useSidebarContext()
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <MenuNavStyle display={display}>
-      <PageHeader label="Navegar" />
+      <PageHeader label={currentLanguage ? "Navegar" : "Navigate"} />
       <Nav className="navigation" paddingInline={0}>
         {sidebarOptions.map((menuOptions) => (
           <NavButton
