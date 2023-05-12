@@ -11,6 +11,7 @@ import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
 import Imgs from "../../shared/assets/index"
 import { Button } from "./utils/Button"
+import { language } from "../../shared/language"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
@@ -65,7 +66,7 @@ export const PaginaInicial = () => {
 
         <Container display="flex" flexDir="column" height="" width="" zIndex={2} align={windowWidth <= 912 ? "center" : "start"}>
           <TTitlePrimary txtColor={theme.text.secondary} fontSize={windowWidth > 912 ? 2.5 : 2}>
-            Olá, eu sou
+            {}
           </TTitlePrimary>
           <THeadingPrimary txtColor={theme.text.h1} txtShadow="2px 2px 0px #3C427B" whiteSpace="nowrap" fontSize={windowWidth > 912 ? 6.563 : 6}>
             Davi Alves

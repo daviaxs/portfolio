@@ -93,7 +93,7 @@ export const Settings = () => {
     const handleClickOutsideSettings = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null
 
-      if (settingsRef.current && target && !settingsRef.current.contains(target)) {
+      if (settingsRef.current && !settingsRef.current.contains(target)) {
         handleOpenSettings()
       }
     }
