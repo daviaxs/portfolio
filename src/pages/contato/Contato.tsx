@@ -208,6 +208,7 @@ export const Contato = () => {
               id="name"
               type="text"
               name="name"
+              title=""
               placeholder={
                 currentLanguage
                   ? languageTexts["pt-br"].contactPage.texts.inputs.name.placeholder
@@ -235,6 +236,7 @@ export const Contato = () => {
               id="email"
               type="email"
               name="email"
+              title=""
               placeholder={
                 currentLanguage
                   ? languageTexts["pt-br"].contactPage.texts.inputs.email.placeholder
@@ -272,6 +274,7 @@ export const Contato = () => {
             <textarea
               id="message"
               name="message"
+              title=""
               placeholder={
                 currentLanguage
                   ? languageTexts["pt-br"].contactPage.texts.inputs.message.placeholder
