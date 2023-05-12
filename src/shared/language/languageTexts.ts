@@ -86,7 +86,7 @@ export const languageTexts = {
         skills: {
           title: "My skills",
           texts: {
-            js: "avaScript is a dynamic and versatile language, allowing the creation of rich and complex interactions on web pages. It is primarily used in front-end and back-end web development.",
+            js: "JavaScript is a dynamic and versatile language, allowing the creation of rich and complex interactions on web pages. It is primarily used in front-end and back-end web development.",
             reactJs: "ReactJS is a JavaScript library that allows you to create user interfaces (UI) through reusable components. It is designed to build scalable, efficient, and easy-to-maintain web applications.",
             ts: "TypeScript is a programming language based on JavaScript that adds static typing features to JavaScript. It is designed to help write safer, more scalable, and easier-to-maintain code in web applications and other platforms that use JavaScript.",
             css: "CSS is a styling language used to style HTML elements and make them visually appealing. It is widely used to create layouts and styles for websites and web applications.",
