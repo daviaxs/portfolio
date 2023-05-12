@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
 import { useSettingsContext } from "../../contexts/SettingsContext"
+import { useLanguageContext } from "../../contexts/LanguageContext"
 import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
 import { Icon } from "../icon/Icon"
@@ -84,6 +85,7 @@ const SettingsStyle = styled.div<ISettingsStyleProps>`
 
 export const Settings = () => {
   const settingsRef = useRef<HTMLDivElement>(null)
+  const { currentLanguage } = useLanguageContext()
   const { width: windowWidth } = useContext(WindowDimensionsContext)
   const { options: settings, openSettings, handleOpenSettings } = useSettingsContext()
 
@@ -136,7 +138,9 @@ export const Settings = () => {
       ref={settingsRef}
     >
       <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
-        <TTitleSecondary fontSize={1.25}>Configurações</TTitleSecondary>
+        <TTitleSecondary fontSize={1.25}>
+          {currentLanguage ? "Configurações" : "Settings"}
+        </TTitleSecondary>
         <span className="line"></span>
       </Container>
       <Container display="flex" flexDir="column" height="" width="100%" gap={0.5}>
