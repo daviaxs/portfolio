@@ -4,12 +4,14 @@ import styled from "styled-components"
 
 import { Rectangle, Rectangles } from "../../shared/components/rectangle/Reactangles.style"
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
 import { Container } from "../../shared/components/container/Container"
 import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { CardTech, CardTechContainer } from "./utils/CardTech"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { CardProfile } from "./utils/CardProfile"
+import { languageTexts } from "../../shared/language"
 
 interface ItextStyleProps {
   txtColor: string
@@ -35,6 +37,7 @@ const TextLinkStyle = styled.span<ItextStyleProps>`
 
 export const Sobre = () => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <LayoutBaseDePagina flexDir="column" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
@@ -47,29 +50,34 @@ export const Sobre = () => {
       />
       <Container display="flex" width="" height="" marginTop={themeConstants.sizes["6xl"]}>
         <TTextPrimary fontSize={1.3}>
-          Olá, seja bem-vindo ao meu mundo digital! Me chamo <TextStyle txtColor={theme.text.secondary}>Davi</TextStyle>, e tenho a paixão de criar
-          experiências incríveis para as pessoas através da programação. Sou um jovem de{" "}
-          <TextStyle txtColor={theme.text.secondary}>17 anos</TextStyle>, atualmente desenvolvedor front-end. E sempre busco alcançar a excelência em
-          tudo o que faço.
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part1 : languageTexts["en"].aboutPage.texts.textAbout.part1}{" "}
+          <TextStyle txtColor={theme.text.secondary}>Davi</TextStyle>,{" "}
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part3 : languageTexts["en"].aboutPage.texts.textAbout.part3}{" "}
+          <TextStyle txtColor={theme.text.secondary}>
+            {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part4 : languageTexts["en"].aboutPage.texts.textAbout.part4}
+          </TextStyle>
+          , {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part5 : languageTexts["en"].aboutPage.texts.textAbout.part5}
           <br />
           <br />
-          Sou movido por desafios, e é isso que me motiva a buscar sempre o próximo nível em minhas aplicações. Aperfeiçoar cada detalhe, criar
-          interfaces intuitivas e dinâmicas, além de proporcionar uma experiência única ao usuário, são alguns dos meus objetivos.
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part6 : languageTexts["en"].aboutPage.texts.textAbout.part6}
           <br />
           <br />
-          Estou sempre em busca de novos conhecimentos e tecnologias, que possam aprimorar minhas habilidades e trazer ainda mais qualidade às minhas
-          aplicações. Busco constantemente me atualizar em relação às tendências do mercado e estar sempre um passo à frente.
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part7 : languageTexts["en"].aboutPage.texts.textAbout.part7}
           <br />
           <br />
-          Navegue pelo meu{" "}
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part8 : languageTexts["en"].aboutPage.texts.textAbout.part8}{" "}
           <NavLink to={"/projetos"}>
-            <TextLinkStyle txtColor={theme.text.fifth}>portfólio</TextLinkStyle>
+            <TextLinkStyle txtColor={theme.text.fifth}>
+              {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part9 : languageTexts["en"].aboutPage.texts.textAbout.part9}
+            </TextLinkStyle>
           </NavLink>{" "}
-          e confira alguns dos meus projetos. E se precisar de ajuda para criar algo inovador e desafiador, entre em{" "}
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part10 : languageTexts["en"].aboutPage.texts.textAbout.part10}{" "}
           <NavLink to={"/contato"}>
-            <TextLinkStyle txtColor={theme.text.fifth}>contato</TextLinkStyle>
+            <TextLinkStyle txtColor={theme.text.fifth}>
+              {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part11 : languageTexts["en"].aboutPage.texts.textAbout.part11}
+            </TextLinkStyle>
           </NavLink>{" "}
-          comigo agora mesmo!
+          {currentLanguage ? languageTexts["pt-br"].aboutPage.texts.textAbout.part12 : languageTexts["en"].aboutPage.texts.textAbout.part12}
         </TTextPrimary>
       </Container>
       <Container
