@@ -5,16 +5,17 @@ import { PaginaInicial, Sobre, Projetos, Contato, FormEnviado } from "../pages"
 import { useSidebarContext } from "../shared/contexts/SidebarContext"
 import { useSettingsContext } from "../shared/contexts/SettingsContext"
 import { useLanguageContext } from "../shared/contexts/LanguageContext"
+import { languageTexts } from "../shared/language"
 
 export const AppRoutes = () => {
   const { setSidebarOptions: setDrawerOptions } = useSidebarContext()
   const { setOptions } = useSettingsContext()
-  const { toggleCurrentLanguage } = useLanguageContext()
+  const { toggleCurrentLanguage, currentLanguage } = useLanguageContext()
 
   useEffect(() => {
     setDrawerOptions([
       {
-        label: "Página inicial",
+        label: currentLanguage ? languageTexts["pt-br"].homePage.label : languageTexts["en"].homePage.label,
         icon: "home",
         to: "/pagina-inicial",
       },
@@ -34,18 +35,18 @@ export const AppRoutes = () => {
         to: "/contato",
       },
     ])
-  }, [])
+  }, [toggleCurrentLanguage])
 
   useEffect(() => {
     setOptions([
       {
         icon: "world",
-        label: "Idioma",
-        description: "PT-BR",
+        label: currentLanguage ? "Idioma" : "Language",
+        description: currentLanguage ? "PT-BR" : "EN",
         onClick: toggleCurrentLanguage,
       },
     ])
-  }, [])
+  }, [toggleCurrentLanguage])
 
   return (
     <Routes>

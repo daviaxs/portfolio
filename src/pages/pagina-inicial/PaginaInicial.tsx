@@ -68,13 +68,13 @@ export const PaginaInicial = () => {
 
         <Container display="flex" flexDir="column" height="" width="" zIndex={2} align={windowWidth <= 912 ? "center" : "start"}>
           <TTitlePrimary txtColor={theme.text.secondary} fontSize={windowWidth > 912 ? 2.5 : 2}>
-            {}
+            {currentLanguage ? languageTexts["pt-br"].homePage.texts.title : languageTexts["en"].homePage.texts.title}
           </TTitlePrimary>
           <THeadingPrimary txtColor={theme.text.h1} txtShadow="2px 2px 0px #3C427B" whiteSpace="nowrap" fontSize={windowWidth > 912 ? 6.563 : 6}>
             Davi Alves
           </THeadingPrimary>
           <TTitlePrimary txtColor={theme.text.secondary} fontSize={windowWidth > 912 ? 2.5 : 2}>
-            Desenvolvedor front-end
+          {currentLanguage ? languageTexts["pt-br"].homePage.texts.title2 : languageTexts["en"].homePage.texts.title2}
           </TTitlePrimary>
 
           <Container display="flex" width="100%" height="" justifyContent="center" gap={2} marginTop={1} marginLeft={windowWidth <= 912 ? 0 : -1}>

@@ -16,7 +16,7 @@ export const useLanguageContext = () => {
 }
 
 export const LanguageProvider: React.FC<ILanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState(true)
 
   const toggleLanguage = useCallback(() => {
     const newLanguage = !currentLanguage
