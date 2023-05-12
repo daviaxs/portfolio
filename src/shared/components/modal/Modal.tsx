@@ -14,6 +14,8 @@ import { Container } from "../container/Container"
 import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
 import { Icon } from "../icon/Icon"
+import { useLanguageContext } from "../../contexts/LanguageContext"
+import { languageTexts } from "../../language"
 
 interface IModalBoxProps {
   width: string | number
@@ -147,6 +149,7 @@ export function Modal() {
 
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
   const { toggleModal, expandedModal } = useModalContext()
+  const { currentLanguage } = useLanguageContext()
 
   const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
   const [shouldRender, setShouldRender] = useState(expandedModal)
@@ -189,7 +192,7 @@ export function Modal() {
     var userTag = user.discriminator
     var avatarUrl = `https://cdn.discordapp.com/avatars/${config.id}/${user.avatar}.png`
   } else {
-    var userName = "Carregando..."
+    var userName = currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.loading : languageTexts["en"].homePage.texts.modal.loading
     var userTag = "0000"
     var avatarUrl = userErrorLoading
   }
@@ -233,7 +236,19 @@ export function Modal() {
 
       <ModalStyle
         width={windowWidth <= 600 ? "calc(100% - 2rem)" : ""}
-        iconMarginLeft={windowWidth <= 600 && windowWidth >= 360 ? 16 : windowWidth < 360 ? 11 : 18}
+        iconMarginLeft={
+          currentLanguage
+            ? windowWidth <= 600 && windowWidth >= 360
+              ? 16
+              : windowWidth < 360
+              ? 11
+              : 18
+            : windowWidth <= 600 && windowWidth >= 360
+            ? 13.5
+            : windowWidth < 360
+            ? 9
+            : 15
+        }
         iconMarginTop={windowWidth < 360 ? 1.3 : 2}
         className={expandedModal ? "openModal" : "closeModal"}
         onAnimationEnd={handleAnimationEnd}
@@ -244,7 +259,8 @@ export function Modal() {
           whiteSpace="nowrap"
           fontSize={windowWidth <= 600 && windowWidth >= 360 ? 1.8 : windowWidth < 360 ? 1.2 : 2}
         >
-          Entre em contato comigo <br /> pelo Discord
+          {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.title : languageTexts["en"].homePage.texts.modal.title} <br />{" "}
+          {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.title2 : languageTexts["en"].homePage.texts.modal.title2}
           <Icon name="happyFace" size={windowWidth <= 600 && windowWidth >= 360 ? 28 : windowWidth < 360 ? 24 : 34} />
         </TTitleSecondary>
 
@@ -270,14 +286,14 @@ export function Modal() {
 
         <ButtonPrimary className="buttonCopy" onClick={handleButtonCopy} disabled={user.username ? false : true}>
           <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
-            Copiar
+            {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.copy : languageTexts["en"].homePage.texts.modal.copy}
           </TTitleSecondary>
         </ButtonPrimary>
       </ModalStyle>
       <Stack spacing={2} sx={{ width: "100%" }} className="snackbar">
         <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handleSnackbarClose}>
           <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: "100%" }}>
-            Copiado!
+            {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.copied : languageTexts["en"].homePage.texts.modal.copied}
           </Alert>
         </Snackbar>
       </Stack>

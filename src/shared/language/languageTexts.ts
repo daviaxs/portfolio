@@ -9,7 +9,9 @@ export const languageTexts = {
         modal: {
           title: "Entre em contato comigo",
           title2: "pelo Discord",
-          copy: "Copiar"
+          copy: "Copiar",
+          copied: "Copiado!",
+          loading: "Carregando..."
         }
       }
     }
@@ -24,7 +26,9 @@ export const languageTexts = {
         modal: {
           title: "Get in touch with me",
           title2: "on Discord",
-          copy: "Copy"
+          copy: "Copy",
+          copied: "Copied!",
+          loading: "Loading..."
         }
       }
     }
