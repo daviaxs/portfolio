@@ -47,6 +47,13 @@ export const languageTexts = {
           }
         }
       }
+    },
+    projectsPage: {
+      label: "Projetos",
+      texts: {
+        title: "Bem-vindo à minha seção de Projetos!",
+        text: "Aqui você encontrará uma seleção de trabalhos que desenvolvi durante minha jornada como programador, com informações sobre as tecnologias e muito mais!"
+      }
     }
   },
   "en": {
@@ -96,6 +103,13 @@ export const languageTexts = {
             git: "Git is a distributed version control system that allows you to track changes in the source code of a software project. It facilitates collaborative teamwork by enabling team members to safely share and merge their changes."
           }
         }
+      }
+    },
+    projectsPage: {
+      label: "Projects",
+      texts: {
+        title: "Welcome to my Projects section!",
+        text: "Here you will find a selection of projects that I have developed during my journey as a programmer, with information about the technologies and much more!"
       }
     }
   }

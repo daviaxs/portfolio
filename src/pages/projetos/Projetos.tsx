@@ -2,12 +2,14 @@ import { useContext } from "react"
 import styled from "styled-components"
 
 import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
 import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
 import { Container } from "../../shared/components/container/Container"
 import { Card, CardContainerStyle, TechUsed } from "./utils/Card"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { Icon } from "../../shared/components/icon/Icon"
+import { languageTexts } from "../../shared/language"
 
 const Separator = styled.span`
   display: flex;
@@ -25,16 +27,16 @@ const Line = styled.span`
 
 export const Projetos: React.FC = () => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <LayoutBaseDePagina flexDir="column" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
       <Container display="flex" flexDir="column" width="100%" height="100%" gap={0.5}>
         <THeadingLinearPrimary fontSize={windowWidth <= 600 ? 1.5 : 2.5} textAlign={windowWidth <= 600 ? "center" : "start"}>
-          Bem-vindo à minha seção de Projetos!
+          {currentLanguage ? languageTexts["pt-br"].projectsPage.texts.title : languageTexts["en"].projectsPage.texts.title}
         </THeadingLinearPrimary>
         <TTextPrimary fontSize={windowWidth <= 600 ? 1 : 1.25} txtColor={theme.text.secondary} textAlign={windowWidth <= 600 ? "center" : "start"}>
-          Aqui você encontrará uma seleção de trabalhos que desenvolvi durante minha jornada como programador, com informações sobre as tecnologias e
-          muito mais!
+          {currentLanguage ? languageTexts["pt-br"].projectsPage.texts.text : languageTexts["en"].projectsPage.texts.text}
         </TTextPrimary>
       </Container>
 

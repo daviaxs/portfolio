@@ -10,8 +10,8 @@ import { TTextPrimary, TTitleSecondary } from "../../shared/fonts"
 import { CardTech, CardTechContainer } from "./utils/CardTech"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
-import { CardProfile } from "./utils/CardProfile"
 import { languageTexts } from "../../shared/language"
+import { CardProfile } from "./utils/CardProfile"
 
 interface ItextStyleProps {
   txtColor: string

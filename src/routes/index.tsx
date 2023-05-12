@@ -25,7 +25,7 @@ export const AppRoutes = () => {
         to: "/sobre",
       },
       {
-        label: "Projetos",
+        label: currentLanguage ? languageTexts["pt-br"].projectsPage.label : languageTexts["en"].projectsPage.label,
         icon: "paint",
         to: "/projetos",
       },
