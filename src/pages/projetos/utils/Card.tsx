@@ -8,7 +8,7 @@ import { Container } from "../../../shared/components/container/Container"
 import { TTextSecondary, TTitleSecondary } from "../../../shared/fonts"
 import projectsCovers from "../../../shared/assets/projects-covers"
 import { theme, themeConstants } from "../../../shared/theme"
-import { Icon } from "../../../shared/components/Icon/Icon"
+import { Icon } from "../../../shared/components/icon/Icon"
 
 interface ICardProps {
   img: keyof typeof projectsCovers

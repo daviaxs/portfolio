@@ -9,9 +9,9 @@ import { HeaderSidebar } from "./utils/SidebarHeader"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { NavButton } from "../navButton/NavButton"
-import { IconButton } from "../Icon/IconButton"
+import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
-import { Icon } from "../Icon/Icon"
+import { Icon } from "../icon/Icon"
 import { Nav } from "../nav/Nav"
 
 export const Sidebar = () => {
