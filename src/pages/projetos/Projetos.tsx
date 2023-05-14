@@ -31,7 +31,7 @@ export const Projetos: React.FC = () => {
 
   return (
     <LayoutBaseDePagina flexDir="column" paddingInline={themeConstants.sizes["5xl"]} paddingTop={themeConstants.sizes["5xl"]}>
-      <Container display="flex" flexDir="column" width="100%" height="100%" gap={0.5}>
+      <Container display="flex" flexDir="column" width="100%" height="" gap={0.5}>
         <THeadingLinearPrimary fontSize={windowWidth <= 600 ? 1.5 : 2.5} textAlign={windowWidth <= 600 ? "center" : "start"}>
           {currentLanguage ? languageTexts["pt-br"].projectsPage.texts.title : languageTexts["en"].projectsPage.texts.title}
         </THeadingLinearPrimary>
