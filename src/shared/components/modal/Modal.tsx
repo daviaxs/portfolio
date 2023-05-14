@@ -15,7 +15,7 @@ import { Container } from "../container/Container"
 import { IconButton } from "../icon/IconButton"
 import { languageTexts } from "../../language"
 import { TTitleSecondary } from "../../fonts"
-import { Icon } from "../icon"
+import { Icon } from "../icon/Icon"
 
 interface IModalBoxProps {
   width: string | number
