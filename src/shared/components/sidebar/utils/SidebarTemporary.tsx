@@ -7,10 +7,10 @@ import { useSidebarContext } from "../../../contexts/SidebarContext"
 import { theme, themeConstants } from "../../../theme"
 import { Container } from "../../container/Container"
 import { NavButton } from "../../navButton/NavButton"
-import { IconButton } from "../../icon/IconButton"
+import { IconButton } from "../../Icon/IconButton"
 import { TTitleSecondary } from "../../../fonts"
 import { HeaderSidebar } from "./SidebarHeader"
-import { Icon } from "../../icon/Icon"
+import { Icon } from "../../Icon/Icon"
 import { Nav } from "../../nav/Nav"
 
 const SidebarTemporaryContainer = styled.div`

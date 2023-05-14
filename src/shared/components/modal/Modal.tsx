@@ -12,10 +12,10 @@ import { useModalContext } from "../../contexts/ModalContext"
 import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
-import { IconButton } from "../icon/IconButton"
+import { IconButton } from "../Icon/IconButton"
 import { languageTexts } from "../../language"
 import { TTitleSecondary } from "../../fonts"
-import { Icon } from "../icon/Icon"
+import { Icon } from "../Icon/Icon"
 
 interface IModalBoxProps {
   width: string | number

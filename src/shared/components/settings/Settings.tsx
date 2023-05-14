@@ -7,7 +7,7 @@ import { useLanguageContext } from "../../contexts/LanguageContext"
 import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
 import { theme } from "../../theme"
-import { Icon } from "../icon/Icon"
+import { Icon } from "../Icon/Icon"
 
 interface ISettingsStyleProps {
   width: "18.75rem" | "90%"
@@ -138,9 +138,7 @@ export const Settings = () => {
       ref={settingsRef}
     >
       <Container display="flex" flexDir="column" align="center" gap={0.625} height="" width="100%">
-        <TTitleSecondary fontSize={1.25}>
-          {currentLanguage ? "Configurações" : "Settings"}
-        </TTitleSecondary>
+        <TTitleSecondary fontSize={1.25}>{currentLanguage ? "Configurações" : "Settings"}</TTitleSecondary>
         <span className="line"></span>
       </Container>
       <Container display="flex" flexDir="column" height="" width="100%" gap={0.5}>

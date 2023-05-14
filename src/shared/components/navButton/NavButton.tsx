@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { theme, themeConstants } from "../../theme"
 import icons from "../../assets/icons"
-import { Icon } from "../icon/Icon"
+import { Icon } from "../Icon/Icon"
 
 interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   to: string

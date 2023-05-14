@@ -8,7 +8,7 @@ import { Container } from "../../shared/components/container/Container"
 import { useModalContext } from "../../shared/contexts/ModalContext"
 import { THeadingPrimary, TTitlePrimary } from "../../shared/fonts"
 import { theme, themeConstants } from "../../shared/theme"
-import { Icon } from "../../shared/components/icon/Icon"
+import { Icon } from "../../shared/components/Icon/Icon"
 import { LayoutBaseDePagina } from "../../shared/layout"
 import { languageTexts } from "../../shared/language"
 import Imgs from "../../shared/assets/index"
@@ -74,7 +74,7 @@ export const PaginaInicial = () => {
             Davi Alves
           </THeadingPrimary>
           <TTitlePrimary txtColor={theme.text.secondary} fontSize={windowWidth > 912 ? 2.5 : 2}>
-          {currentLanguage ? languageTexts["pt-br"].homePage.texts.title2 : languageTexts["en"].homePage.texts.title2}
+            {currentLanguage ? languageTexts["pt-br"].homePage.texts.title2 : languageTexts["en"].homePage.texts.title2}
           </TTitlePrimary>
 
           <Container display="flex" width="100%" height="" justifyContent="center" gap={2} marginTop={1} marginLeft={windowWidth <= 912 ? 0 : -1}>
