@@ -48,10 +48,10 @@ export const Projetos: React.FC = () => {
       <CardContainerStyle>
         <Card
           img="habits"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
-          label="Project name"
-          toDeploy=""
-          toGithub=""
+          label="Habits"
+          description="O Habits é um web site para monitoramento de tarefas diárias para auxiliar seus usuários a rastrear suas atividades realizadas e não realizadas."
+          toDeploy="https://habits-mocha.vercel.app"
+          toGithub="https://github.com/daviaxs/habits"
           flexDir={windowWidth <= 600 ? "column" : "row"}
           align={windowWidth <= 600 ? "center" : "start"}
           justifyContent={windowWidth <= 600 ? "center" : "start"}
@@ -59,56 +59,6 @@ export const Projetos: React.FC = () => {
           <TechUsed label="html" />
           <TechUsed label="css" />
           <TechUsed label="js" />
-          <TechUsed label="git" />
-          <TechUsed label="figma" />
-        </Card>
-        <Card
-          img="habits"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
-          label="Project name"
-          toDeploy=""
-          toGithub=""
-          flexDir={windowWidth <= 600 ? "column" : "row"}
-          align={windowWidth <= 600 ? "center" : "start"}
-          justifyContent={windowWidth <= 600 ? "center" : "start"}
-        >
-          <TechUsed label="html" />
-          <TechUsed label="css" />
-          <TechUsed label="js" />
-          <TechUsed label="git" />
-          <TechUsed label="figma" />
-        </Card>
-        <Card
-          img="habits"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
-          label="Project name"
-          toDeploy=""
-          toGithub=""
-          flexDir={windowWidth <= 600 ? "column" : "row"}
-          align={windowWidth <= 600 ? "center" : "start"}
-          justifyContent={windowWidth <= 600 ? "center" : "start"}
-        >
-          <TechUsed label="html" />
-          <TechUsed label="css" />
-          <TechUsed label="js" />
-          <TechUsed label="git" />
-          <TechUsed label="figma" />
-        </Card>
-        <Card
-          img="habits"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae voluptatibus quo sunt recusandae voluptatem vitae assumenda placeat, eos tenetur aut, eius ad necessitatibus in cumque ratione eligendi pariatur blanditiis?"
-          label="Project name"
-          toDeploy=""
-          toGithub=""
-          flexDir={windowWidth <= 600 ? "column" : "row"}
-          align={windowWidth <= 600 ? "center" : "start"}
-          justifyContent={windowWidth <= 600 ? "center" : "start"}
-        >
-          <TechUsed label="html" />
-          <TechUsed label="css" />
-          <TechUsed label="js" />
-          <TechUsed label="git" />
-          <TechUsed label="figma" />
         </Card>
       </CardContainerStyle>
     </LayoutBaseDePagina>
