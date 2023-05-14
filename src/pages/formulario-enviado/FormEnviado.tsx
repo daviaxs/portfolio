@@ -1,13 +1,15 @@
+import { useContext } from "react"
+import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
+import { THeadingLinearPrimary, TTitlePrimary, TTitleSecondary } from "../../shared/fonts"
+import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
+import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
+import { useLanguageContext } from "../../shared/contexts/LanguageContext"
+import { Container } from "../../shared/components/container/Container"
 import { theme, themeConstants } from "../../shared/theme"
 import Imgs from "../../shared/assets/index"
-import { Container } from "../../shared/components/container/Container"
-import { THeadingLinearPrimary, TTitlePrimary, TTitleSecondary } from "../../shared/fonts"
-import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
-import { NavLink } from "react-router-dom"
-import { useContext } from "react"
-import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
+import { languageTexts } from "../../shared/language"
 
 const FormSentStyle = styled.main`
   display: flex;
@@ -46,6 +48,7 @@ const FormSentStyle = styled.main`
 
 export const FormEnviado = () => {
   const { width: windowWidth } = useContext(WindowDimensionsContext)
+  const { currentLanguage } = useLanguageContext()
 
   return (
     <FormSentStyle>
@@ -74,7 +77,7 @@ export const FormEnviado = () => {
         marginBottom={windowWidth <= 850 ? 20 : 0}
       >
         <THeadingLinearPrimary fontSize={windowWidth <= 600 && windowWidth > 400 ? 2 : windowWidth <= 400 ? 1.8 : 2.5} whiteSpace="nowrap">
-          Formulário entregue!
+          {currentLanguage ? languageTexts["pt-br"].formSent.heading : languageTexts["en"].formSent.heading}
         </THeadingLinearPrimary>
         <TTitleSecondary
           fontSize={windowWidth <= 600 ? 1.3 : 1.5}
@@ -82,11 +85,14 @@ export const FormEnviado = () => {
           textAlign={windowWidth <= 400 ? "center" : "start"}
           className="text"
         >
-          Seu formulário foi entregue com sucesso! <br /> Aguarde minha resposta em breve.
+          {currentLanguage ? languageTexts["pt-br"].formSent.text1 : languageTexts["en"].formSent.text1} <br />{" "}
+          {currentLanguage ? languageTexts["pt-br"].formSent.text2 : languageTexts["en"].formSent.text2}
         </TTitleSecondary>
         <NavLink to={"/pagina-inicial"}>
           <ButtonSecondary width="11.25rem" height="3.125rem">
-            <TTitlePrimary fontSize={2}>Voltar</TTitlePrimary>
+            <TTitlePrimary fontSize={2}>
+              {currentLanguage ? languageTexts["pt-br"].formSent.buttonBack : languageTexts["en"].formSent.buttonBack}
+            </TTitlePrimary>
           </ButtonSecondary>
         </NavLink>
       </Container>

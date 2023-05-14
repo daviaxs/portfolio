@@ -81,6 +81,12 @@ export const languageTexts = {
         },
         submit: "Enviar"
       }
+    },
+    formSent: {
+      heading: "Formulário entregue!",
+      text1: "Seu formulário foi entregue com sucesso!",
+      text2: "Aguarde minha resposta em breve.",
+      buttonBack: "Voltar"
     }
   },
   "en": {
@@ -165,6 +171,12 @@ export const languageTexts = {
         },
         submit: "Submit"
       }
+    },
+    formSent: {
+      heading: "Form Submitted!",
+      text1: "Your form has been successfully submitted!",
+      text2: "Please wait for my response shortly.",
+      buttonBack: "Back"
     }
   }
 }
