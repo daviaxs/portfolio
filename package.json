@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "CI=false tsc && vite react-scripts build",
+    "build": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
