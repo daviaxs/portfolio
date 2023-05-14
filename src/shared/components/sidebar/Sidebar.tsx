@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 
 import { useSidebarTemporaryContext } from "../../contexts/SidebarTemporaryContext"
 import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
@@ -9,9 +9,8 @@ import { HeaderSidebar } from "./utils/SidebarHeader"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { NavButton } from "../navButton/NavButton"
-import { IconButton } from "../icon/IconButton"
 import { TTitleSecondary } from "../../fonts"
-import { Icon } from "../icon/Icon"
+import { Icon, IconButton } from "../icon"
 import { Nav } from "../nav/Nav"
 
 export const Sidebar = () => {

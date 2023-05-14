@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Skeleton, Stack } from "@mui/material"
 
+import { WindowDimensionsContext } from "../../../shared/contexts/WindowDimensionsContext"
 import { Container } from "../../../shared/components/container/Container"
 import { TTextSecondary, TTitleSecondary } from "../../../shared/fonts"
 import projectsCovers from "../../../shared/assets/projects-covers"
 import { theme, themeConstants } from "../../../shared/theme"
-import { Icon } from "../../../shared/components/icon/Icon"
-import { WindowDimensionsContext } from "../../../shared/contexts/WindowDimensionsContext"
+import { Icon } from "../../../shared/components/icon"
 
 interface ICardProps {
   img: keyof typeof projectsCovers

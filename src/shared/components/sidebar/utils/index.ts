@@ -1,2 +1,2 @@
-export * from "./SidebarTemporaryContainer.style"
+export * from "./SidebarTemporary"
 export * from "./SidebarHeader"

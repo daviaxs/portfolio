@@ -8,8 +8,8 @@ import { Container } from "../../shared/components/container/Container"
 import { Card, CardContainerStyle, TechUsed } from "./utils/Card"
 import { theme, themeConstants } from "../../shared/theme"
 import { LayoutBaseDePagina } from "../../shared/layout"
-import { Icon } from "../../shared/components/icon/Icon"
 import { languageTexts } from "../../shared/language"
+import { Icon } from "../../shared/components/icon"
 
 const Separator = styled.span`
   display: flex;

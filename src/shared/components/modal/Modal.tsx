@@ -6,16 +6,16 @@ import config from "../../../../config.json"
 import Stack from "@mui/material/Stack"
 import styled from "styled-components"
 
+import { useLanguageContext } from "../../contexts/LanguageContext"
 import userErrorLoading from "../../assets/userErrorLoading.svg"
 import { useModalContext } from "../../contexts/ModalContext"
 import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import { theme, themeConstants } from "../../theme"
 import { Container } from "../container/Container"
 import { IconButton } from "../icon/IconButton"
-import { TTitleSecondary } from "../../fonts"
-import { Icon } from "../icon/Icon"
-import { useLanguageContext } from "../../contexts/LanguageContext"
 import { languageTexts } from "../../language"
+import { TTitleSecondary } from "../../fonts"
+import { Icon } from "../icon"
 
 interface IModalBoxProps {
   width: string | number

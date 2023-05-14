@@ -6,8 +6,8 @@ import { useSettingsContext } from "../../contexts/SettingsContext"
 import { useLanguageContext } from "../../contexts/LanguageContext"
 import { TTextSecondary, TTitleSecondary } from "../../fonts"
 import { Container } from "../container/Container"
-import { Icon } from "../icon/Icon"
 import { theme } from "../../theme"
+import { Icon } from "../icon"
 
 interface ISettingsStyleProps {
   width: "18.75rem" | "90%"
