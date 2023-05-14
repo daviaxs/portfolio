@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Skeleton, Stack } from "@mui/material"
@@ -8,6 +8,7 @@ import { TTextSecondary, TTitleSecondary } from "../../../shared/fonts"
 import projectsCovers from "../../../shared/assets/projects-covers"
 import { theme, themeConstants } from "../../../shared/theme"
 import { Icon } from "../../../shared/components/icon/Icon"
+import { WindowDimensionsContext } from "../../../shared/contexts/WindowDimensionsContext"
 
 interface ICardProps {
   img: keyof typeof projectsCovers
@@ -24,6 +25,7 @@ interface ICardProps {
 }
 
 interface ICardSTyleProps {
+  width: "fit-content" | "100%"
   align: "start" | "center"
   justifyContent: "start" | "center"
   flexDir: "row" | "column"
@@ -46,7 +48,7 @@ const CardSTyle = styled.div<ICardSTyleProps>`
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justifyContent};
 
-  width: fit-content;
+  width: ${(props) => props.width};
   border: 1px solid ${theme.buttons.bg_default_secondary};
   border-radius: ${themeConstants.sizes.lg}rem;
   padding: ${themeConstants.sizes["2xl"]}rem;
@@ -94,7 +96,7 @@ const TechContainer = styled.ul`
   flex-wrap: wrap;
   gap: 0.5rem;
 `
-export const TechUsed = styled.li<{label: string}>`
+export const TechUsed = styled.li<{ label: string }>`
   display: flex;
   align-items: center;
   justify-content: start;
@@ -128,9 +130,10 @@ export const TechUsed = styled.li<{label: string}>`
 
 export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, flexDir, align, justifyContent, children }) => {
   const [imgLoading, setImgLoading] = useState(false)
+  const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   return (
-    <CardSTyle flexDir={flexDir} align={align} justifyContent={justifyContent}>
+    <CardSTyle flexDir={flexDir} align={align} justifyContent={justifyContent} width={windowWidth <= 400 ? "fit-content" : "100%"}>
       <Stack>
         {imgLoading ? (
           <img src={projectsCovers[img]} alt={`${img} capa`} className="image" />
