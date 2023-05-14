@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState } from "react"
+import { createContext, useCallback, useContext, useState, useEffect } from "react"
 
 interface ILanguageContextData {
   currentLanguage: boolean
@@ -18,9 +18,20 @@ export const useLanguageContext = () => {
 export const LanguageProvider: React.FC<ILanguageProviderProps> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState(true)
 
+  useEffect(() => {
+    const savedValue = window.localStorage.getItem("currentLanguage")
+    if (savedValue !== null) {
+      const parsedValue = JSON.parse(savedValue)
+      if (parsedValue !== currentLanguage) {
+        setCurrentLanguage(parsedValue)
+      }
+    }
+  }, [])
+
   const toggleLanguage = useCallback(() => {
     const newLanguage = !currentLanguage
     setCurrentLanguage(newLanguage)
+    window.localStorage.setItem("currentLanguage", JSON.stringify(newLanguage))
   }, [currentLanguage])
 
   return (
