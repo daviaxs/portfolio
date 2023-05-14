@@ -53,6 +53,12 @@ export const languageTexts = {
       texts: {
         title: "Bem-vindo à minha seção de Projetos!",
         text: "Aqui você encontrará uma seleção de trabalhos que desenvolvi durante minha jornada como programador, com informações sobre as tecnologias e muito mais!"
+      },
+      projects: {
+        habits: {
+          label: "Habits",
+          description: "O Habits é um web site para monitorament é um web site para monitoramento de tarefas diárias para auxiliar seus usuários a rastrear suas atividades realizadas e não realizadas."
+        }
       }
     },
     contactPage: {
@@ -143,6 +149,12 @@ export const languageTexts = {
       texts: {
         title: "Welcome to my Projects section!",
         text: "Here you will find a selection of projects that I have developed during my journey as a programmer, with information about the technologies and much more!"
+      },
+      projects: {
+        habits: {
+          label: "Habits",
+          description: "Habits is a website for daily task monitoring to assist its users in tracking their completed and uncompleted activities."
+        }
       }
     },
     contactPage: {

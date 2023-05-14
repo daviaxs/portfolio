@@ -49,7 +49,11 @@ export const Projetos: React.FC = () => {
         <Card
           img="habits"
           label="Habits"
-          description="O Habits é um web site para monitorament é um web site para monitoramento de tarefas diárias para auxiliar seus usuários a rastrear suas atividades realizadas e não realizadas."
+          description={
+            currentLanguage
+              ? languageTexts["pt-br"].projectsPage.projects.habits.description
+              : languageTexts["en"].projectsPage.projects.habits.description
+          }
           toDeploy="https://habits-mocha.vercel.app"
           toGithub="https://github.com/daviaxs/habits"
           flexDir={windowWidth <= 600 ? "column" : "row"}
