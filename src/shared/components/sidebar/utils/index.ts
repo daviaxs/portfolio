@@ -1,2 +1,2 @@
-export * from "./SidebarTemporary"
-export * from "./SidebarHeader"
+export * from "@/shared/components/sidebar/utils/SidebarTemporary"
+export * from "@/shared/components/sidebar/utils/SidebarHeader"

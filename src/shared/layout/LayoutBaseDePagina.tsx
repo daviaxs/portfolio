@@ -1,8 +1,8 @@
-import { Sidebar } from "../components/sidebar/Sidebar"
-import { Modal } from "../components/modal/Modal"
-import { PageLayout } from "./utils/PageLayout"
-import { Box } from "../components/box/Box"
-import { theme } from "../theme"
+import { Sidebar } from "@/shared/components/sidebar/Sidebar"
+import { PageLayout } from "@/shared/layout/utils/PageLayout"
+import { Modal } from "@/shared/components/modal/Modal"
+import { Box } from "@/shared/components/box/Box"
+import { theme } from "@/shared/theme"
 
 interface ILayoutBaseDePaginaProps {
   children: React.ReactNode

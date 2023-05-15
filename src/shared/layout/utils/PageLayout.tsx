@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
-import { useMenuNavContext } from "../../contexts/MenuNavContext"
-import { useSidebarContext } from "../../contexts/SidebarContext"
-import { Settings } from "../../components/settings/Settings"
-import { MenuNav } from "../../components/menuNav/MenuNav"
-import { theme, themeConstants } from "../../theme"
-import { PageHeader } from "./PageHeader"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { Settings } from "@/shared/components/settings/Settings"
+import { MenuNav } from "@/shared/components/menuNav/MenuNav"
+import { theme, themeConstants } from "@/shared/theme"
+import { PageHeader } from "@/shared/layout/utils/PageHeader"
 
 interface IPageLayoutProps extends IPageContentProps {
   children: React.ReactNode

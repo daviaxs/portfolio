@@ -1,12 +1,12 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../../shared/contexts/WindowDimensionsContext"
-import { Container } from "../../../shared/components/container/Container"
-import { TTextTertiary, TTitlePrimary } from "../../../shared/fonts"
-import { theme, themeConstants } from "../../../shared/theme"
-import logosTech from "../../../shared/assets/logos-tech"
-import { ImageTech } from "./ImageTech"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { Container } from "@/shared/components/container/Container"
+import { TTextTertiary, TTitlePrimary } from "@/shared/fonts"
+import { theme, themeConstants } from "@/shared/theme"
+import logosTech from "@/shared/assets/logos-tech"
+import { ImageTech } from "@/pages/sobre/utils/ImageTech"
 
 interface ICardTechContainerProps {
   flexDir: "row" | "column"

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../theme"
+import { theme } from "@/shared/theme"
 
 interface IIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width: number

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { themeConstants } from "../../../theme"
+import { themeConstants } from "@/shared/theme"
 
 interface IHeaderSidebarProps {
   justifyContent: "space-between" | "center"

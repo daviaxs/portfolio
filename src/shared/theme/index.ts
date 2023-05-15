@@ -1,2 +1,2 @@
-export * from "./theme"
-export * from "./themeConstants"
+export * from "@/shared/theme/theme"
+export * from "@/shared/theme/themeConstants"

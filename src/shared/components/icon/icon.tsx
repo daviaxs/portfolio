@@ -1,4 +1,4 @@
-import icons from "../../assets/icons"
+import icons from "@/shared/assets/icons/index"
 
 interface IIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   name: keyof typeof icons

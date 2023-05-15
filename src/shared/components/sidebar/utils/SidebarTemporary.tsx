@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from "react"
 import styled from "styled-components"
 
-import { useSidebarTemporaryContext } from "../../../contexts/SidebarTemporaryContext"
-import { useLanguageContext } from "../../../contexts/LanguageContext"
-import { useSidebarContext } from "../../../contexts/SidebarContext"
-import { theme, themeConstants } from "../../../theme"
-import { Container } from "../../container/Container"
-import { NavButton } from "../../navButton/NavButton"
-import { IconButton } from "../../icon/IconButton"
-import { TTitleSecondary } from "../../../fonts"
-import { HeaderSidebar } from "./SidebarHeader"
-import { Icon } from "../../icon/Icon"
-import { Nav } from "../../nav/Nav"
+import { useSidebarTemporaryContext } from "@/shared/contexts/SidebarTemporaryContext"
+import { HeaderSidebar } from "@/shared/components/sidebar/utils/SidebarHeader"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { Container } from "@/shared/components/container/Container"
+import { NavButton } from "@/shared/components/navButton/NavButton"
+import { IconButton } from "@/shared/components/icon/IconButton"
+import { theme, themeConstants } from "@/shared/theme"
+import { Icon } from "@/shared/components/icon/Icon"
+import { Nav } from "@/shared/components/nav/Nav"
+import { TTitleSecondary } from "@/shared/fonts"
 
 const SidebarTemporaryContainer = styled.div`
   position: fixed;

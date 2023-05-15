@@ -2,10 +2,10 @@ import { useState } from "react"
 import styled from "@emotion/styled"
 import { Skeleton, Stack } from "@mui/material"
 
-import { Container } from "../../../shared/components/container/Container"
-import { THeadingLinearPrimary } from "../../../shared/fonts"
-import { theme, themeConstants } from "../../../shared/theme"
-import Imgs from "../../../shared/assets/index"
+import { Container } from "@/shared/components/container/Container"
+import { THeadingLinearPrimary } from "@/shared/fonts"
+import { theme, themeConstants } from "@/shared/theme"
+import Imgs from "@/shared/assets/index"
 
 interface ICardProfileProps {
   width: string

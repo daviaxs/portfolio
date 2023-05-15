@@ -1,15 +1,15 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
-import { useLanguageContext } from "../../shared/contexts/LanguageContext"
-import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
-import { Container } from "../../shared/components/container/Container"
-import { Card, CardContainerStyle, TechUsed } from "./utils/Card"
-import { theme, themeConstants } from "../../shared/theme"
-import { Icon } from "../../shared/components/icon/Icon"
-import { LayoutBaseDePagina } from "../../shared/layout"
-import { languageTexts } from "../../shared/language"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
+import { Container } from "@/shared/components/container/Container"
+import { Card, CardContainerStyle, TechUsed } from "@/pages/projetos/utils/Card"
+import { theme, themeConstants } from "@/shared/theme"
+import { Icon } from "@/shared/components/icon/Icon"
+import { LayoutBaseDePagina } from "@/shared/layout"
+import { languageTexts } from "@/shared/language"
 
 const Separator = styled.span`
   display: flex;

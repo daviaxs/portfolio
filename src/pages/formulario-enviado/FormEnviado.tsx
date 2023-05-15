@@ -2,14 +2,14 @@ import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-import { THeadingLinearPrimary, TTitlePrimary, TTitleSecondary } from "../../shared/fonts"
-import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
-import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
-import { useLanguageContext } from "../../shared/contexts/LanguageContext"
-import { Container } from "../../shared/components/container/Container"
-import { theme, themeConstants } from "../../shared/theme"
-import Imgs from "../../shared/assets/index"
-import { languageTexts } from "../../shared/language"
+import { THeadingLinearPrimary, TTitlePrimary, TTitleSecondary } from "@/shared/fonts"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { ButtonSecondary } from "@/shared/components/buttons/ButtonSecondary"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { Container } from "@/shared/components/container/Container"
+import { theme, themeConstants } from "@/shared/theme"
+import Imgs from "@/shared/assets/index"
+import { languageTexts } from "@/shared/language"
 
 const FormSentStyle = styled.main`
   display: flex;

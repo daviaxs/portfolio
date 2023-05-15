@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { theme, themeConstants } from "../../../shared/theme"
+import { theme, themeConstants } from "@/shared/theme"
 
 interface IRectangleProps {
   width: number

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme, themeConstants } from "../../theme"
+import { theme, themeConstants } from "@/shared/theme"
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode

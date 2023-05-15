@@ -1,13 +1,13 @@
 import styled from "styled-components"
 
-import { useLanguageContext } from "../../contexts/LanguageContext"
-import { useMenuNavContext } from "../../contexts/MenuNavContext"
-import { useSidebarContext } from "../../contexts/SidebarContext"
-import { PageHeader } from "../../layout/utils/PageHeader"
-import { theme, themeConstants } from "../../theme"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { PageHeader } from "@/shared/layout/utils/PageHeader"
+import { theme, themeConstants } from "@/shared/theme"
 import { NavButton } from "../navButton/NavButton"
-import { TTitleSecondary } from "../../fonts"
-import { Nav } from "../nav/Nav"
+import { Nav } from "@/shared/components/nav/Nav"
+import { TTitleSecondary } from "@/shared/fonts"
 
 interface IMenuNavProps {
   display: "flex" | "none"

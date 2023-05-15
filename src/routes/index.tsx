@@ -1,11 +1,11 @@
 import { useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
-import { PaginaInicial, Sobre, Projetos, Contato, FormEnviado } from "../pages"
-import { useSettingsContext } from "../shared/contexts/SettingsContext"
-import { useLanguageContext } from "../shared/contexts/LanguageContext"
-import { useSidebarContext } from "../shared/contexts/SidebarContext"
-import { languageTexts } from "../shared/language"
+import { PaginaInicial, Sobre, Projetos, Contato, FormEnviado } from "@/pages"
+import { useSettingsContext } from "@/shared/contexts/SettingsContext"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { languageTexts } from "@/shared/language"
 
 export const AppRoutes = () => {
   const { setSidebarOptions: setDrawerOptions } = useSidebarContext()

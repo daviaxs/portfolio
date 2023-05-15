@@ -1,15 +1,15 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../shared/contexts/WindowDimensionsContext"
-import { ButtonSecondary } from "../../shared/components/buttons/ButtonSecondary"
-import { useLanguageContext } from "../../shared/contexts/LanguageContext"
-import { THeadingLinearPrimary, TTextPrimary } from "../../shared/fonts"
-import { Container } from "../../shared/components/container/Container"
-import { theme, themeConstants } from "../../shared/theme"
-import { LayoutBaseDePagina } from "../../shared/layout"
-import { Icon } from "../../shared/components/icon/Icon"
-import { languageTexts } from "../../shared/language"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { ButtonSecondary } from "@/shared/components/buttons/ButtonSecondary"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
+import { Container } from "@/shared/components/container/Container"
+import { theme, themeConstants } from "@/shared/theme"
+import { LayoutBaseDePagina } from "@/shared/layout"
+import { Icon } from "@/shared/components/icon/Icon"
+import { languageTexts } from "@/shared/language"
 
 interface IVTextFieldProps {
   height: number

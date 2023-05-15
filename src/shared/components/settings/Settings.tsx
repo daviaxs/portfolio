@@ -1,13 +1,13 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
-import { useSettingsContext } from "../../contexts/SettingsContext"
-import { useLanguageContext } from "../../contexts/LanguageContext"
-import { TTextSecondary, TTitleSecondary } from "../../fonts"
-import { Container } from "../container/Container"
-import { theme } from "../../theme"
-import { Icon } from "../icon/Icon"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { useSettingsContext } from "@/shared/contexts/SettingsContext"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { Container } from "@/shared/components/container/Container"
+import { TTextSecondary, TTitleSecondary } from "@/shared/fonts"
+import { Icon } from "@/shared/components/icon/Icon"
+import { theme } from "@/shared/theme"
 
 interface ISettingsStyleProps {
   width: "18.75rem" | "90%"

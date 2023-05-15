@@ -1,1 +1,1 @@
-export * from "./languageTexts"
+export * from "@/shared/language/languageTexts"

@@ -1,1 +1,1 @@
-export * from "./fonts.style"
+export * from "@/shared/fonts/fonts.style"

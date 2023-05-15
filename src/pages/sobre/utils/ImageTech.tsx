@@ -1,6 +1,6 @@
 import React from "react"
 
-import logosTech from "../../../shared/assets/logos-tech"
+import logosTech from "@/shared/assets/logos-tech"
 
 interface IImageTechProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   img: keyof typeof logosTech

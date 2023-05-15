@@ -1,14 +1,14 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "../../contexts/WindowDimensionsContext"
-import { useSettingsContext } from "../../contexts/SettingsContext"
-import { useMenuNavContext } from "../../contexts/MenuNavContext"
-import { useSidebarContext } from "../../contexts/SidebarContext"
-import { IconButton } from "../../components/icon/IconButton"
-import { theme, themeConstants } from "../../theme"
-import { Icon } from "../../components/icon/Icon"
-import { TTitleSecondary } from "../../fonts"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { useSettingsContext } from "@/shared/contexts/SettingsContext"
+import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { IconButton } from "@/shared/components/icon/IconButton"
+import { theme, themeConstants } from "@/shared/theme"
+import { Icon } from "@/shared/components/icon/Icon"
+import { TTitleSecondary } from "@/shared/fonts"
 
 interface IPageHeaderProps {
   label: string
