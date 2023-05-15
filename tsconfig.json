@@ -27,7 +27,8 @@
     },
   },
   "include": [
-    "src"
+    "src",
+    "src/shared/components/icon/icon-env.d.ts"
   ],
   "references": [
     {
