@@ -7,7 +7,7 @@ import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
 import { Container } from "@/shared/components/container/Container"
 import { Card, CardContainerStyle, TechUsed } from "@/pages/projetos/utils/Card"
 import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icon/Icon"
+import { Icon } from "@/shared/components/test/Test"
 import { LayoutBaseDePagina } from "@/shared/layout"
 import { languageTexts } from "@/shared/language"
 

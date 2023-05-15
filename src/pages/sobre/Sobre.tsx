@@ -8,10 +8,10 @@ import { useLanguageContext } from "@/shared/contexts/LanguageContext"
 import { Container } from "@/shared/components/container/Container"
 import { TTextPrimary, TTitleSecondary } from "@/shared/fonts"
 import { CardTech, CardTechContainer } from "./utils/CardTech"
+import { CardProfile } from "@/pages/sobre/utils/CardProfile"
 import { theme, themeConstants } from "@/shared/theme"
 import { LayoutBaseDePagina } from "@/shared/layout"
 import { languageTexts } from "@/shared/language"
-import { CardProfile } from "@/pages/sobre/utils/CardProfile"
 
 interface ItextStyleProps {
   txtColor: string

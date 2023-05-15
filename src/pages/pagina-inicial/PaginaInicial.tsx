@@ -7,12 +7,12 @@ import { useSidebarContext } from "@/shared/contexts/SidebarContext"
 import { Container } from "@/shared/components/container/Container"
 import { useModalContext } from "@/shared/contexts/ModalContext"
 import { THeadingPrimary, TTitlePrimary } from "@/shared/fonts"
+import { Button } from "@/pages/pagina-inicial/utils/Button"
 import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icon/Icon"
+import { Icon } from "@/shared/components/test/Test"
 import { LayoutBaseDePagina } from "@/shared/layout"
 import { languageTexts } from "@/shared/language"
 import Imgs from "@/shared/assets/index"
-import { Button } from "@/pages/pagina-inicial/utils/Button"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)

@@ -5,9 +5,9 @@ import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsConte
 import { useSettingsContext } from "@/shared/contexts/SettingsContext"
 import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
 import { useSidebarContext } from "@/shared/contexts/SidebarContext"
-import { IconButton } from "@/shared/components/icon/IconButton"
+import { IconButton } from "@/shared/components/test/TestButton"
 import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icon/Icon"
+import { Icon } from "@/shared/components/test/Test"
 import { TTitleSecondary } from "@/shared/fonts"
 
 interface IPageHeaderProps {

@@ -6,7 +6,7 @@ import { useSettingsContext } from "@/shared/contexts/SettingsContext"
 import { useLanguageContext } from "@/shared/contexts/LanguageContext"
 import { Container } from "@/shared/components/container/Container"
 import { TTextSecondary, TTitleSecondary } from "@/shared/fonts"
-import { Icon } from "@/shared/components/icon/Icon"
+import { Icon } from "@/shared/components/test/Test"
 import { theme } from "@/shared/theme"
 
 interface ISettingsStyleProps {

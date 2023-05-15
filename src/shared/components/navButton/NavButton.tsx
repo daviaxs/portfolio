@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icon/Icon"
+import { Icon } from "@/shared/components/test/Test"
 import icons from "@/shared/assets/icons"
 
 interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
