@@ -161,31 +161,31 @@ export function Modal() {
     }
   }, [expandedModal])
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(url)
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await fetch(url)
 
-        if (response.ok) {
-          var data = await response.json()
-        } else {
-          console.error(response.status, response.statusText)
-        }
+  //       if (response.ok) {
+  //         var data = await response.json()
+  //       } else {
+  //         console.error(response.status, response.statusText)
+  //       }
 
-        if (data) {
-          setUser({
-            username: data.username,
-            avatar: data.avatar,
-            discriminator: data.discriminator,
-          })
-        }
-      } catch (error) {
-        console.error(error)
-      }
-    }
+  //       if (data) {
+  //         setUser({
+  //           username: data.username,
+  //           avatar: data.avatar,
+  //           discriminator: data.discriminator,
+  //         })
+  //       }
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   }
 
-    fetchData()
-  }, [])
+  //   fetchData()
+  // }, [])
 
   if (user.username && user.discriminator && user.avatar) {
     var userName = user.username
