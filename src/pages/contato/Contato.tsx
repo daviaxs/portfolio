@@ -8,7 +8,7 @@ import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
 import { Container } from "@/shared/components/container/Container"
 import { theme, themeConstants } from "@/shared/theme"
 import { LayoutBaseDePagina } from "@/shared/layout"
-import { Icon } from "@/shared/components/test/Test"
+import { Icon } from "@/shared/components/icone/Icone"
 import { languageTexts } from "@/shared/language"
 
 interface IVTextFieldProps {
