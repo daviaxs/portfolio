@@ -1,20 +1,20 @@
-import React, { useCallback, useContext, useEffect, useState } from "react"
 import MuiAlert, { AlertProps } from "@mui/material/Alert"
 import Snackbar from "@mui/material/Snackbar"
 import Stack from "@mui/material/Stack"
+import React, { useCallback, useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
-import { ButtonPrimary } from "@/shared/components/buttons/ButtonPrimary"
-import { useLanguageContext } from "@/shared/contexts/LanguageContext"
-import { Container } from "@/shared/components/container/Container"
 import userErrorLoading from "@/shared/assets/userErrorLoading.svg"
-import { useModalContext } from "@/shared/contexts/ModalContext"
-import { IconButton } from "@/shared/components/icone/IconeButton"
-import { theme, themeConstants } from "@/shared/theme"
+import { ButtonPrimary } from "@/shared/components/buttons/ButtonPrimary"
+import { Container } from "@/shared/components/container/Container"
 import { Icon } from "@/shared/components/icone/Icone"
-import { languageTexts } from "@/shared/language"
+import { IconButton } from "@/shared/components/icone/IconeButton"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { useModalContext } from "@/shared/contexts/ModalContext"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
 import { TTitleSecondary } from "@/shared/fonts"
+import { languageTexts } from "@/shared/language"
+import { theme, themeConstants } from "@/shared/theme"
 import config from "../../../../config.json"
 
 interface IModalBoxProps {
@@ -151,7 +151,7 @@ export function Modal() {
   const { toggleModal, expandedModal } = useModalContext()
   const { currentLanguage } = useLanguageContext()
 
-  const [user, setUser] = useState({ username: "", avatar: "", discriminator: "" })
+  const [user, setUser] = useState({ username: "", avatar: "" })
   const [shouldRender, setShouldRender] = useState(expandedModal)
   const [openSnackbar, setOpenSnackbar] = useState(false)
 
@@ -176,7 +176,6 @@ export function Modal() {
           setUser({
             username: data.username,
             avatar: data.avatar,
-            discriminator: data.discriminator,
           })
         }
       } catch (error) {
@@ -187,13 +186,11 @@ export function Modal() {
     fetchData()
   }, [])
 
-  if (user.username && user.discriminator && user.avatar) {
+  if (user.username && user.avatar) {
     var userName = user.username
-    var userTag = user.discriminator
     var avatarUrl = `https://cdn.discordapp.com/avatars/${config.id}/${user.avatar}.png`
   } else {
     var userName = currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.loading : languageTexts["en"].homePage.texts.modal.loading
-    var userTag = "0000"
     var avatarUrl = userErrorLoading
   }
 
@@ -220,7 +217,7 @@ export function Modal() {
   }
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(`${userName}#${userTag}`)
+    navigator.clipboard.writeText(`${userName}`)
   }
 
   const handleButtonCopy = () => {
@@ -280,7 +277,7 @@ export function Modal() {
         >
           <img src={avatarUrl} alt="Foto de perfil do discord" className="avatar" />
           <TTitleSecondary fontSize={windowWidth <= 600 && windowWidth >= 360 ? 1.5 : windowWidth < 360 ? 1.2 : 2}>
-            {userName}#{userTag}
+            {userName}
           </TTitleSecondary>
         </Container>
 
