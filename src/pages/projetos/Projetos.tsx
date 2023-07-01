@@ -56,13 +56,30 @@ export const Projetos: React.FC = () => {
           }
           toDeploy="https://habits-mocha.vercel.app"
           toGithub="https://github.com/daviaxs/habits"
-          flexDir={windowWidth <= 600 ? "column" : "row"}
-          align={windowWidth <= 600 ? "center" : "start"}
-          justifyContent={windowWidth <= 600 ? "center" : "start"}
         >
           <TechUsed label="html" />
           <TechUsed label="css" />
           <TechUsed label="js" />
+        </Card>
+
+        <Card
+          img="phoneStore"
+          label={
+            currentLanguage
+              ? languageTexts["pt-br"].projectsPage.projects.phoneStore.label
+              : languageTexts["en"].projectsPage.projects.phoneStore.label
+          }
+          description={
+            currentLanguage
+              ? languageTexts["pt-br"].projectsPage.projects.phoneStore.description
+              : languageTexts["en"].projectsPage.projects.phoneStore.description
+          }
+          toDeploy="https://loja-de-celulares-iota.vercel.app/pagina-inicial"
+          toGithub="https://github.com/daviaxs/smartphones-store"
+        >
+          <TechUsed label="react js" />
+          <TechUsed label="Typescript" />
+          <TechUsed label="Styled components" />
         </Card>
       </CardContainerStyle>
     </LayoutBaseDePagina>

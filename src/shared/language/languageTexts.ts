@@ -58,7 +58,11 @@ export const languageTexts = {
         habits: {
           label: "Habits",
           description: "O Habits é um web site para monitorament é um web site para monitoramento de tarefas diárias para auxiliar seus usuários a rastrear suas atividades realizadas e não realizadas."
-        }
+        },
+        phoneStore: {
+          label: "Loja de celulares",
+          description: "Este site de comércio eletrônico foi desenvolvido como um projeto pessoal, com o objetivo de oferecer uma experiência única de compra de celulares. Ele foi criado com o propósito de demonstrar um exemplo de um site de comércio eletrônico e apresentar informações sobre produtos relacionados a celulares."
+        },
       }
     },
     contactPage: {
@@ -154,7 +158,11 @@ export const languageTexts = {
         habits: {
           label: "Habits",
           description: "Habits is a website for daily task monitoring to assist its users in tracking their completed and uncompleted activities."
-        }
+        },
+        phoneStore: {
+          label: "Cellphone Store",
+          description: "This e-commerce website was developed as a personal project, with the aim of providing a unique cellphone purchasing experience. It was created to demonstrate an example of an e-commerce website and showcase information about cellphone-related products."
+        },
       }
     },
     contactPage: {

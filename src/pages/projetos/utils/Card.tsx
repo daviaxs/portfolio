@@ -1,14 +1,14 @@
-import { useState, useContext } from "react"
+import { Skeleton, Stack } from "@mui/material"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { Skeleton, Stack } from "@mui/material"
 
-import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
-import { Container } from "@/shared/components/container/Container"
-import { TTextSecondary, TTitleSecondary } from "@/shared/fonts"
 import projectsCovers from "@/shared/assets/projects-covers"
-import { theme, themeConstants } from "@/shared/theme"
+import { Container } from "@/shared/components/container/Container"
 import { Icon } from "@/shared/components/icone/Icone"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { TTextSecondary, TTitleSecondary } from "@/shared/fonts"
+import { theme, themeConstants } from "@/shared/theme"
 
 interface ICardProps {
   img: keyof typeof projectsCovers
@@ -18,9 +18,6 @@ interface ICardProps {
   toDeploy: string
   toGithub: string
 
-  flexDir: "row" | "column"
-  align: "start" | "center"
-  justifyContent: "start" | "center"
   children: React.ReactNode
 }
 
@@ -61,6 +58,7 @@ const CardSTyle = styled.div<ICardSTyleProps>`
     width: 13.875rem;
     height: 10.875rem;
     border-radius: 1rem;
+    object-fit: contain;
   }
 
   &:hover {
@@ -128,12 +126,17 @@ export const TechUsed = styled.li<{ label: string }>`
   }
 `
 
-export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, flexDir, align, justifyContent, children }) => {
+export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, toDeploy, children }) => {
   const [imgLoading, setImgLoading] = useState(false)
   const { width: windowWidth } = useContext(WindowDimensionsContext)
 
   return (
-    <CardSTyle flexDir={flexDir} align={align} justifyContent={justifyContent} width={windowWidth <= 400 ? "fit-content" : "100%"}>
+    <CardSTyle
+      flexDir={windowWidth <= 600 ? "column" : "row"}
+      align={windowWidth <= 600 ? "center" : "start"}
+      justifyContent={windowWidth <= 600 ? "center" : "start"}
+      width={windowWidth <= 400 ? "fit-content" : "100%"}
+    >
       <Stack>
         {imgLoading ? (
           <img src={projectsCovers[img]} alt={`${img} capa`} className="image" />
@@ -144,16 +147,16 @@ export const Card: React.FC<ICardProps> = ({ img, label, description, toGithub, 
       </Stack>
 
       <Container display="flex" flexDir="column" width="100%" height="100%" paddingTop={0.5} paddingBottom={0.5} gap={2}>
-        <Container display="flex" flexDir="column" width="100%" height="100%" align={align} gap={1}>
+        <Container display="flex" flexDir="column" width="100%" height="100%" align={windowWidth <= 600 ? "center" : "start"} gap={1}>
           <TTitleSecondary fontSize={1}>{label}</TTitleSecondary>
           <TTextSecondary fontSize={1} txtColor={theme.text.quaternary}>
             {description}
           </TTextSecondary>
         </Container>
 
-        <Container display="flex" flexDir="column" width="100%" height="100%" align={align} justifyContent="end" gap={1}>
+        <Container display="flex" flexDir="column" width="100%" height="100%" align={windowWidth <= 600 ? "center" : "start"} justifyContent="end" gap={1}>
           <TechContainer>{children}</TechContainer>
-          <Container display="flex" width="100%" height="" gap={1} align="end" justifyContent={justifyContent}>
+          <Container display="flex" width="100%" height="" gap={1} align="end" justifyContent={windowWidth <= 600 ? "center" : "start"}>
             <Link to={toGithub} target="_blank">
               <ButtonLink>
                 <Icon name="github" size={21} fill={theme.text.quaternary} />
