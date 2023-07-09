@@ -112,6 +112,7 @@ export const PaginaInicial = () => {
           alt="Desenho de davi alves"
           style={{
             height: `${windowWidth > 600 ? "43.75rem" : "31.25rem"}`,
+            width: `${windowWidth > 600 ? "43.75rem" : "31.25rem"}`,
             marginTop: `${windowHeight <= 490 && windowHeight >= 410 && windowWidth >= 390 && windowWidth <= 912
               ? "5rem"
               : windowHeight <= 410 && windowHeight >= 345 && windowWidth >= 390 && windowWidth <= 912
