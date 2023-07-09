@@ -1,14 +1,14 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
-import { useSettingsContext } from "@/shared/contexts/SettingsContext"
-import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
-import { useSidebarContext } from "@/shared/contexts/SidebarContext"
-import { IconButton } from "@/shared/components/icone/IconeButton"
-import { theme, themeConstants } from "@/shared/theme"
 import { Icon } from "@/shared/components/icone/Icone"
+import { IconButton } from "@/shared/components/icone/IconeButton"
+import { useMenuNavContext } from "@/shared/contexts/MenuNavContext"
+import { useSettingsContext } from "@/shared/contexts/SettingsContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
 import { TTitleSecondary } from "@/shared/fonts"
+import { theme, themeConstants } from "@/shared/theme"
 
 interface IPageHeaderProps {
   label: string
@@ -52,10 +52,10 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ label }) => {
       <TTitleSecondary fontSize={1} txtColor={theme.text.quaternary} display={!expanded || windowWidth <= 900 ? "flex" : "none"}>
         {label}
       </TTitleSecondary>
-      <IconButton display={windowWidth <= 600 ? "flex" : "none"} className="iconMenu" height={2.6} width={2.6} onClick={toggleMenuNav}>
+      <IconButton title={expandedMenu ? "Fechar menu de navegação" : "Abrir menu de navegação"} display={windowWidth <= 600 ? "flex" : "none"} className="iconMenu" height={2.6} width={2.6} onClick={toggleMenuNav}>
         <Icon name={expandedMenu ? "arrowBack" : "options"} size={20} fill={theme.text.quaternary} />
       </IconButton>
-      <IconButton className="iconSettings" height={2.6} width={2.6} onClick={handleOpenSettings}>
+      <IconButton title={openSettings ? "Fechar configurações" : "Abrir configurações"} className="iconSettings" height={2.6} width={2.6} onClick={handleOpenSettings}>
         <Icon name={openSettings ? "xClose" : "settings"} size={25} fill={theme.text.quaternary} />
       </IconButton>
     </PageHeaderStyle>
