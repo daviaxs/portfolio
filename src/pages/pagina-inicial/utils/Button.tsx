@@ -7,12 +7,11 @@ interface IButtonProps extends React.LinkHTMLAttributes<HTMLLinkElement> {
   width: number
 
   children: React.ReactNode
-  href?: string
 
   onClick?: () => void
 }
 
-const ButtonStyle = styled.a<IButtonProps>`
+const ButtonStyle = styled.button<IButtonProps>`
   cursor: pointer;
   opacity: 70%;
 
@@ -23,6 +22,7 @@ const ButtonStyle = styled.a<IButtonProps>`
   height: ${(props) => props.height}rem;
   width: ${(props) => props.width}rem;
   border-radius: 9999px;
+  border: none;
 
   background-color: ${theme.text.secondary};
   transition: all 0.2s ease-out;
@@ -43,9 +43,9 @@ const ButtonStyle = styled.a<IButtonProps>`
     margin-left: 0.04rem;
   }
 `
-export const Button: React.FC<IButtonProps> = ({ height, width, href, onClick, children }) => {
+export const Button: React.FC<IButtonProps> = ({ height, width, onClick, children }) => {
   return (
-    <ButtonStyle height={height} width={width} href={href} target="_blank" onClick={onClick}>
+    <ButtonStyle height={height} width={width} onClick={onClick}>
       {children}
     </ButtonStyle>
   )

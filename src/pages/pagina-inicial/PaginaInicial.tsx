@@ -1,18 +1,18 @@
 import { useContext } from "react"
 
-import { Rectangle, Rectangles } from "@/shared/components/rectangle/Reactangles.style"
-import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
-import { useLanguageContext } from "@/shared/contexts/LanguageContext"
-import { useSidebarContext } from "@/shared/contexts/SidebarContext"
-import { Container } from "@/shared/components/container/Container"
-import { useModalContext } from "@/shared/contexts/ModalContext"
-import { THeadingPrimary, TTitlePrimary } from "@/shared/fonts"
 import { Button } from "@/pages/pagina-inicial/utils/Button"
-import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icone/Icone"
-import { LayoutBaseDePagina } from "@/shared/layout"
-import { languageTexts } from "@/shared/language"
 import Imgs from "@/shared/assets/index"
+import { Container } from "@/shared/components/container/Container"
+import { Icon } from "@/shared/components/icone/Icone"
+import { Rectangle, Rectangles } from "@/shared/components/rectangle/Reactangles.style"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { useModalContext } from "@/shared/contexts/ModalContext"
+import { useSidebarContext } from "@/shared/contexts/SidebarContext"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { THeadingPrimary, TTitlePrimary } from "@/shared/fonts"
+import { languageTexts } from "@/shared/language"
+import { LayoutBaseDePagina } from "@/shared/layout"
+import { theme, themeConstants } from "@/shared/theme"
 
 export const PaginaInicial = () => {
   const { width: windowWidth, height: windowHeight } = useContext(WindowDimensionsContext)
@@ -40,10 +40,10 @@ export const PaginaInicial = () => {
           windowWidth <= 600 && windowWidth >= 390
             ? { transform: "scale(0.90)" }
             : windowWidth <= 390 && windowWidth >= 300
-            ? { transform: "scale(0.70)" }
-            : windowWidth <= 300
-            ? { transform: "scale(0.60)" }
-            : {}
+              ? { transform: "scale(0.70)" }
+              : windowWidth <= 300
+                ? { transform: "scale(0.60)" }
+                : {}
         }
       >
         <Rectangles>
@@ -78,9 +78,11 @@ export const PaginaInicial = () => {
           </TTitlePrimary>
 
           <Container display="flex" width="100%" height="" justifyContent="center" gap={2} marginTop={1} marginLeft={windowWidth <= 912 ? 0 : -1}>
-            <Button height={4.125} width={4.125} href="https://github.com/daviaxs">
-              <Icon name="github" fill={theme.bg.primary} size={40} />
-            </Button>
+            <a href="https://github.com/daviaxs" target="_blank">
+              <Button height={4.125} width={4.125}>
+                <Icon name="github" fill={theme.bg.primary} size={40} />
+              </Button>
+            </a>
             <Button height={4.125} width={4.125} onClick={toggleModal}>
               <Icon name="discord" fill={theme.bg.primary} size={50} className="iconDiscord" />
             </Button>
@@ -99,10 +101,10 @@ export const PaginaInicial = () => {
           windowWidth <= 600 && windowWidth >= 390
             ? { transform: "scale(1)" }
             : windowWidth <= 390 && windowWidth >= 300
-            ? { transform: "scale(0.90)" }
-            : windowWidth <= 300
-            ? { transform: "scale(0.85)" }
-            : {}
+              ? { transform: "scale(0.90)" }
+              : windowWidth <= 300
+                ? { transform: "scale(0.85)" }
+                : {}
         }
       >
         <img
@@ -110,17 +112,16 @@ export const PaginaInicial = () => {
           alt="Desenho de davi alves"
           style={{
             height: `${windowWidth > 600 ? "43.75rem" : "31.25rem"}`,
-            marginTop: `${
-              windowHeight <= 490 && windowHeight >= 410 && windowWidth >= 390 && windowWidth <= 912
-                ? "5rem"
-                : windowHeight <= 410 && windowHeight >= 345 && windowWidth >= 390 && windowWidth <= 912
+            marginTop: `${windowHeight <= 490 && windowHeight >= 410 && windowWidth >= 390 && windowWidth <= 912
+              ? "5rem"
+              : windowHeight <= 410 && windowHeight >= 345 && windowWidth >= 390 && windowWidth <= 912
                 ? "10rem"
                 : windowHeight <= 345 && windowWidth >= 390 && windowWidth <= 912
-                ? "18rem"
-                : windowWidth <= 390
-                ? "-4rem"
-                : ""
-            }`,
+                  ? "18rem"
+                  : windowWidth <= 390
+                    ? "-4rem"
+                    : ""
+              }`,
           }}
         />
       </Container>
