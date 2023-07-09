@@ -128,7 +128,7 @@ export const SidebarTemporary = () => {
             <TTitleSecondary fontSize={1} display="flex">
               {currentLanguage ? "Explorar" : "Explore"}
             </TTitleSecondary>
-            <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
+            <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary} title="Fechar menu lateral">
               <Icon name="arrowClose" size={18} />
             </IconButton>
           </HeaderSidebar>

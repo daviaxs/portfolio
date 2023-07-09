@@ -68,7 +68,7 @@ export const Sidebar = () => {
         {windowWidth <= 912 && (
           <Container width="4.5rem" height="100%" flexDir="column" display="flex">
             <HeaderSidebar justifyContent="center">
-              <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary}>
+              <IconButton height={2.25} width={2.25} onClick={toggleSidebarTemporary} title="Abrir menu lateral">
                 <Icon name="arrowOpen" size={18} />
               </IconButton>
             </HeaderSidebar>
