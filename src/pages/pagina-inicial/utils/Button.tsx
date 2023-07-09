@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { theme } from "@/shared/theme"
 
-interface IButtonProps extends React.LinkHTMLAttributes<HTMLLinkElement> {
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   height: number
   width: number
 
