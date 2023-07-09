@@ -35,7 +35,7 @@ export const Sidebar = () => {
           <TTitleSecondary fontSize={1} display={expanded ? "flex" : "none"} whiteSpace="nowrap">
             {currentLanguage ? "Explorar" : "Explore"}
           </TTitleSecondary>
-          <IconButton height={2.25} width={2.25} onClick={toggleExpanded}>
+          <IconButton height={2.25} width={2.25} onClick={toggleExpanded} name={expanded ? "Fechar menu lateral" : "Abrir menu lateral"}>
             <Icon name={expanded ? "arrowClose" : "arrowOpen"} size={18} />
           </IconButton>
         </HeaderSidebar>

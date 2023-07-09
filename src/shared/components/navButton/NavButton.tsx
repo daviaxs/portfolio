@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-import { theme, themeConstants } from "@/shared/theme"
-import { Icon } from "@/shared/components/icone/Icone"
 import icons from "@/shared/assets/icons"
+import { Icon } from "@/shared/components/icone/Icone"
+import { theme, themeConstants } from "@/shared/theme"
 
 interface INavButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   to: string
@@ -110,6 +110,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           borderSize={borderSize}
           borderRadius={borderRadius}
           iconName={iconName}
+          name={`Navegar para ${to}`}
           to={to}
           {...rest}
         >
