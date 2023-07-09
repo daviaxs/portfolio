@@ -7,6 +7,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width: number
 
   children: React.ReactNode
+  title: string
 
   onClick?: () => void
 }
@@ -43,9 +44,9 @@ const ButtonStyle = styled.button<IButtonProps>`
     margin-left: 0.04rem;
   }
 `
-export const Button: React.FC<IButtonProps> = ({ height, width, onClick, children }) => {
+export const Button: React.FC<IButtonProps> = ({ height, width, title, onClick, children }) => {
   return (
-    <ButtonStyle height={height} width={width} onClick={onClick}>
+    <ButtonStyle title={title} height={height} width={width} onClick={onClick}>
       {children}
     </ButtonStyle>
   )
