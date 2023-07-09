@@ -110,7 +110,7 @@ export const NavButton: React.FC<INavButtonProps> = ({
           borderSize={borderSize}
           borderRadius={borderRadius}
           iconName={iconName}
-          name={`Navegar para ${to}`}
+          title={`Navegar para ${to}`}
           to={to}
           {...rest}
         >
