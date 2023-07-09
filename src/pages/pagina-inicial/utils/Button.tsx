@@ -7,7 +7,6 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width: number
 
   children: React.ReactNode
-  title: string
 
   onClick?: () => void
 }

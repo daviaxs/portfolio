@@ -38,9 +38,9 @@ const IconButtonStyle = styled.button<IIconButtonProps>`
   }
 `
 
-export const IconButton: React.FC<IIconButtonProps> = ({ width, height, borderRadius = 9999, display = "flex", onClick, children, ...rest }) => {
+export const IconButton: React.FC<IIconButtonProps> = ({ width, height, borderRadius = 9999, display = "flex", onClick, title, children, ...rest }) => {
   return (
-    <IconButtonStyle onClick={onClick} width={width} height={height} borderRadius={borderRadius} display={display} {...rest}>
+    <IconButtonStyle onClick={onClick} width={width} height={height} borderRadius={borderRadius} title={title} display={display} {...rest}>
       {children}
     </IconButtonStyle>
   )
