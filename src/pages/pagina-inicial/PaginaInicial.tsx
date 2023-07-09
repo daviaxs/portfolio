@@ -79,11 +79,11 @@ export const PaginaInicial = () => {
 
           <Container display="flex" width="100%" height="" justifyContent="center" gap={2} marginTop={1} marginLeft={windowWidth <= 912 ? 0 : -1}>
             <a href="https://github.com/daviaxs" target="_blank">
-              <Button height={4.125} width={4.125}>
+              <Button height={4.125} width={4.125} name="Github">
                 <Icon name="github" fill={theme.bg.primary} size={40} />
               </Button>
             </a>
-            <Button height={4.125} width={4.125} onClick={toggleModal}>
+            <Button height={4.125} width={4.125} onClick={toggleModal} name="Discord">
               <Icon name="discord" fill={theme.bg.primary} size={50} className="iconDiscord" />
             </Button>
           </Container>
