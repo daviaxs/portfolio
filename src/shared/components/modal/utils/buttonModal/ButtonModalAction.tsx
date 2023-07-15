@@ -17,8 +17,14 @@ const Button = styled.button`
   
   width: fit-content;
   height: fit-content;
-
   padding: 0.5rem 0.75rem;
+
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: ${theme.buttons.hover};
+  }
 `
 
 export function ButtonModalAction({ iconName, ...rest }: ButtonModalActionProps) {

@@ -283,8 +283,8 @@ export function Modal() {
 
         <ButtonModal.Root>
           <ButtonModal.Actions>
-            <ButtonModal.Action iconName="copy" />
-            <ButtonModal.Action iconName="redirect" />
+            <ButtonModal.Action onClick={handleButtonCopy} iconName="copy" />
+            <ButtonModal.Action onClick={() => alert('foi')} iconName="redirect" />
           </ButtonModal.Actions>
         </ButtonModal.Root>
       </ModalStyle>
