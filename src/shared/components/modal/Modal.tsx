@@ -5,7 +5,6 @@ import React, { useCallback, useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 
 import userErrorLoading from "@/shared/assets/userErrorLoading.svg"
-import { ButtonPrimary } from "@/shared/components/buttons/ButtonPrimary"
 import { Container } from "@/shared/components/container/Container"
 import { Icon } from "@/shared/components/icone/Icone"
 import { IconButton } from "@/shared/components/icone/IconeButton"
@@ -16,6 +15,7 @@ import { TTitleSecondary } from "@/shared/fonts"
 import { languageTexts } from "@/shared/language"
 import { theme, themeConstants } from "@/shared/theme"
 import config from "../../../../config.json"
+import { ButtonModal } from "./utils/buttonModal"
 
 interface IModalBoxProps {
   width: string | number
@@ -99,7 +99,7 @@ const ModalStyle = styled.div<IModalBoxProps>`
   box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 
-  .icon {
+  .happyFaceIcon {
     position: absolute;
     margin-left: ${(props) => props.iconMarginLeft}rem;
     margin-top: ${(props) => props.iconMarginTop}rem;
@@ -238,13 +238,13 @@ export function Modal() {
             ? windowWidth <= 600 && windowWidth >= 360
               ? 16
               : windowWidth < 360
-              ? 11
-              : 18
+                ? 11
+                : 18
             : windowWidth <= 600 && windowWidth >= 360
-            ? 13.5
-            : windowWidth < 360
-            ? 9
-            : 15
+              ? 13.5
+              : windowWidth < 360
+                ? 9
+                : 15
         }
         iconMarginTop={windowWidth < 360 ? 1.3 : 2}
         className={expandedModal ? "openModal" : "closeModal"}
@@ -258,7 +258,7 @@ export function Modal() {
         >
           {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.title : languageTexts["en"].homePage.texts.modal.title} <br />{" "}
           {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.title2 : languageTexts["en"].homePage.texts.modal.title2}
-          <Icon name="happyFace" size={windowWidth <= 600 && windowWidth >= 360 ? 28 : windowWidth < 360 ? 24 : 34} />
+          <Icon name="happyFace" size={windowWidth <= 600 && windowWidth >= 360 ? 28 : windowWidth < 360 ? 24 : 34} className="happyFaceIcon" />
         </TTitleSecondary>
 
         <Container
@@ -281,9 +281,12 @@ export function Modal() {
           </TTitleSecondary>
         </Container>
 
-        <ButtonPrimary className="buttonCopy" onClick={handleButtonCopy} disabled={user.username ? false : true}>
-          {/* //*botão// */}
-        </ButtonPrimary>
+        <ButtonModal.Root>
+          <ButtonModal.Actions>
+            <ButtonModal.Action iconName="copy" />
+            <ButtonModal.Action iconName="redirect" />
+          </ButtonModal.Actions>
+        </ButtonModal.Root>
       </ModalStyle>
       <Stack spacing={2} sx={{ width: "100%" }} className="snackbar">
         <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handleSnackbarClose}>
