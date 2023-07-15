@@ -14,7 +14,7 @@ const ButtonModalActionsStyle = styled.div`
   width: fit-content;
   height: fit-content;
 
-  border-radius: ${themeConstants.sizes.md}rem;
+  border-radius: ${themeConstants.sizes.lg}rem;
   overflow: hidden;
 `
 

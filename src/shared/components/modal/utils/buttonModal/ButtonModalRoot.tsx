@@ -1,4 +1,4 @@
-import { theme } from "@/shared/theme"
+import { theme, themeConstants } from "@/shared/theme"
 import styled from "styled-components"
 
 interface ButtonModalRootProps {
@@ -13,6 +13,7 @@ const ButtonModalRootStyle = styled.div`
   justify-content: center;
 
   padding: 0.5rem 0.75rem;
+  margin-top: ${themeConstants.sizes.lg}rem;
 
   .separator {
     height: 3.5rem;

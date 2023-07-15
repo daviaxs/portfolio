@@ -91,7 +91,7 @@ const ModalStyle = styled.div<IModalBoxProps>`
   align-items: center;
 
   width: ${(props) => props.width};
-  padding: 1.563rem 5.063rem;
+  padding: 1rem 5.063rem;
   margin-inline: 2rem;
 
   background: ${theme.bg.tertiary};
@@ -108,10 +108,6 @@ const ModalStyle = styled.div<IModalBoxProps>`
   .avatar {
     border-radius: 999px;
     height: 94px;
-  }
-
-  .buttonCopy {
-    margin-top: ${themeConstants.sizes.lg}rem;
   }
 
   &.openModal {
