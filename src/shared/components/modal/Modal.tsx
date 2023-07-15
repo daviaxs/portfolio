@@ -284,6 +284,7 @@ export function Modal() {
         <ButtonModal.Root>
           <ButtonModal.Actions>
             <ButtonModal.Action onClick={handleButtonCopy} iconName="copy" />
+            <span className="separator"/>
             <ButtonModal.Action onClick={() => window.open("https://discord.com/users/852904928166281248", '_blank')} iconName="redirect" />
           </ButtonModal.Actions>
         </ButtonModal.Root>
