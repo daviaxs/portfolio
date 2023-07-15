@@ -282,9 +282,7 @@ export function Modal() {
         </Container>
 
         <ButtonPrimary className="buttonCopy" onClick={handleButtonCopy} disabled={user.username ? false : true}>
-          <TTitleSecondary txtColor={theme.text.fifth} fontSize={windowWidth <= 600 ? 1.5 : 2}>
-            {currentLanguage ? languageTexts["pt-br"].homePage.texts.modal.copy : languageTexts["en"].homePage.texts.modal.copy}
-          </TTitleSecondary>
+          {/* //*botão// */}
         </ButtonPrimary>
       </ModalStyle>
       <Stack spacing={2} sx={{ width: "100%" }} className="snackbar">
