@@ -1,3 +1,4 @@
+import { themeConstants } from "@/shared/theme"
 import styled from "styled-components"
 
 interface ButtonModalActionsProps {
@@ -12,6 +13,9 @@ const ButtonModalActionsStyle = styled.div`
   justify-content: center;
   width: fit-content;
   height: fit-content;
+
+  border-radius: ${themeConstants.sizes.md}rem;
+  overflow: hidden;
 `
 
 export function ButtonModalActions({ children }: ButtonModalActionsProps) {
