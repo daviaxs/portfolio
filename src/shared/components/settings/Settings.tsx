@@ -113,19 +113,13 @@ export const Settings = () => {
     }
   }, [openSettings])
 
-  useEffect(() => {
-    if (openSettings) {
-      setShouldRender(true)
-    }
-  }, [openSettings])
-
   const handleAnimationEnd = useCallback(() => {
     if (!openSettings) {
       setShouldRender(false)
     }
   }, [openSettings])
 
-  if (shouldRender === false) {
+  if (!shouldRender) {
     return null
   }
 
