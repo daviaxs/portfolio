@@ -1,7 +1,7 @@
 import HabitsCover from '@/shared/assets/projects-covers/habits-cover.png'
-import PhoneStore from '@/shared/assets/projects-covers/cell-phone-store.png'
+import EcommerceDX from '@/shared/assets/projects-covers/eccomerce-dx.png'
 
 export default {
   habits: HabitsCover,
-  phoneStore: PhoneStore
+  ecommerceDX: EcommerceDX
 }

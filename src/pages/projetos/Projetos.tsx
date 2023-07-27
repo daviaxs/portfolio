@@ -63,16 +63,12 @@ export const Projetos: React.FC = () => {
         </Card>
 
         <Card
-          img="phoneStore"
-          label={
-            currentLanguage
-              ? languageTexts["pt-br"].projectsPage.projects.phoneStore.label
-              : languageTexts["en"].projectsPage.projects.phoneStore.label
-          }
+          img="ecommerceDX"
+          label="E-commerce"
           description={
             currentLanguage
-              ? languageTexts["pt-br"].projectsPage.projects.phoneStore.description
-              : languageTexts["en"].projectsPage.projects.phoneStore.description
+              ? languageTexts["pt-br"].projectsPage.projects.ecommerceDX.description
+              : languageTexts["en"].projectsPage.projects.ecommerceDX.description
           }
           toDeploy="https://loja-de-celulares-iota.vercel.app/pagina-inicial"
           toGithub="https://github.com/daviaxs/smartphones-store"
