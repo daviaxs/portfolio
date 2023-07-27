@@ -70,8 +70,8 @@ export const Projetos: React.FC = () => {
               ? languageTexts["pt-br"].projectsPage.projects.ecommerceDX.description
               : languageTexts["en"].projectsPage.projects.ecommerceDX.description
           }
-          toDeploy="https://loja-de-celulares-iota.vercel.app/pagina-inicial"
-          toGithub="https://github.com/daviaxs/smartphones-store"
+          toDeploy="https://eccomerce-dx.vercel.app/pagina-inicial"
+          toGithub="https://github.com/daviaxs/eccomerce-dx"
         >
           <TechUsed label="react js" />
           <TechUsed label="Typescript" />
