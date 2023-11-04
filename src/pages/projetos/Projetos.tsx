@@ -86,8 +86,8 @@ export const Projetos: React.FC = () => {
               ? languageTexts["pt-br"].projectsPage.projects.dtMoney.description
               : languageTexts["en"].projectsPage.projects.dtMoney.description
           }
-          toDeploy="https://loja-virtual-dx.vercel.app/pagina-inicial"
-          toGithub="https://github.com/daviaxs/eccomerce-dx"
+          toDeploy="https://dt-money-daviaxs.vercel.app"
+          toGithub="https://github.com/daviaxs/dt-money"
         >
           <TechUsed label="react js" />
           <TechUsed label="Typescript" />
