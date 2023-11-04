@@ -61,6 +61,9 @@ export const languageTexts = {
         ecommerceDX: {
           description: "Este site de comércio eletrônico foi desenvolvido como um projeto pessoal, com o objetivo de oferecer uma experiência única de compra de produtos em geral. Ele foi criado com o propósito de demonstrar um exemplo de um site de comércio eletrônico e apresentar informações sobre produtos em geral."
         },
+        dtMoney: {
+          description: "DT Money é um site de gerenciamento de finanças pessoais com um design intuitivo. Registre suas transações com facilidade, veja entradas, saídas e o saldo total. Mantenha suas finanças sob controle de forma simples."
+        },
       }
     },
     contactPage: {
@@ -158,6 +161,9 @@ export const languageTexts = {
         },
         ecommerceDX: {
           description: "This e-commerce website was developed as a personal project, with the aim of providing a unique purchasing experience for various products. It was created to demonstrate an example of an e-commerce website and showcase information about general products."
+        },
+        dtMoney: {
+          description: "DT Money is a personal finance management website with an intuitive design. Easily record your transactions, view income, expenses, and the total balance. Keep your finances in check with simplicity."
         },
       }
     },

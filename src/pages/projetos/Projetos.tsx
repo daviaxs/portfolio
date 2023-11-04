@@ -1,15 +1,15 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
-import { useLanguageContext } from "@/shared/contexts/LanguageContext"
-import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
-import { Container } from "@/shared/components/container/Container"
 import { Card, CardContainerStyle, TechUsed } from "@/pages/projetos/utils/Card"
-import { theme, themeConstants } from "@/shared/theme"
+import { Container } from "@/shared/components/container/Container"
 import { Icon } from "@/shared/components/icone/Icone"
-import { LayoutBaseDePagina } from "@/shared/layout"
+import { useLanguageContext } from "@/shared/contexts/LanguageContext"
+import { WindowDimensionsContext } from "@/shared/contexts/WindowDimensionsContext"
+import { THeadingLinearPrimary, TTextPrimary } from "@/shared/fonts"
 import { languageTexts } from "@/shared/language"
+import { LayoutBaseDePagina } from "@/shared/layout"
+import { theme, themeConstants } from "@/shared/theme"
 
 const Separator = styled.span`
   display: flex;
@@ -76,6 +76,24 @@ export const Projetos: React.FC = () => {
           <TechUsed label="react js" />
           <TechUsed label="Typescript" />
           <TechUsed label="Styled components" />
+        </Card>
+
+        <Card
+          img="dtMoney"
+          label="DT Money"
+          description={
+            currentLanguage
+              ? languageTexts["pt-br"].projectsPage.projects.dtMoney.description
+              : languageTexts["en"].projectsPage.projects.dtMoney.description
+          }
+          toDeploy="https://loja-virtual-dx.vercel.app/pagina-inicial"
+          toGithub="https://github.com/daviaxs/eccomerce-dx"
+        >
+          <TechUsed label="react js" />
+          <TechUsed label="Typescript" />
+          <TechUsed label="Styled components" />
+          <TechUsed label="zod" />
+          <TechUsed label="radix-ui" />
         </Card>
       </CardContainerStyle>
     </LayoutBaseDePagina>
