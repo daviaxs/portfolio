@@ -67,7 +67,7 @@ const TTextSecondaryStyle = styled.p<ITextProps>`
   font-weight: 400;
   font-size: ${(props) => props.fontSize}rem;
   white-space: ${(props) => props.whiteSpace};
-  line-height: 100%;
+  line-height: 115%;
   text-align: ${(props) => props.textAlign};
 
   color: ${(props) => props.txtColor};
