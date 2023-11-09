@@ -64,6 +64,9 @@ export const languageTexts = {
         dtMoney: {
           description: "DT Money é um site de gerenciamento de finanças pessoais com um design intuitivo. Registre suas transações com facilidade, veja entradas, saídas e o saldo total. Mantenha suas finanças sob controle de forma simples."
         },
+        dxStore: {
+          description: "DX Store é um site de e-commerce desenvolvido com ReactJS e Prisma, oferecendo aos usuários a oportunidade de explorar e simular compras de produtos eletrônicos. Com a conveniência do login via Google, os visitantes podem experimentar o processo de compra, graças à integração do modo de teste do Stripe."
+        },
       }
     },
     contactPage: {
@@ -164,6 +167,9 @@ export const languageTexts = {
         },
         dtMoney: {
           description: "DT Money is a personal finance management website with an intuitive design. Easily record your transactions, view income, expenses, and the total balance. Keep your finances in check with simplicity."
+        },
+        dxStore: {
+          description: "DX Store is an e-commerce website developed with ReactJS and Prisma, offering users the opportunity to explore and simulate electronic product purchases. With the convenience of Google login, visitors can experience the purchasing process, thanks to the integration of Stripe's test mode."
         },
       }
     },

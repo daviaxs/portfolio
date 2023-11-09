@@ -47,6 +47,25 @@ export const Projetos: React.FC = () => {
       </Separator>
       <CardContainerStyle>
         <Card
+          img="dxStore"
+          label="DX Store"
+          description={
+            currentLanguage
+              ? languageTexts["pt-br"].projectsPage.projects.dxStore.description
+              : languageTexts["en"].projectsPage.projects.dxStore.description
+          }
+          toDeploy="https://dx-store.vercel.app"
+          toGithub="https://github.com/daviaxs/DX-Store"
+        >
+          <TechUsed label="react js" />
+          <TechUsed label="next-auth" />
+          <TechUsed label="typescript" />
+          <TechUsed label="prisma" />
+          <TechUsed label="tailwindcss" />
+          <TechUsed label="stripe" />
+        </Card>
+
+        <Card
           img="habits"
           label="Habits"
           description={
